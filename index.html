@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Infografis Disdukcapil V2</title>
+
+    <!-- Favicon / Logo Tab Disdukcapil -->
+    <link rel="icon" type="image/png" href="img/logo_disduk.png">
+    <link rel="shortcut icon" type="image/png" href="img/logo_disduk.png">
+    <link rel="apple-touch-icon" href="img/logo_disduk.png">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SheetJS XLSX CDN for Excel Parsing V2 -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- JSZip CDN for Social Media ZIP Export V2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Design System CSS Tokens V2 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-full overflow-hidden antialiased transition-colors duration-250" style="background-color: var(--color-bg-workspace); color: var(--color-text-main);">
+
+    <div class="flex h-full w-full">
+
+        <!-- SIDEBAR CONTAINER (Left Panel 320px) -->
+        <aside id="sidebar-container" class="w-80 flex-shrink-0 h-full z-20"></aside>
+
+        <!-- MAIN WORKSPACE & LIVE PREVIEW AREA (Right Panel) -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+
+            <!-- PREVIEW HEADER TOOLBAR -->
+            <div class="h-12 px-6 border-b flex items-center justify-between flex-shrink-0 z-10 transition-colors duration-250"
+                 style="background-color: var(--color-bg-surface); border-color: var(--color-border-subtle);">
+                <div class="flex items-center gap-3">
+                    <span id="preview-title" class="text-xs font-extrabold tracking-wider uppercase flex items-center gap-2" style="color: var(--color-text-main);">
+                        <i class="fa-solid fa-eye text-emerald-500"></i>
+                        <span>Preview • Template 1</span>
+                    </span>
+                    <span id="scale-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                        100% Scale
+                    </span>
+                </div>
+
+                <!-- Theme Controller Toggle Buttons -->
+                <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1 p-1 rounded-lg border text-xs" style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-subtle);">
+                        <button id="btn-theme-light" title="Mode Terang" class="px-2 py-0.5 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-amber-500 text-[11px]">
+                            <i class="fa-solid fa-sun text-amber-500"></i>
+                            <span class="hidden md:inline">Terang</span>
+                        </button>
+                        <button id="btn-theme-dark" title="Mode Gelap" class="px-2 py-0.5 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-indigo-500 text-[11px]">
+                            <i class="fa-solid fa-moon text-indigo-500"></i>
+                            <span class="hidden md:inline">Gelap</span>
+                        </button>
+                        <button id="btn-theme-system" title="Ikuti Sistem" class="px-2 py-0.5 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-emerald-500 text-[11px]">
+                            <i class="fa-solid fa-desktop text-emerald-500"></i>
+                            <span class="hidden md:inline">Sistem</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSPACE 1: FULL INFOGRAPHICS PREVIEW CONTAINER (V1 - UNTOUCHED) -->
+            <div id="preview-wrapper-full" class="flex-1 p-6 overflow-auto flex justify-center items-start relative transition-colors duration-200"
+                 style="background-color: var(--color-bg-workspace);">
+                <div id="preview-scaler" class="origin-top transition-transform duration-150 shadow-xl rounded-xl overflow-hidden border"
+                     style="width: 1200px; background-color: #ffffff; border-color: var(--color-border-strong);">
+                    <iframe id="preview-iframe" style="width: 1200px; border: 0; min-height: 1600px; background-color: #ffffff;" title="Infographic Live Preview"></iframe>
+                </div>
+            </div>
+
+            <!-- WORKSPACE 2: MEDIA SOSIAL CAROUSEL PREVIEW CONTAINER (V2 - 2 SLIDES IN 1 PAGE VIEW) -->
+            <div id="preview-wrapper-social" class="hidden flex-1 p-6 overflow-auto flex flex-col items-center gap-4 relative transition-colors duration-200"
+                 style="background-color: var(--color-bg-workspace);">
+                
+                <!-- Information Metadata Panel V2 -->
+                <div id="preview-v2-info-panel" class="w-full max-w-[2240px] p-3 rounded-xl border shadow-sm transition-colors duration-200 text-xs"
+                     style="background-color: var(--color-bg-surface); border-color: var(--color-border-subtle); color: var(--color-text-main);">
+                </div>
+
+                <!-- Dual Carousel Live Canvas View (Slide 1 & Slide 2 Side-by-Side in 1 Page View) -->
+                <div id="social-slides-scaler" class="origin-top transition-transform duration-150 flex flex-wrap lg:flex-nowrap justify-center gap-6 w-full max-w-[2240px]">
+                    <!-- Slide 1 Canvas Frame -->
+                    <div class="flex flex-col items-center">
+                        <div class="text-xs font-extrabold text-emerald-500 mb-2 uppercase tracking-wider flex items-center gap-1.5 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/20">
+                            <i class="fa-solid fa-images"></i> Slide 1 — Cover Profil
+                        </div>
+                        <div class="shadow-2xl rounded-2xl overflow-hidden border bg-slate-900" style="width: 1080px; height: 1350px; border-color: var(--color-border-strong);">
+                            <iframe id="preview-social-slide1" style="width: 1080px; height: 1350px; border: 0;" title="Social Slide 1"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 Canvas Frame -->
+                    <div class="flex flex-col items-center">
+                        <div class="text-xs font-extrabold text-indigo-500 mb-2 uppercase tracking-wider flex items-center gap-1.5 bg-indigo-500/10 px-3 py-1 rounded-lg border border-indigo-500/20">
+                            <i class="fa-solid fa-chart-pie"></i> Slide 2 — Visualisasi Demografi
+                        </div>
+                        <div class="shadow-2xl rounded-2xl overflow-hidden border bg-slate-900" style="width: 1080px; height: 1350px; border-color: var(--color-border-strong);">
+                            <iframe id="preview-social-slide2" style="width: 1080px; height: 1350px; border: 0;" title="Social Slide 2"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Application Script (ES Module) -->
+    <script type="module" src="src/app.js"></script>
+</body>
+</html>

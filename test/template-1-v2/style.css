@@ -1,0 +1,366 @@
+/* ==========================================================================
+   DISDUKCAPIL INFOGRAFIS V2 — DESIGN SYSTEM (4:5 SOCIAL MEDIA CAROUSEL)
+   Format Target: Instagram Portrait (1080 x 1350 px | 4:5 Aspect Ratio)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS (VARIABLES)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Tokens: Brand Colors */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
+
+  /* Color Tokens: Dark Neutrals (Navy/Slate) */
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+  --color-secondary-950: #020617;
+
+  /* Color Tokens: Accent Highlights */
+  --color-accent-amber: #d97706;
+  --color-accent-amber-light: #fef3c7;
+  --color-accent-sky: #0284c7;
+  --color-accent-sky-light: #e0f2fe;
+  --color-accent-rose: #e11d48;
+  --color-accent-rose-light: #ffe4e6;
+
+  /* Color Tokens: Light Neutrals */
+  --color-neutral-white: #ffffff;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+
+  /* Gradient Tokens */
+  --grad-hero: linear-gradient(135deg, #047857 0%, #064e3b 100%);
+  --grad-hero-accent: linear-gradient(135deg, #059669 0%, #047857 100%);
+  --grad-card-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --grad-card-light: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --grad-sky: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+
+  /* Spacing Tokens */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 14px;
+  --space-md: 22px;
+  --space-lg: 32px;
+  --space-xl: 44px;
+  --space-2xl: 56px;
+
+  /* Border Radius Tokens */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Shadow Tokens */
+  --shadow-subtle: 0 4px 12px rgba(15, 23, 42, 0.03);
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-hero: 0 16px 40px rgba(4, 120, 87, 0.20);
+  --shadow-floating: 0 20px 48px rgba(15, 23, 42, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   2. CANVAS BASE & RESET (EXACT 1080 x 1350 px | 4:5 ASPECT RATIO)
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.social-canvas {
+  width: 1080px;
+  height: 1350px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #d1fae5 45%, #e0f2fe 100%);
+  color: var(--color-neutral-800);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-floating);
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY SYSTEM
+   -------------------------------------------------------------------------- */
+.text-display-hero {
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.text-display-stat {
+  font-size: 64px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.text-heading-1 {
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.text-heading-2 {
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.text-subtitle {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.text-body-large {
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.text-body-regular {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER COMPONENT (COMPACT OFFICIAL HEADER)
+   -------------------------------------------------------------------------- */
+.social-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-neutral-200);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title-main {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-primary-700);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.header-title-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-neutral-600);
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER COMPONENT (COMPACT OFFICIAL FOOTER)
+   -------------------------------------------------------------------------- */
+.social-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--color-neutral-200);
+}
+
+.footer-social-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-social-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--color-neutral-100);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.slide-indicator {
+  background-color: var(--color-secondary-900);
+  color: var(--color-neutral-white);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   6. BADGE COMPONENTS
+   -------------------------------------------------------------------------- */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-emerald {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-800);
+  border: 1px solid var(--color-primary-500);
+}
+
+.badge-amber {
+  background-color: var(--color-accent-amber-light);
+  color: var(--color-accent-amber);
+  border: 1px solid var(--color-accent-amber);
+}
+
+.badge-sky {
+  background-color: var(--color-accent-sky-light);
+  color: var(--color-accent-sky);
+  border: 1px solid var(--color-accent-sky);
+}
+
+.badge-dark {
+  background-color: var(--color-secondary-900);
+  color: var(--color-neutral-white);
+}
+
+/* --------------------------------------------------------------------------
+   7. STATISTIC CARDS & CONTAINER COMPONENTS
+   -------------------------------------------------------------------------- */
+.stat-card-hero {
+  background: var(--grad-hero);
+  color: var(--color-neutral-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-hero);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card-hero::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.stat-card-secondary {
+  background: var(--color-neutral-white);
+  border: 2px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card-dark {
+  background: var(--grad-card-dark);
+  color: var(--color-neutral-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* --------------------------------------------------------------------------
+   8. VISUALIZATION COMPONENTS (PROGRESS BARS & INSIGHT BOXES)
+   -------------------------------------------------------------------------- */
+.progress-bar-track {
+  width: 100%;
+  height: 18px;
+  background-color: var(--color-neutral-200);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  display: flex;
+}
+
+.progress-bar-fill-emerald {
+  background-color: var(--color-primary-600);
+  height: 100%;
+}
+
+.progress-bar-fill-rose {
+  background-color: var(--color-accent-rose);
+  height: 100%;
+}
+
+.insight-box {
+  background-color: var(--color-primary-50);
+  border-left: 6px solid var(--color-primary-700);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   9. NATIVE SVG ICON UTILITIES
+   -------------------------------------------------------------------------- */
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}

@@ -1,0 +1,1163 @@
+{
+  "Cipatujah": {
+    "no": 1,
+    "nama": "Cipatujah",
+    "penduduk": {
+      "laki_laki": "38.937",
+      "perempuan": "37.565",
+      "total": "76.502"
+    }
+  },
+  "Karangnunggal": {
+    "no": 2,
+    "nama": "Karangnunggal",
+    "penduduk": {
+      "laki_laki": "48.186",
+      "perempuan": "46.791",
+      "total": "94.977"
+    }
+  },
+  "Cikalong": {
+    "no": 3,
+    "nama": "Cikalong",
+    "penduduk": {
+      "laki_laki": "37.425",
+      "perempuan": "36.362",
+      "total": "73.787"
+    }
+  },
+  "Pancatengah": {
+    "no": 4,
+    "nama": "Pancatengah",
+    "penduduk": {
+      "laki_laki": "27.137",
+      "perempuan": "26.188",
+      "total": "53.325"
+    }
+  },
+  "Cikatomas": {
+    "no": 5,
+    "nama": "Cikatomas",
+    "penduduk": {
+      "laki_laki": "28.982",
+      "perempuan": "27.986",
+      "total": "56.968"
+    }
+  },
+  "Cibalong": {
+    "no": 6,
+    "nama": "Cibalong",
+    "penduduk": {
+      "laki_laki": "17.950",
+      "perempuan": "17.494",
+      "total": "35.444"
+    }
+  },
+  "Parungponteng": {
+    "no": 7,
+    "nama": "Parungponteng",
+    "penduduk": {
+      "laki_laki": "20.300",
+      "perempuan": "19.593",
+      "total": "39.893"
+    }
+  },
+  "Bantarkalong": {
+    "no": 8,
+    "nama": "Bantarkalong",
+    "penduduk": {
+      "laki_laki": "20.485",
+      "perempuan": "19.648",
+      "total": "40.133"
+    }
+  },
+  "Bojongasih": {
+    "no": 9,
+    "nama": "Bojongasih",
+    "penduduk": {
+      "laki_laki": "11.739",
+      "perempuan": "11.324",
+      "total": "23.063"
+    }
+  },
+  "Culamega": {
+    "no": 10,
+    "nama": "Culamega",
+    "penduduk": {
+      "laki_laki": "14.108",
+      "perempuan": "13.561",
+      "total": "27.669"
+    }
+  },
+  "Bojonggambir": {
+    "no": 11,
+    "nama": "Bojonggambir",
+    "penduduk": {
+      "laki_laki": "23.450",
+      "perempuan": "22.539",
+      "total": "45.989"
+    }
+  },
+  "Sodonghilir": {
+    "no": 12,
+    "nama": "Sodonghilir",
+    "penduduk": {
+      "laki_laki": "38.200",
+      "perempuan": "36.615",
+      "total": "74.815"
+    }
+  },
+  "Taraju": {
+    "no": 13,
+    "nama": "Taraju",
+    "penduduk": {
+      "laki_laki": "23.109",
+      "perempuan": "22.689",
+      "total": "45.798"
+    }
+  },
+  "Salawu": {
+    "no": 14,
+    "nama": "Salawu",
+    "penduduk": {
+      "laki_laki": "34.719",
+      "perempuan": "33.603",
+      "total": "68.322"
+    }
+  },
+  "Puspahiang": {
+    "no": 15,
+    "nama": "Puspahiang",
+    "penduduk": {
+      "laki_laki": "19.372",
+      "perempuan": "19.247",
+      "total": "38.619"
+    }
+  },
+  "Tanjungjaya": {
+    "no": 16,
+    "nama": "Tanjungjaya",
+    "penduduk": {
+      "laki_laki": "25.871",
+      "perempuan": "24.956",
+      "total": "50.827"
+    }
+  },
+  "Sukaraja": {
+    "no": 17,
+    "nama": "Sukaraja",
+    "penduduk": {
+      "laki_laki": "29.659",
+      "perempuan": "28.161",
+      "total": "57.820"
+    }
+  },
+  "Salopa": {
+    "no": 18,
+    "nama": "Salopa",
+    "penduduk": {
+      "laki_laki": "28.195",
+      "perempuan": "26.879",
+      "total": "55.074"
+    }
+  },
+  "Jatiwaras": {
+    "no": 19,
+    "nama": "Jatiwaras",
+    "penduduk": {
+      "laki_laki": "29.284",
+      "perempuan": "27.872",
+      "total": "57.156"
+    }
+  },
+  "Cineam": {
+    "no": 20,
+    "nama": "Cineam",
+    "penduduk": {
+      "laki_laki": "18.407",
+      "perempuan": "18.691",
+      "total": "37.098"
+    }
+  },
+  "Karangjaya": {
+    "no": 21,
+    "nama": "Karangjaya",
+    "penduduk": {
+      "laki_laki": "6.666",
+      "perempuan": "6.554",
+      "total": "13.220"
+    }
+  },
+  "Manonjaya": {
+    "no": 22,
+    "nama": "Manonjaya",
+    "penduduk": {
+      "laki_laki": "34.891",
+      "perempuan": "33.924",
+      "total": "68.815"
+    }
+  },
+  "Gunungtanjung": {
+    "no": 23,
+    "nama": "Gunungtanjung",
+    "penduduk": {
+      "laki_laki": "17.439",
+      "perempuan": "16.454",
+      "total": "33.893"
+    }
+  },
+  "Singaparna": {
+    "no": 24,
+    "nama": "Singaparna",
+    "penduduk": {
+      "laki_laki": "39.425",
+      "perempuan": "38.613",
+      "total": "78.038"
+    }
+  },
+  "Mangunreja": {
+    "no": 25,
+    "nama": "Mangunreja",
+    "penduduk": {
+      "laki_laki": "22.375",
+      "perempuan": "21.779",
+      "total": "44.154"
+    }
+  },
+  "Sukarame": {
+    "no": 26,
+    "nama": "Sukarame",
+    "penduduk": {
+      "laki_laki": "23.085",
+      "perempuan": "22.058",
+      "total": "45.143"
+    }
+  },
+  "Cigalontang": {
+    "no": 27,
+    "nama": "Cigalontang",
+    "penduduk": {
+      "laki_laki": "42.856",
+      "perempuan": "40.550",
+      "total": "83.406"
+    }
+  },
+  "Leuwisari": {
+    "no": 28,
+    "nama": "Leuwisari",
+    "penduduk": {
+      "laki_laki": "23.452",
+      "perempuan": "22.697",
+      "total": "46.149"
+    }
+  },
+  "Padakembang": {
+    "no": 29,
+    "nama": "Padakembang",
+    "penduduk": {
+      "laki_laki": "22.781",
+      "perempuan": "22.162",
+      "total": "44.943"
+    }
+  },
+  "Sariwangi": {
+    "no": 30,
+    "nama": "Sariwangi",
+    "penduduk": {
+      "laki_laki": "20.243",
+      "perempuan": "19.094",
+      "total": "39.337"
+    }
+  },
+  "Sukaratu": {
+    "no": 31,
+    "nama": "Sukaratu",
+    "penduduk": {
+      "laki_laki": "28.810",
+      "perempuan": "27.170",
+      "total": "55.980"
+    }
+  },
+  "Cisayong": {
+    "no": 32,
+    "nama": "Cisayong",
+    "penduduk": {
+      "laki_laki": "33.479",
+      "perempuan": "32.218",
+      "total": "65.697"
+    }
+  },
+  "Sukahening": {
+    "no": 33,
+    "nama": "Sukahening",
+    "penduduk": {
+      "laki_laki": "17.620",
+      "perempuan": "17.330",
+      "total": "34.950"
+    }
+  },
+  "Rajapolah": {
+    "no": 34,
+    "nama": "Rajapolah",
+    "penduduk": {
+      "laki_laki": "27.765",
+      "perempuan": "26.634",
+      "total": "54.399"
+    }
+  },
+  "Jamanis": {
+    "no": 35,
+    "nama": "Jamanis",
+    "penduduk": {
+      "laki_laki": "21.589",
+      "perempuan": "20.470",
+      "total": "42.059"
+    }
+  },
+  "Ciawi": {
+    "no": 36,
+    "nama": "Ciawi",
+    "penduduk": {
+      "laki_laki": "35.796",
+      "perempuan": "34.927",
+      "total": "70.723"
+    }
+  },
+  "Kadipaten": {
+    "no": 37,
+    "nama": "Kadipaten",
+    "penduduk": {
+      "laki_laki": "22.226",
+      "perempuan": "20.753",
+      "total": "42.979"
+    }
+  },
+  "Pagerageung": {
+    "no": 38,
+    "nama": "Pagerageung",
+    "penduduk": {
+      "laki_laki": "33.174",
+      "perempuan": "31.997",
+      "total": "65.171"
+    }
+  },
+  "Sukaresik": {
+    "no": 39,
+    "nama": "Sukaresik",
+    "penduduk": {
+      "laki_laki": "22.146",
+      "perempuan": "21.600",
+      "total": "43.746"
+    }
+  },
+  "JUMLAH": {
+    "no": 16,
+    "nama": "JUMLAH",
+    "penduduk": {
+      "laki_laki": "1.031.333",
+      "perempuan": "994.748",
+      "total": "2.026.081"
+    }
+  },
+  "CIPATUJAH": {
+    "no": 1,
+    "nama": "CIPATUJAH",
+    "penduduk": {
+      "laki_laki": "38.937",
+      "perempuan": "37.565",
+      "total": "76.502"
+    }
+  },
+  "KARANGNUNGGAL": {
+    "no": 2,
+    "nama": "KARANGNUNGGAL",
+    "penduduk": {
+      "laki_laki": "48.186",
+      "perempuan": "46.791",
+      "total": "94.977"
+    }
+  },
+  "CIKALONG": {
+    "no": 3,
+    "nama": "CIKALONG",
+    "penduduk": {
+      "laki_laki": "37.425",
+      "perempuan": "36.362",
+      "total": "73.787"
+    }
+  },
+  "PANCATENGAH": {
+    "no": 4,
+    "nama": "PANCATENGAH",
+    "penduduk": {
+      "laki_laki": "27.137",
+      "perempuan": "26.188",
+      "total": "53.325"
+    }
+  },
+  "CIKATOMAS": {
+    "no": 5,
+    "nama": "CIKATOMAS",
+    "penduduk": {
+      "laki_laki": "28.982",
+      "perempuan": "27.986",
+      "total": "56.968"
+    }
+  },
+  "CIBALONG": {
+    "no": 6,
+    "nama": "CIBALONG",
+    "penduduk": {
+      "laki_laki": "17.950",
+      "perempuan": "17.494",
+      "total": "35.444"
+    }
+  },
+  "PARUNGPONTENG": {
+    "no": 7,
+    "nama": "PARUNGPONTENG",
+    "penduduk": {
+      "laki_laki": "20.300",
+      "perempuan": "19.593",
+      "total": "39.893"
+    }
+  },
+  "BANTARKALONG": {
+    "no": 8,
+    "nama": "BANTARKALONG",
+    "penduduk": {
+      "laki_laki": "20.485",
+      "perempuan": "19.648",
+      "total": "40.133"
+    }
+  },
+  "BOJONGASIH": {
+    "no": 9,
+    "nama": "BOJONGASIH",
+    "penduduk": {
+      "laki_laki": "11.739",
+      "perempuan": "11.324",
+      "total": "23.063"
+    }
+  },
+  "CULAMEGA": {
+    "no": 10,
+    "nama": "CULAMEGA",
+    "penduduk": {
+      "laki_laki": "14.108",
+      "perempuan": "13.561",
+      "total": "27.669"
+    }
+  },
+  "BOJONGGAMBIR": {
+    "no": 11,
+    "nama": "BOJONGGAMBIR",
+    "penduduk": {
+      "laki_laki": "23.450",
+      "perempuan": "22.539",
+      "total": "45.989"
+    }
+  },
+  "SODONGHILIR": {
+    "no": 12,
+    "nama": "SODONGHILIR",
+    "penduduk": {
+      "laki_laki": "38.200",
+      "perempuan": "36.615",
+      "total": "74.815"
+    }
+  },
+  "TARAJU": {
+    "no": 13,
+    "nama": "TARAJU",
+    "penduduk": {
+      "laki_laki": "23.109",
+      "perempuan": "22.689",
+      "total": "45.798"
+    }
+  },
+  "SALAWU": {
+    "no": 14,
+    "nama": "SALAWU",
+    "penduduk": {
+      "laki_laki": "34.719",
+      "perempuan": "33.603",
+      "total": "68.322"
+    }
+  },
+  "PUSPAHIANG": {
+    "no": 15,
+    "nama": "PUSPAHIANG",
+    "penduduk": {
+      "laki_laki": "19.372",
+      "perempuan": "19.247",
+      "total": "38.619"
+    }
+  },
+  "TANJUNGJAYA": {
+    "no": 16,
+    "nama": "TANJUNGJAYA",
+    "penduduk": {
+      "laki_laki": "25.871",
+      "perempuan": "24.956",
+      "total": "50.827"
+    }
+  },
+  "SUKARAJA": {
+    "no": 17,
+    "nama": "SUKARAJA",
+    "penduduk": {
+      "laki_laki": "29.659",
+      "perempuan": "28.161",
+      "total": "57.820"
+    }
+  },
+  "SALOPA": {
+    "no": 18,
+    "nama": "SALOPA",
+    "penduduk": {
+      "laki_laki": "28.195",
+      "perempuan": "26.879",
+      "total": "55.074"
+    }
+  },
+  "JATIWARAS": {
+    "no": 19,
+    "nama": "JATIWARAS",
+    "penduduk": {
+      "laki_laki": "29.284",
+      "perempuan": "27.872",
+      "total": "57.156"
+    }
+  },
+  "CINEAM": {
+    "no": 20,
+    "nama": "CINEAM",
+    "penduduk": {
+      "laki_laki": "18.407",
+      "perempuan": "18.691",
+      "total": "37.098"
+    }
+  },
+  "KARANGJAYA": {
+    "no": 21,
+    "nama": "KARANGJAYA",
+    "penduduk": {
+      "laki_laki": "6.666",
+      "perempuan": "6.554",
+      "total": "13.220"
+    }
+  },
+  "MANONJAYA": {
+    "no": 22,
+    "nama": "MANONJAYA",
+    "penduduk": {
+      "laki_laki": "34.891",
+      "perempuan": "33.924",
+      "total": "68.815"
+    }
+  },
+  "GUNUNGTANJUNG": {
+    "no": 23,
+    "nama": "GUNUNGTANJUNG",
+    "penduduk": {
+      "laki_laki": "17.439",
+      "perempuan": "16.454",
+      "total": "33.893"
+    }
+  },
+  "SINGAPARNA": {
+    "no": 24,
+    "nama": "SINGAPARNA",
+    "penduduk": {
+      "laki_laki": "39.425",
+      "perempuan": "38.613",
+      "total": "78.038"
+    }
+  },
+  "MANGUNREJA": {
+    "no": 25,
+    "nama": "MANGUNREJA",
+    "penduduk": {
+      "laki_laki": "22.375",
+      "perempuan": "21.779",
+      "total": "44.154"
+    }
+  },
+  "SUKARAME": {
+    "no": 26,
+    "nama": "SUKARAME",
+    "penduduk": {
+      "laki_laki": "23.085",
+      "perempuan": "22.058",
+      "total": "45.143"
+    }
+  },
+  "CIGALONTANG": {
+    "no": 27,
+    "nama": "CIGALONTANG",
+    "penduduk": {
+      "laki_laki": "42.856",
+      "perempuan": "40.550",
+      "total": "83.406"
+    }
+  },
+  "LEUWISARI": {
+    "no": 28,
+    "nama": "LEUWISARI",
+    "penduduk": {
+      "laki_laki": "23.452",
+      "perempuan": "22.697",
+      "total": "46.149"
+    }
+  },
+  "PADAKEMBANG": {
+    "no": 29,
+    "nama": "PADAKEMBANG",
+    "penduduk": {
+      "laki_laki": "22.781",
+      "perempuan": "22.162",
+      "total": "44.943"
+    }
+  },
+  "SARIWANGI": {
+    "no": 30,
+    "nama": "SARIWANGI",
+    "penduduk": {
+      "laki_laki": "20.243",
+      "perempuan": "19.094",
+      "total": "39.337"
+    }
+  },
+  "SUKARATU": {
+    "no": 31,
+    "nama": "SUKARATU",
+    "penduduk": {
+      "laki_laki": "28.810",
+      "perempuan": "27.170",
+      "total": "55.980"
+    }
+  },
+  "CISAYONG": {
+    "no": 32,
+    "nama": "CISAYONG",
+    "penduduk": {
+      "laki_laki": "33.479",
+      "perempuan": "32.218",
+      "total": "65.697"
+    }
+  },
+  "SUKAHENING": {
+    "no": 33,
+    "nama": "SUKAHENING",
+    "penduduk": {
+      "laki_laki": "17.620",
+      "perempuan": "17.330",
+      "total": "34.950"
+    }
+  },
+  "RAJAPOLAH": {
+    "no": 34,
+    "nama": "RAJAPOLAH",
+    "penduduk": {
+      "laki_laki": "27.765",
+      "perempuan": "26.634",
+      "total": "54.399"
+    }
+  },
+  "JAMANIS": {
+    "no": 35,
+    "nama": "JAMANIS",
+    "penduduk": {
+      "laki_laki": "21.589",
+      "perempuan": "20.470",
+      "total": "42.059"
+    }
+  },
+  "CIAWI": {
+    "no": 36,
+    "nama": "CIAWI",
+    "penduduk": {
+      "laki_laki": "35.796",
+      "perempuan": "34.927",
+      "total": "70.723"
+    }
+  },
+  "KADIPATEN": {
+    "no": 37,
+    "nama": "KADIPATEN",
+    "penduduk": {
+      "laki_laki": "22.226",
+      "perempuan": "20.753",
+      "total": "42.979"
+    }
+  },
+  "PAGERAGEUNG": {
+    "no": 38,
+    "nama": "PAGERAGEUNG",
+    "penduduk": {
+      "laki_laki": "33.174",
+      "perempuan": "31.997",
+      "total": "65.171"
+    }
+  },
+  "SUKARESIK": {
+    "no": 39,
+    "nama": "SUKARESIK",
+    "penduduk": {
+      "laki_laki": "22.146",
+      "perempuan": "21.600",
+      "total": "43.746"
+    }
+  },
+  "Tamat Strata  II": {
+    "no": 9,
+    "nama": "Tamat Strata  II",
+    "penduduk": {
+      "laki_laki": "1.694",
+      "perempuan": "974",
+      "total": "2.668"
+    }
+  },
+  "Tamat Strata  III": {
+    "no": 10,
+    "nama": "Tamat Strata  III",
+    "penduduk": {
+      "laki_laki": "93",
+      "perempuan": "33",
+      "total": "126"
+    }
+  },
+  "ISLAM": {
+    "no": 1,
+    "nama": "ISLAM",
+    "penduduk": {
+      "laki_laki": "1.030.925",
+      "perempuan": "994.381",
+      "total": "2.025.306"
+    }
+  },
+  "KRISTEN": {
+    "no": 2,
+    "nama": "KRISTEN",
+    "penduduk": {
+      "laki_laki": "226",
+      "perempuan": "204",
+      "total": "430"
+    }
+  },
+  "KATHOLIK": {
+    "no": 3,
+    "nama": "KATHOLIK",
+    "penduduk": {
+      "laki_laki": "147",
+      "perempuan": "124",
+      "total": "271"
+    }
+  },
+  "HINDU": {
+    "no": 4,
+    "nama": "HINDU",
+    "penduduk": {
+      "laki_laki": "3",
+      "perempuan": "5",
+      "total": "8"
+    }
+  },
+  "BUDHA": {
+    "no": 5,
+    "nama": "BUDHA",
+    "penduduk": {
+      "laki_laki": "6",
+      "perempuan": "4",
+      "total": "10"
+    }
+  },
+  "KHONGHUCU": {
+    "no": 6,
+    "nama": "KHONGHUCU",
+    "penduduk": {
+      "laki_laki": "0",
+      "perempuan": "0",
+      "total": "0"
+    }
+  },
+  "KEPERCAYAAN": {
+    "no": 7,
+    "nama": "KEPERCAYAAN",
+    "penduduk": {
+      "laki_laki": "26",
+      "perempuan": "30",
+      "total": "56"
+    }
+  },
+  "Cacat Fisik": {
+    "no": 1,
+    "nama": "Cacat Fisik",
+    "penduduk": {
+      "laki_laki": "236",
+      "perempuan": "172",
+      "total": "408"
+    }
+  },
+  "Cacat Netra": {
+    "no": 2,
+    "nama": "Cacat Netra",
+    "penduduk": {
+      "laki_laki": "139",
+      "perempuan": "120",
+      "total": "259"
+    }
+  },
+  "Cacat Rungu": {
+    "no": 3,
+    "nama": "Cacat Rungu",
+    "penduduk": {
+      "laki_laki": "197",
+      "perempuan": "173",
+      "total": "370"
+    }
+  },
+  "Cacat Fisik Dan Mental": {
+    "no": 5,
+    "nama": "Cacat Fisik Dan Mental",
+    "penduduk": {
+      "laki_laki": "37",
+      "perempuan": "32",
+      "total": "69"
+    }
+  },
+  "Cacat Lainnya": {
+    "no": 6,
+    "nama": "Cacat Lainnya",
+    "penduduk": {
+      "laki_laki": "80",
+      "perempuan": "60",
+      "total": "140"
+    }
+  },
+  "Istri": {
+    "no": 7,
+    "nama": "Istri",
+    "penduduk": {
+      "laki_laki": "0",
+      "perempuan": "467.407",
+      "total": "467.407"
+    }
+  },
+  "Cucu": {
+    "no": 23,
+    "nama": "Cucu",
+    "penduduk": {
+      "laki_laki": "6.442",
+      "perempuan": "4.537",
+      "total": "10.979"
+    }
+  },
+  "Lainnya": {
+    "no": 7,
+    "nama": "Lainnya",
+    "penduduk": {
+      "laki_laki": "1.469",
+      "perempuan": "1.535",
+      "total": "3.004"
+    }
+  },
+  "Cerai Hidup": {
+    "no": 1,
+    "nama": "Cerai Hidup",
+    "penduduk": {
+      "laki_laki": "19.208",
+      "perempuan": "33.206",
+      "total": "4"
+    }
+  },
+  "MENGURUS RUMAH TANGGA": {
+    "no": 2,
+    "nama": "MENGURUS RUMAH TANGGA",
+    "penduduk": {
+      "laki_laki": "369",
+      "perempuan": "125.283",
+      "total": "125.652"
+    }
+  },
+  "PENSIUNAN": {
+    "no": 4,
+    "nama": "PENSIUNAN",
+    "penduduk": {
+      "laki_laki": "6.731",
+      "perempuan": "2.586",
+      "total": "9.317"
+    }
+  },
+  "TENTARA NASIONAL INDONESIA": {
+    "no": 6,
+    "nama": "TENTARA NASIONAL INDONESIA",
+    "penduduk": {
+      "laki_laki": "420",
+      "perempuan": "1",
+      "total": "421"
+    }
+  },
+  "PERDAGANGAN": {
+    "no": 8,
+    "nama": "PERDAGANGAN",
+    "penduduk": {
+      "laki_laki": "701",
+      "perempuan": "58",
+      "total": "759"
+    }
+  },
+  "PETERNAK": {
+    "no": 10,
+    "nama": "PETERNAK",
+    "penduduk": {
+      "laki_laki": "92",
+      "perempuan": "8",
+      "total": "100"
+    }
+  },
+  "INDUSTRI": {
+    "no": 12,
+    "nama": "INDUSTRI",
+    "penduduk": {
+      "laki_laki": "10",
+      "perempuan": "3",
+      "total": "13"
+    }
+  },
+  "KONSTRUKSI": {
+    "no": 13,
+    "nama": "KONSTRUKSI",
+    "penduduk": {
+      "laki_laki": "20",
+      "perempuan": "0",
+      "total": "20"
+    }
+  },
+  "TRANSPORTASI": {
+    "no": 14,
+    "nama": "TRANSPORTASI",
+    "penduduk": {
+      "laki_laki": "59",
+      "perempuan": "0",
+      "total": "59"
+    }
+  },
+  "KARYAWAN SWASTA": {
+    "no": 15,
+    "nama": "KARYAWAN SWASTA",
+    "penduduk": {
+      "laki_laki": "20.748",
+      "perempuan": "1.116",
+      "total": "21.864"
+    }
+  },
+  "KARYAWAN BUMN": {
+    "no": 16,
+    "nama": "KARYAWAN BUMN",
+    "penduduk": {
+      "laki_laki": "613",
+      "perempuan": "36",
+      "total": "649"
+    }
+  },
+  "KARYAWAN BUMD": {
+    "no": 17,
+    "nama": "KARYAWAN BUMD",
+    "penduduk": {
+      "laki_laki": "143",
+      "perempuan": "6",
+      "total": "149"
+    }
+  },
+  "KARYAWAN HONORER": {
+    "no": 18,
+    "nama": "KARYAWAN HONORER",
+    "penduduk": {
+      "laki_laki": "2.913",
+      "perempuan": "342",
+      "total": "3.255"
+    }
+  },
+  "BURUH HARIAN LEPAS": {
+    "no": 19,
+    "nama": "BURUH HARIAN LEPAS",
+    "penduduk": {
+      "laki_laki": "248.070",
+      "perempuan": "9.722",
+      "total": "257.792"
+    }
+  },
+  "BURUH PETERNAKAN": {
+    "no": 22,
+    "nama": "BURUH PETERNAKAN",
+    "penduduk": {
+      "laki_laki": "61",
+      "perempuan": "5",
+      "total": "66"
+    }
+  },
+  "PEMBANTU RUMAH TANGGA": {
+    "no": 23,
+    "nama": "PEMBANTU RUMAH TANGGA",
+    "penduduk": {
+      "laki_laki": "4",
+      "perempuan": "63",
+      "total": "67"
+    }
+  },
+  "TUKANG CUKUR": {
+    "no": 24,
+    "nama": "TUKANG CUKUR",
+    "penduduk": {
+      "laki_laki": "66",
+      "perempuan": "0",
+      "total": "66"
+    }
+  },
+  "TUKANG LISTRIK": {
+    "no": 25,
+    "nama": "TUKANG LISTRIK",
+    "penduduk": {
+      "laki_laki": "2",
+      "perempuan": "0",
+      "total": "2"
+    }
+  },
+  "TUKANG BATU": {
+    "no": 26,
+    "nama": "TUKANG BATU",
+    "penduduk": {
+      "laki_laki": "16",
+      "perempuan": "0",
+      "total": "16"
+    }
+  },
+  "TUKANG KAYU": {
+    "no": 27,
+    "nama": "TUKANG KAYU",
+    "penduduk": {
+      "laki_laki": "41",
+      "perempuan": "0",
+      "total": "41"
+    }
+  },
+  "TUKANG SOL SEPATU": {
+    "no": 28,
+    "nama": "TUKANG SOL SEPATU",
+    "penduduk": {
+      "laki_laki": "5",
+      "perempuan": "0",
+      "total": "5"
+    }
+  },
+  "TUKANG JAHIT": {
+    "no": 30,
+    "nama": "TUKANG JAHIT",
+    "penduduk": {
+      "laki_laki": "357",
+      "perempuan": "24",
+      "total": "381"
+    }
+  },
+  "TUKANG GIGI": {
+    "no": 31,
+    "nama": "TUKANG GIGI",
+    "penduduk": {
+      "laki_laki": "2",
+      "perempuan": "0",
+      "total": "2"
+    }
+  },
+  "PENATA RIAS": {
+    "no": 32,
+    "nama": "PENATA RIAS",
+    "penduduk": {
+      "laki_laki": "1",
+      "perempuan": "3",
+      "total": "4"
+    }
+  },
+  "PENATA BUSANA": {
+    "no": 33,
+    "nama": "PENATA BUSANA",
+    "penduduk": {
+      "laki_laki": "0",
+      "perempuan": "0",
+      "total": "0"
+    }
+  },
+  "PENATA RAMBUT": {
+    "no": 34,
+    "nama": "PENATA RAMBUT",
+    "penduduk": {
+      "laki_laki": "5",
+      "perempuan": "2",
+      "total": "7"
+    }
+  },
+  "MEKANIK": {
+    "no": 35,
+    "nama": "MEKANIK",
+    "penduduk": {
+      "laki_laki": "113",
+      "perempuan": "0",
+      "total": "113"
+    }
+  },
+  "SENIMAN": {
+    "no": 36,
+    "nama": "SENIMAN",
+    "penduduk": {
+      "laki_laki": "32",
+      "perempuan": "7",
+      "total": "39"
+    }
+  },
+  "TABIB": {
+    "no": 37,
+    "nama": "TABIB",
+    "penduduk": {
+      "laki_laki": "2",
+      "perempuan": "0",
+      "total": "2"
+    }
+  },
+  "PARAJI": {
+    "no": 38,
+    "nama": "PARAJI",
+    "penduduk": {
+      "laki_laki": "2",
+      "perempuan": "29",
+      "total": "31"
+    }
+  },
+  "PERANCANG BUSANA": {
+    "no": 39,
+    "nama": "PERANCANG BUSANA",
+    "penduduk": {
+      "laki_laki": "0",
+      "perempuan": "0",
+      "total": "0"
+    }
+  },
+  "TOTAL": {
+    "no": 3,
+    "nama": "TOTAL",
+    "penduduk": {
+      "laki_laki": "575.232",
+      "perempuan": "171.259",
+      "total": "746.491"
+    }
+  },
+  "PENTERJEMAH": {
+    "no": 39,
+    "nama": "PENTERJEMAH",
+    "penduduk": {
+      "laki_laki": "1",
+      "perempuan": "1",
+      "total": "2"
+    }
+  }
+}

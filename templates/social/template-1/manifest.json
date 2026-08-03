@@ -1,0 +1,16 @@
+{
+  "id": "template-1-v2",
+  "name": "Template 1 V2",
+  "version": "2.0.0",
+  "status": "active",
+  "category": "social",
+  "ratio": "1080x1350",
+  "slides": 2,
+  "createdAt": "2026-07-24",
+  "updatedAt": "2026-07-27",
+  "author": "Disdukcapil Dev Team",
+  "compatibleDatasetVersion": "1.0",
+  "engine": "TemplateEngineV2",
+  "description": "Carousel 2-Slide Standard",
+  "icon": "fa-images"
+}

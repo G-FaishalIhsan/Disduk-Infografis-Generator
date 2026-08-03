@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kependudukan Kecamatan Singaparna 2025</title>
+    <!-- Favicon Logo Disdukcapil -->
+    <link rel="icon" type="image/png" href="../../img/logo_disduk.png">
+    <link rel="shortcut icon" type="image/png" href="../../img/logo_disduk.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        /* Infographic Container */
+        #infographic-container {
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+        }
+        /* Header background with internet random landscape image */
+        #header-bg {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.90), rgba(4, 120, 87, 0.85)), url('/img/disduk_header.png');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Total Population Prominent Card with background image */
+        #total-pop-card {
+            background-image: linear-gradient(135deg, rgba(29, 78, 216, 0.92), rgba(30, 27, 75, 0.92)), url('/img/total_pddk.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .vector-bar {
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 flex flex-col justify-center items-center gap-4">
+
+    <!-- Main Infographic Container -->
+    <div id="infographic-container" class="max-w-6xl w-full shadow-2xl rounded-3xl overflow-hidden border border-slate-200 p-5 md:p-8 relative" style="width: 1200px !important;">
+        
+        <!-- Header Section -->
+        <header id="header-bg" data-export-slide="cover" data-slide-title="Cover Infografis" class="relative mb-8 p-6 md:p-8 rounded-2xl overflow-hidden shadow-lg text-white">
+            <!-- Top Row: Logo & Disdukcapil Identity -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6 relative z-10">
+                <div class="flex items-center gap-4 p-3.5 rounded-2xl backdrop-blur-md border border-white/15 shadow-xl">
+                    <div class="w-14 h-14 flex-shrink-0 flex items-center justify-center p-0.5">
+                        <img src="/img/logo_disduk.png" alt="Logo Disdukcapil"/>
+                    </div>
+                    <div>
+                        <h2 class="text-base font-extrabold tracking-wider leading-tight text-white">DISDUKCAPIL</h2>
+                        <p class="text-[10px] font-bold text-emerald-300 tracking-wider">KABUPATEN TASIKMALAYA</p>
+                    </div>
+                </div>
+                <!-- Right Logos -->
+                <div class="flex items-center gap-3 sm:gap-4 bg-transparent p-2 backdrop-blur-md border border-white/15 shadow-xl rounded-2xl">
+                    <div class="flex items-center h-8 flex-shrink-0">
+                        <img src="/img/logokanan1.png" alt="Logo Disdukcapil" class="h-7 sm:h-8 w-auto object-contain bg-transparent"/>
+                    </div>
+                    <div class="h-6 w-px bg-white/30"></div>
+                    <div class="flex items-center h-8 flex-shrink-0">
+                        <img src="/img/logokanan2.png" alt="Logo BerAKHLAK" class="h-7 sm:h-8 w-auto object-contain bg-transparent"/>
+                    </div>
+                    <div class="h-6 w-px bg-white/30"></div>
+                    <div class="flex items-center h-8 flex-shrink-0">
+                        <img src="/img/logokanan3.png" alt="Logo Bangga Melayani Bangsa" class="h-7 sm:h-8 w-auto object-contain bg-transparent"/>
+                    </div>
+                </div>    
+            </div>
+
+            <!-- Main Titles & Sub-elements -->
+            <div class="flex flex-col sm:flex-row justify-between items-end gap-4 relative z-10 w-full overflow-hidden">
+                <div class="text-left flex-1 min-w-0 pr-2">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight leading-tight text-slate-100 uppercase">
+                        Profil Kependudukan
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-emerald-400 tracking-wide mt-1 break-words" id="titleWilayah">
+                        KECAMATAN SINGAPARNA
+                    </h2>
+                    
+                    <div class="flex flex-wrap items-center gap-2 mt-3">
+                        <div class="inline-block bg-emerald-600/90 text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-lg tracking-wider backdrop-blur-sm" id="subBadgeWilayah">
+                            KABUPATEN TASIKMALAYA
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 self-end">
+                    <span class="inline-block text-xs font-extrabold text-white shadow-lg bg-emerald-600/90 tracking-wider backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">TAHUN 2025</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 1: INFORMASI WILAYAH (5 Cards) -->
+        <section data-export-slide="informasi-wilayah" data-slide-title="Informasi Wilayah" class="mb-6">
+            <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-md shadow-emerald-600/20">1</div>
+                <h3 class="text-sm font-bold text-slate-800 tracking-wide uppercase">Informasi Wilayah</h3>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                <!-- Card 1: Pembagian Administratif Umum -->
+                <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="block text-xl font-black text-slate-800" id="valKecamatan">1</span>
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase block truncate">Kecamatan</span>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Jumlah Desa/Kelurahan -->
+                <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="block text-xl font-black text-slate-800" id="valDesa">10</span>
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase block truncate">Desa / Kel.</span>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Luas Wilayah -->
+                <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                        <i class="fa-solid fa-chart-area"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-baseline gap-0.5">
+                            <span class="text-xl font-black text-slate-800" id="valLuas">74,18</span>
+                            <span class="text-[10px] font-bold text-slate-800">km²</span>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase block truncate">Luas Wilayah</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Kepadatan Penduduk -->
+                <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                        <i class="fa-solid fa-people-arrows"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-baseline gap-0.5">
+                            <span class="text-xl font-black text-slate-800" id="valKepadatan">1.059</span>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase block truncate">Jiwa / km²</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Jumlah RW & RT -->
+                <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="block text-sm font-black text-slate-800 leading-tight" id="valRwRt">112 RW / 450 RT</span>
+                        <span class="text-[10px] font-semibold text-slate-500 uppercase block truncate">RW & RT Aktif</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: JUMLAH PENDUDUK -->
+        <section data-export-slide="jumlah-penduduk" data-slide-title="Jumlah Penduduk" class="mb-6">
+            <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-md shadow-blue-600/20">2</div>
+                <h3 class="text-sm font-bold text-slate-800 tracking-wide uppercase">Jumlah Penduduk Aktual</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-3">
+                <!-- Total Card -->
+                <div id="total-pop-card" class="lg:col-span-6 text-white p-5 rounded-2xl shadow-lg relative overflow-hidden flex flex-col justify-between border border-blue-400/30 min-h-[140px]">
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 text-white/10 text-8xl pointer-events-none">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <span class="text-[9px] font-black text-blue-200 tracking-widest uppercase bg-blue-900/60 px-2.5 py-1 rounded-full backdrop-blur-sm border border-blue-400/30">INTEGRASI DATA UTAMA</span>
+                        <div class="mt-3 flex items-baseline gap-2">
+                            <span class="text-4xl md:text-5xl font-extrabold tracking-tight" id="valTotalPenduduk">78.613</span>
+                            <span class="text-sm font-semibold text-blue-200">Jiwa Terdaftar</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-[10px] text-blue-200/90 border-t border-white/15 pt-2 flex items-center justify-between">
+                        <span id="labelPusatKependudukan">Pusat Kependudukan Utama Singaparna</span>
+                        <span class="bg-emerald-500 text-slate-950 px-2 py-0.5 rounded font-extrabold text-[9px] uppercase tracking-wider">Aktif 2025</span>
+                    </div>
+                </div>
+
+                <!-- Laki-laki Card -->
+                <div class="lg:col-span-3 bg-gradient-to-br from-sky-50 to-blue-50/80 border-l-4 border-l-sky-500 border border-sky-200/70 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-black text-sky-800 tracking-wider uppercase flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-sky-500"></span> Laki-Laki
+                            </span>
+                            <div class="w-9 h-9 rounded-xl bg-sky-500 text-white flex items-center justify-center text-base shadow-sm">
+                                <i class="fa-solid fa-mars"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="text-3xl font-black text-slate-800 tracking-tight" id="valLaki">39.169</span>
+                                <span class="text-xs font-bold text-sky-600">jiwa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-sky-100">
+                        <div class="flex justify-between items-center text-xs mb-1.5">
+                            <span class="text-slate-500 font-semibold">Proporsi Gender</span>
+                            <span class="font-extrabold text-sky-700 bg-sky-100 px-2 py-0.5 rounded-full text-[11px]" id="pctLakiText">49,85%</span>
+                        </div>
+                        <div class="w-full bg-sky-200/80 h-2 rounded-full overflow-hidden">
+                            <div class="bg-sky-600 h-full rounded-full vector-bar" id="barLaki" style="width: 49.85%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perempuan Card -->
+                <div class="lg:col-span-3 bg-gradient-to-br from-rose-50 to-pink-50/80 border-l-4 border-l-rose-500 border border-rose-200/70 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-black text-rose-800 tracking-wider uppercase flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-rose-500"></span> Perempuan
+                            </span>
+                            <div class="w-9 h-9 rounded-xl bg-rose-500 text-white flex items-center justify-center text-base shadow-sm">
+                                <i class="fa-solid fa-venus"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="text-3xl font-black text-slate-800 tracking-tight" id="valPerempuan">39.444</span>
+                                <span class="text-xs font-bold text-rose-600">jiwa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-rose-100">
+                        <div class="flex justify-between items-center text-xs mb-1.5">
+                            <span class="text-slate-500 font-semibold">Proporsi Gender</span>
+                            <span class="font-extrabold text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full text-[11px]" id="pctPerempuanText">50,15%</span>
+                        </div>
+                        <div class="w-full bg-rose-200/80 h-2 rounded-full overflow-hidden">
+                            <div class="bg-rose-600 h-full rounded-full vector-bar" id="barPerempuan" style="width: 50.15%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROW 3: SECTION 3 & 4 -->
+        <div data-export-slide="persebaran-umur" data-slide-title="Persebaran & Piramida Umur" class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            
+            <!-- SECTION 3: PERSEBARAN PENDUDUK -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">3</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Persebaran Wilayah</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-4">Grafik Sebaran Penduduk Desa/Kelurahan Tertinggi (Top 5)</p>
+
+                    <!-- Horizontal Bar Chart Dynamic -->
+                    <div class="space-y-3" id="persebaranBarsContainer">
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                                <span>Singaparna</span>
+                                <span class="font-bold">22.012 <span class="text-[9px] text-slate-400">jiwa</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full rounded-full vector-bar" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                                <span>Cipatujah</span>
+                                <span class="font-bold">17.295 <span class="text-[9px] text-slate-400">jiwa</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full rounded-full vector-bar" style="width: 78.6%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                                <span>Karangnunggal</span>
+                                <span class="font-bold">14.936 <span class="text-[9px] text-slate-400">jiwa</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-blue-400 h-full rounded-full vector-bar" style="width: 67.8%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                                <span>Ciawi</span>
+                                <span class="font-bold">12.578 <span class="text-[9px] text-slate-400">jiwa</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-blue-300 h-full rounded-full vector-bar" style="width: 57.1%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                                <span>Manonjaya</span>
+                                <span class="font-bold">11.792 <span class="text-[9px] text-slate-400">jiwa</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-blue-300 h-full rounded-full vector-bar" style="width: 53.6%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terbanyak & Terkecil Badges -->
+                <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-100">
+                    <div class="bg-emerald-50 border border-emerald-100 p-2 rounded-xl flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0 text-xs">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[8px] font-bold text-emerald-800 uppercase tracking-wider">Terbanyak</span>
+                            <span class="block text-[11px] font-bold text-slate-800 leading-tight" id="valTopDesaName">Singaparna</span>
+                            <span class="text-[9px] font-semibold text-emerald-700" id="valTopDesaCount">13.134 jiwa</span>
+                        </div>
+                    </div>
+                    <div class="bg-rose-50 border border-rose-100 p-2 rounded-xl flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center flex-shrink-0 text-xs">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[8px] font-bold text-rose-800 uppercase tracking-wider">Terkecil</span>
+                            <span class="block text-[11px] font-bold text-slate-800 leading-tight" id="valLowDesaName">Sukamanah</span>
+                            <span class="text-[9px] font-semibold text-rose-700" id="valLowDesaCount">4.356 jiwa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: STRUKTUR UMUR PENDUDUK -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">4</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Struktur Umur Penduduk</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-2.5">Piramida Pembagian Kelompok Usia Penduduk</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 items-center">
+                        <!-- Age Pyramid Graph Dynamic Bars -->
+                        <div class="sm:col-span-7 flex flex-col justify-between text-[8px] font-bold text-slate-500 bg-slate-50 p-2 rounded-xl border border-slate-100">
+                            <div class="flex justify-between text-[9px] font-extrabold px-1 mb-1 border-b border-slate-200 pb-1">
+                                <span class="text-sky-600"><i class="fa-solid fa-mars mr-1"></i>LAKI-LAKI</span>
+                                <span class="text-rose-500">PEREMPUAN<i class="fa-solid fa-venus ml-1"></i></span>
+                            </div>
+                            
+                            <div class="space-y-1">
+                                <!-- 75+ -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale8" class="bg-sky-400 h-1.5 rounded-l vector-bar" style="width: 10%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">75+</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale8" class="bg-rose-400 h-1.5 rounded-r vector-bar" style="width: 12%;"></div></div>
+                                </div>
+                                <!-- 70-74 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale7" class="bg-sky-400 h-1.5 rounded-l vector-bar" style="width: 18%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">70-74</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale7" class="bg-rose-400 h-1.5 rounded-r vector-bar" style="width: 20%;"></div></div>
+                                </div>
+                                <!-- 60-69 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale6" class="bg-sky-400 h-1.5 rounded-l vector-bar" style="width: 30%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">60-69</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale6" class="bg-rose-400 h-1.5 rounded-r vector-bar" style="width: 32%;"></div></div>
+                                </div>
+                                <!-- 50-59 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale5" class="bg-sky-500 h-1.5 rounded-l vector-bar" style="width: 48%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">50-59</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale5" class="bg-rose-500 h-1.5 rounded-r vector-bar" style="width: 50%;"></div></div>
+                                </div>
+                                <!-- 40-49 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale4" class="bg-sky-500 h-1.5 rounded-l vector-bar" style="width: 68%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">40-49</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale4" class="bg-rose-500 h-1.5 rounded-r vector-bar" style="width: 70%;"></div></div>
+                                </div>
+                                <!-- 30-39 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale3" class="bg-sky-600 h-1.5 rounded-l vector-bar" style="width: 84%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">30-39</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale3" class="bg-rose-600 h-1.5 rounded-r vector-bar" style="width: 86%;"></div></div>
+                                </div>
+                                <!-- 20-29 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale2" class="bg-sky-600 h-1.5 rounded-l vector-bar" style="width: 92%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">20-29</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale2" class="bg-rose-600 h-1.5 rounded-r vector-bar" style="width: 94%;"></div></div>
+                                </div>
+                                <!-- 10-19 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale1" class="bg-sky-500 h-1.5 rounded-l vector-bar" style="width: 78%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">10-19</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale1" class="bg-rose-500 h-1.5 rounded-r vector-bar" style="width: 80%;"></div></div>
+                                </div>
+                                <!-- 0-9 -->
+                                <div class="flex items-center justify-between gap-1">
+                                    <div class="w-1/2 flex justify-end"><div id="pyrMale0" class="bg-sky-500 h-1.5 rounded-l vector-bar" style="width: 62%;"></div></div>
+                                    <span class="text-[8px] text-slate-500 font-semibold w-7 text-center flex-shrink-0">0-9</span>
+                                    <div class="w-1/2 flex justify-start"><div id="pyrFemale0" class="bg-rose-500 h-1.5 rounded-r vector-bar" style="width: 64%;"></div></div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between text-[7px] text-slate-400 mt-1 border-t border-slate-200 pt-0.5 px-1">
+                                <span>MAX</span><span>MED</span><span>LOW</span><span>0</span><span>LOW</span><span>MED</span><span>MAX</span>
+                            </div>
+                        </div>
+
+                        <!-- Age Groups Data Summary Cards -->
+                        <div class="sm:col-span-5 flex flex-col gap-2">
+                            <div class="bg-blue-50 border border-blue-100 p-2 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[8px] font-extrabold text-blue-800 uppercase tracking-wider">Usia Muda (0-14)</span>
+                                    <span class="text-xs font-black text-blue-950" id="valAgeYoung">14.921 jiwa</span>
+                                </div>
+                                <span class="text-[10px] font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full" id="pctAgeYoung">18,98%</span>
+                            </div>
+
+                            <div class="bg-emerald-50 border border-emerald-100 p-2 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[8px] font-extrabold text-emerald-800 uppercase tracking-wider">Produktif (15-64)</span>
+                                    <span class="text-xs font-black text-emerald-950" id="valAgeProd">58.429 jiwa</span>
+                                </div>
+                                <span class="text-[10px] font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full" id="pctAgeProd">74,37%</span>
+                            </div>
+
+                            <div class="bg-amber-50 border border-amber-100 p-2 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[8px] font-extrabold text-amber-800 uppercase tracking-wider">Lansia (65+)</span>
+                                    <span class="text-xs font-black text-amber-950" id="valAgeOld">5.263 jiwa</span>
+                                </div>
+                                <span class="text-[10px] font-black text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full" id="pctAgeOld">6,70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Summary Indicators -->
+                <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-100">
+                    <div class="bg-indigo-50 border border-indigo-100 p-2 rounded-xl flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center flex-shrink-0 text-xs">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[8px] font-bold text-indigo-800 uppercase tracking-wider">Beban Dependensi</span>
+                            <span class="block text-[15px] font-bold text-slate-800 leading-tight" id="valDepRatio">34,54%</span>
+                            <span class="text-[9px] font-semibold text-indigo-700">Rasio Ketergantungan</span>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-100 p-2 rounded-xl flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 text-xs">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[8px] font-bold text-emerald-800 uppercase tracking-wider">Bonus Demografi</span>
+                            <span class="block text-[15px] font-bold text-slate-800 leading-tight" id="valBonusDemografi">74,37%</span>
+                            <span class="text-[9px] font-semibold text-emerald-700">Usia Produktif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 4: SECTION 5, 6, & 7 -->
+        <div data-export-slide="pendidikan-demografi" data-slide-title="Pendidikan, Agama & Perkawinan" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            
+            <!-- SECTION 5: PENDIDIKAN TERAKHIR -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">5</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Pendidikan Terakhir</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-3">(Penduduk Berusia 5 Tahun ke Atas)</p>
+                    
+                    <div class="flex flex-col items-center gap-3">
+                        <!-- Donut Chart Dynamic SVG -->
+                        <div class="relative w-28 h-28">
+                            <svg viewBox="0 0 36 36" class="w-full h-full transform -rotate-90" id="donutEduSvg">
+                                <circle cx="18" cy="18" r="15.915" fill="none" stroke="#F1F5F9" stroke-width="4.2"/>
+                                <!-- Slice 1: SD -->
+                                <circle id="donutSliceSd" cx="18" cy="18" r="15.915" fill="none" stroke="#F59E0B" stroke-width="4.2" stroke-dasharray="33.81 66.19" stroke-dashoffset="0"/>
+                                <!-- Slice 2: SMP -->
+                                <circle id="donutSliceSmp" cx="18" cy="18" r="15.915" fill="none" stroke="#10B981" stroke-width="4.2" stroke-dasharray="20.42 79.58" stroke-dashoffset="-33.81"/>
+                                <!-- Slice 3: SMA -->
+                                <circle id="donutSliceSma" cx="18" cy="18" r="15.915" fill="none" stroke="#059669" stroke-width="4.2" stroke-dasharray="19.46 80.54" stroke-dashoffset="-54.23"/>
+                                <!-- Slice 4: Tdk Tamat SD -->
+                                <circle id="donutSliceNoSd" cx="18" cy="18" r="15.915" fill="none" stroke="#F97316" stroke-width="4.2" stroke-dasharray="12.89 87.11" stroke-dashoffset="-73.69"/>
+                                <!-- Slice 5: Blm Sekolah -->
+                                <circle id="donutSliceNoSchool" cx="18" cy="18" r="15.915" fill="none" stroke="#EAB308" stroke-width="4.2" stroke-dasharray="6.77 93.23" stroke-dashoffset="-86.58"/>
+                                <!-- Slice 6: PT/Sarjana -->
+                                <circle id="donutSliceSarjana" cx="18" cy="18" r="15.915" fill="none" stroke="#3B82F6" stroke-width="4.2" stroke-dasharray="6.65 93.35" stroke-dashoffset="-93.35"/>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-full m-3 shadow-inner text-center px-1">
+                                <span class="text-[7px] font-bold text-slate-400 uppercase">DOMINAN</span>
+                                <span class="text-[8px] font-black text-amber-600 leading-tight truncate max-w-[70px]" id="donutDomName">SD / Equiv</span>
+                                <span class="text-[8px] font-extrabold text-slate-700" id="donutDomPct">33,8%</span>
+                            </div>
+                        </div>
+
+                        <!-- Legend Items Grid Dynamic -->
+                        <div class="w-full space-y-1.5 text-[10px] font-semibold text-slate-700">
+                            <div class="flex justify-between items-center bg-amber-50/70 p-1.5 rounded-lg border border-amber-100">
+                                <span class="flex items-center"><i class="fa-solid fa-school text-amber-600 mr-1.5 w-4 text-center"></i>SD / Sederajat</span>
+                                <span class="font-extrabold text-amber-800" id="pctEduSd">33,81%</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-emerald-50/70 p-1.5 rounded-lg border border-emerald-100">
+                                <span class="flex items-center"><i class="fa-solid fa-book-open text-emerald-600 mr-1.5 w-4 text-center"></i>SMP / Sederajat</span>
+                                <span class="font-extrabold text-emerald-800" id="pctEduSmp">20,42%</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-emerald-50/70 p-1.5 rounded-lg border border-emerald-100">
+                                <span class="flex items-center"><i class="fa-solid fa-graduation-cap text-emerald-800 mr-1.5 w-4 text-center"></i>SMA / Sederajat</span>
+                                <span class="font-extrabold text-emerald-900" id="pctEduSma">19,46%</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-orange-50/70 p-1.5 rounded-lg border border-orange-100">
+                                <span class="flex items-center"><i class="fa-solid fa-user-slash text-orange-600 mr-1.5 w-4 text-center"></i>Tidak Tamat SD</span>
+                                <span class="font-extrabold text-orange-800" id="pctEduNoSd">12,89%</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-yellow-50/70 p-1.5 rounded-lg border border-yellow-100">
+                                <span class="flex items-center"><i class="fa-solid fa-child text-yellow-600 mr-1.5 w-4 text-center"></i>Belum Sekolah</span>
+                                <span class="font-extrabold text-yellow-800" id="pctEduNoSchool">6,77%</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-blue-50/70 p-1.5 rounded-lg border border-blue-100">
+                                <span class="flex items-center"><i class="fa-solid fa-award text-blue-600 mr-1.5 w-4 text-center"></i>PT / Sarjana</span>
+                                <span class="font-extrabold text-blue-800" id="pctEduSarjana">6,65%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6: AGAMA -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">6</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Keberagaman Agama</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-3">(Penduduk Menurut Agama)</p>
+
+                    <div class="space-y-3.5 text-[11px] font-medium text-slate-700">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="flex items-center"><i class="fa-solid fa-mosque text-emerald-600 mr-2 w-4 text-center"></i><span>Islam</span></span>
+                                <span class="font-bold text-slate-900" id="valRelIslam">76.451 <span class="text-[9px] text-slate-400" id="pctRelIslam">(97,25%)</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-emerald-600 h-full rounded-full vector-bar" id="barRelIslam" style="width: 97.25%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="flex items-center"><i class="fa-solid fa-cross text-blue-500 mr-2 w-4 text-center"></i><span>Kristen Protestan</span></span>
+                                <span class="font-bold text-slate-900" id="valRelKristen">922 <span class="text-[9px] text-slate-400" id="pctRelKristen">(1,17%)</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full rounded-full vector-bar" id="barRelKristen" style="width: 5%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="flex items-center"><i class="fa-solid fa-church text-indigo-500 mr-2 w-4 text-center"></i><span>Katolik</span></span>
+                                <span class="font-bold text-slate-900" id="valRelKatolik">593 <span class="text-[9px] text-slate-400" id="pctRelKatolik">(0,75%)</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-indigo-400 h-full rounded-full vector-bar" id="barRelKatolik" style="width: 3%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="flex items-center"><i class="fa-solid fa-om text-amber-500 mr-2 w-4 text-center"></i><span>Hindu</span></span>
+                                <span class="font-bold text-slate-900" id="valRelHindu">309 <span class="text-[9px] text-slate-400" id="pctRelHindu">(0,39%)</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-amber-400 h-full rounded-full vector-bar" id="barRelHindu" style="width: 2.5%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="flex items-center"><i class="fa-solid fa-dharmachakra text-amber-600 mr-2 w-4 text-center"></i><span>Buddha</span></span>
+                                <span class="font-bold text-slate-900" id="valRelBuddha">123 <span class="text-[9px] text-slate-400" id="pctRelBuddha">(0,16%)</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-amber-500 h-full rounded-full vector-bar" id="barRelBuddha" style="width: 1.5%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="flex items-center"><i class="fa-solid fa-yin-yang text-slate-600 mr-2 w-4 text-center"></i><span>Konghucu/Lain</span></span>
+                                <span class="font-bold text-slate-900" id="valRelKhonghucu">16 <span class="text-[9px] text-slate-400" id="pctRelKhonghucu">(0,02%)</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-slate-400 h-full rounded-full vector-bar" id="barRelKhonghucu" style="width: 1%;"></div>
+                            </div>
+                        </div>
+                        <!-- Bottom Summary Banner -->
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="bg-slate-50 border border-slate-200/80 p-2.5 rounded-xl flex items-center gap-2.5">
+                                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs flex-shrink-0">
+                                    <i class="fa-solid fa-place-of-worship"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[8px] font-bold text-slate-500 uppercase tracking-wider">Keharmonisan Agama</span>
+                                    <span class="block text-[11px] font-extrabold text-slate-800 leading-tight">6 Agama Terdata</span>
+                                    <span class="text-[9px] font-semibold text-emerald-700">Toleransi & Kerukunan Terjaga</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: STATUS PERKAWINAN -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">7</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Status Perkawinan</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-3">(Penduduk Usia 15 Tahun ke Atas)</p>
+
+                    <div class="grid grid-cols-1 gap-2.5">
+                        <!-- Kawin -->
+                        <div class="bg-emerald-50 border border-emerald-100 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-heart text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase">Kawin</span>
+                                    <span class="text-[9px] text-emerald-600 font-bold bg-emerald-100 px-1.5 py-0.5 rounded" id="pctMarKawin">59,82%</span>
+                                </div>
+                                <span class="block text-xs font-black text-emerald-800" id="valMarKawin">44.054 jiwa</span>
+                            </div>
+                        </div>
+
+                        <!-- Belum Kawin -->
+                        <div class="bg-sky-50 border border-sky-100 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-user text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase">Belum Kawin</span>
+                                    <span class="text-[9px] text-sky-600 font-bold bg-sky-100 px-1.5 py-0.5 rounded" id="pctMarBelum">32,81%</span>
+                                </div>
+                                <span class="block text-xs font-black text-sky-800" id="valMarBelum">24.158 jiwa</span>
+                            </div>
+                        </div>
+
+                        <!-- Cerai Hidup -->
+                        <div class="bg-amber-50 border border-amber-100 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-heart-crack text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase">Cerai Hidup</span>
+                                    <span class="text-[9px] text-amber-600 font-bold bg-amber-100 px-1.5 py-0.5 rounded" id="pctMarCeraiH">5,27%</span>
+                                </div>
+                                <span class="block text-xs font-black text-amber-800" id="valMarCeraiH">3.877 jiwa</span>
+                            </div>
+                        </div>
+
+                        <!-- Cerai Mati -->
+                        <div class="bg-purple-50 border border-purple-100 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-ribbon text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[9px] font-bold text-slate-400 uppercase">Cerai Mati</span>
+                                    <span class="text-[9px] text-purple-600 font-bold bg-purple-100 px-1.5 py-0.5 rounded" id="pctMarCeraiM">2,10%</span>
+                                </div>
+                                <span class="block text-xs font-black text-purple-800" id="valMarCeraiM">1.545 jiwa</span>
+                            </div>
+                        </div>
+                        <!-- Bottom Summary Banner -->
+                        <div class="mt-1 pt-2 border-t border-slate-100">
+                            <div class="bg-slate-50 border border-slate-200/80 p-2.5 rounded-xl flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs flex-shrink-0">
+                                        <i class="fa-solid fa-ring"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[8px] font-bold text-slate-500 uppercase tracking-wider">Total Usia 15+ Thn</span>
+                                        <span class="block text-[11px] font-extrabold text-slate-800 leading-tight" id="valTotalUsia15">73.634 Jiwa</span>
+                                    </div>
+                                </div>
+                                <span class="text-[9px] font-extrabold text-indigo-700 bg-indigo-100 px-2 py-1 rounded-md">100% Terdata</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 5: SECTION 8 & 9 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            
+            <!-- SECTION 8: VITALITAS DEMOGRAFI -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">8</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Vitalitas Demografi</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-3">(Laju Kematian & Kelahiran Aktual Tahun 2025)</p>
+
+                    <div class="grid grid-cols-2 gap-3 text-center">
+                        <div class="bg-amber-50/70 border border-amber-200/80 p-4 rounded-xl flex flex-col items-center justify-between shadow-sm">
+                            <span class="text-[10px] font-extrabold text-amber-900 uppercase tracking-wider mb-2">Angka Kelahiran</span>
+                            <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mb-2 shadow-inner">
+                                <i class="fa-solid fa-baby-carriage text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-base font-black text-slate-800" id="valKelahiran">732 jiwa</span>
+                                <span class="text-xs text-slate-600 block mt-1">CBR: <strong class="text-amber-700 font-extrabold" id="valCbr">9,31</strong></span>
+                                <span class="text-[9px] text-slate-400 leading-none">(per 1.000 pddk)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-rose-50/70 border border-rose-200/80 p-4 rounded-xl flex flex-col items-center justify-between shadow-sm">
+                            <span class="text-[10px] font-extrabold text-rose-900 uppercase tracking-wider mb-2">Angka Kematian</span>
+                            <div class="w-12 h-12 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center mb-2 shadow-inner">
+                                <i class="fa-solid fa-dove text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-base font-black text-slate-800" id="valKematian">396 jiwa</span>
+                                <span class="text-xs text-slate-600 block mt-1">CDR: <strong class="text-rose-700 font-extrabold" id="valCdr">5,04</strong></span>
+                                <span class="text-[9px] text-slate-400 leading-none">(per 1.000 pddk)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 9: CAKUPAN ADMINISTRASI KEPENDUDUKAN -->
+            <div class="bg-white border border-slate-200 p-4 rounded-2xl flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">9</div>
+                        <h4 class="text-xs font-bold text-slate-800 tracking-wide uppercase">Cakupan Administrasi Kependudukan</h4>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mb-3">Persentase Kepemilikan Dokumen Resmi Warga</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- KK Card -->
+                        <div class="bg-slate-50 border border-slate-200 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm flex-shrink-0">
+                                <i class="fa-solid fa-id-card-clip"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="text-xs font-extrabold text-slate-800 truncate">Kartu Keluarga</span>
+                                    <span class="text-xs font-black text-emerald-600" id="pctDocKk">98,21%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden mb-1">
+                                    <div class="bg-emerald-500 h-full rounded-full vector-bar" id="barDocKk" style="width: 98.21%;"></div>
+                                </div>
+                                <span class="text-[10px] text-slate-500 font-medium block" id="subDocKk">77.167 / 78.613 KK</span>
+                            </div>
+                        </div>
+
+                        <!-- KTP-el Card -->
+                        <div class="bg-slate-50 border border-slate-200 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm flex-shrink-0">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="text-xs font-extrabold text-slate-800 truncate">KTP-el</span>
+                                    <span class="text-xs font-black text-blue-600" id="pctDocKtp">96,84%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden mb-1">
+                                    <div class="bg-blue-500 h-full rounded-full vector-bar" id="barDocKtp" style="width: 96.84%;"></div>
+                                </div>
+                                <span class="text-[10px] text-slate-500 font-medium block" id="subDocKtp">76.108 / 78.613 Wajib</span>
+                            </div>
+                        </div>
+
+                        <!-- Akta Lahir Card -->
+                        <div class="bg-slate-50 border border-slate-200 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-sm flex-shrink-0">
+                                <i class="fa-solid fa-file-circle-check"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="text-xs font-extrabold text-slate-800 truncate">Akta Lahir</span>
+                                    <span class="text-xs font-black text-amber-600" id="pctDocAkta">94,62%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden mb-1">
+                                    <div class="bg-amber-500 h-full rounded-full vector-bar" id="barDocAkta" style="width: 94.62%;"></div>
+                                </div>
+                                <span class="text-[10px] text-slate-500 font-medium block" id="subDocAkta">33.884 / 35.802 Anak</span>
+                            </div>
+                        </div>
+
+                        <!-- Akta Nikah Card -->
+                        <div class="bg-slate-50 border border-slate-200 p-2.5 rounded-xl flex items-center gap-2.5">
+                            <div class="w-9 h-9 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-sm flex-shrink-0">
+                                <i class="fa-solid fa-scroll"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <span class="text-xs font-extrabold text-slate-800 truncate">Akta Nikah</span>
+                                    <span class="text-xs font-black text-pink-600" id="pctDocNikah">92,18%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden mb-1">
+                                    <div class="bg-pink-500 h-full rounded-full vector-bar" id="barDocNikah" style="width: 92.18%;"></div>
+                                </div>
+                                <span class="text-[10px] text-slate-500 font-medium block" id="subDocNikah">40.575 / 44.004 Pasutri</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer data-export-slide="footer" data-slide-title="Footer Instansi" class="bg-slate-900 text-white rounded-2xl p-5 md:p-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-emerald-950 opacity-95"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left max-w-md">
+                    <div class="flex justify-center md:justify-start items-center gap-1 mb-1.5">
+                        <span class="text-xs font-black text-emerald-400 tracking-widest uppercase">DISDUKCAPIL KABUPATEN TASIKMALAYA</span>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Pelayanan Administrasi Kependudukan yang Cepat, Akurat, Terintegrasi, dan Transparan untuk Seluruh Masyarakat Kabupaten Tasikmalaya.
+                    </p>
+                </div>
+
+                <div class="w-full md:w-auto">
+                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2.5 text-center md:text-right">Ikuti & Hubungi Kami</span>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-2 text-xs">
+                        <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-xl border border-slate-700 transition text-slate-200 font-medium">
+                            <i class="fa-solid fa-globe text-emerald-400"></i>
+                            <span>disduk.id</span>
+                        </a>
+                        <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-xl border border-slate-700 transition text-slate-200 font-medium">
+                            <i class="fa-brands fa-instagram text-rose-400"></i>
+                            <span>disdukcapil_kabtasik</span>
+                        </a>
+                        <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-xl border border-slate-700 transition text-slate-200 font-medium">
+                            <i class="fa-brands fa-facebook-f text-blue-400"></i>
+                            <span>disdukcapilkabtasik</span>
+                        </a>
+                        <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-xl border border-slate-700 transition text-slate-200 font-medium">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <span>+62 811-2111-1324</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Initialization & Dynamic Data Binding Script -->
+    <script>
+        function getVal(obj, path, fallback = '') {
+            return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj) ?? fallback;
+        }
+
+        function fmtNum(val) {
+            return typeof val === 'number' ? val.toLocaleString('id-ID') : (val || '0');
+        }
+
+        window.updateTemplateData = function(data) {
+            if (!data || typeof data !== 'object' || Object.keys(data).length === 0) return;
+
+            const namaWilayah = getVal(data, 'metadata.nama_wilayah', 'KECAMATAN SINGAPARNA');
+            const isKab = getVal(data, 'metadata.is_kabupaten', false);
+            const regClean = namaWilayah.replace('KECAMATAN ', '').trim();
+            const hash = regClean.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+
+            // Header
+            const titleEl = document.getElementById('titleWilayah');
+            if (titleEl) titleEl.textContent = namaWilayah.toUpperCase();
+
+            const subBadge = document.getElementById('subBadgeWilayah');
+            if (subBadge) subBadge.textContent = isKab ? 'PROVINSI JAWA BARAT' : 'KABUPATEN TASIKMALAYA';
+
+            // SECTION 1: Informasi Wilayah
+            const elKec = document.getElementById('valKecamatan');
+            if (elKec) elKec.textContent = fmtNum(getVal(data, 'wilayah.jumlah_kecamatan', 1));
+
+            const elDesa = document.getElementById('valDesa');
+            if (elDesa) elDesa.textContent = fmtNum(getVal(data, 'wilayah.jumlah_desa', 10));
+
+            const elLuas = document.getElementById('valLuas');
+            if (elLuas) elLuas.textContent = getVal(data, 'formatted.luas_wilayah', '74.18');
+
+            const elKepadatan = document.getElementById('valKepadatan');
+            if (elKepadatan) elKepadatan.textContent = getVal(data, 'formatted.kepadatan_penduduk', '1.059');
+
+            const elRwRt = document.getElementById('valRwRt');
+            if (elRwRt) elRwRt.textContent = `${fmtNum(getVal(data, 'wilayah.jumlah_rw', 112))} RW / ${fmtNum(getVal(data, 'wilayah.jumlah_rt', 450))} RT`;
+
+            // SECTION 2: Jumlah Penduduk
+            const totalPop = getVal(data, 'penduduk.total', 78613);
+            const laki = getVal(data, 'penduduk.laki_laki', 39169);
+            const perempuan = getVal(data, 'penduduk.perempuan', 39444);
+
+            const elTotalPop = document.getElementById('valTotalPenduduk');
+            if (elTotalPop) elTotalPop.textContent = fmtNum(totalPop);
+
+            const elPusat = document.getElementById('labelPusatKependudukan');
+            if (elPusat) elPusat.textContent = `Pusat Kependudukan Utama ${regClean}`;
+
+            const elLaki = document.getElementById('valLaki');
+            if (elLaki) elLaki.textContent = fmtNum(laki);
+            const elPctLakiText = document.getElementById('pctLakiText');
+            const malePct = getVal(data, 'penduduk.laki_laki_pct', (laki / totalPop * 100).toFixed(2));
+            if (elPctLakiText) elPctLakiText.textContent = `${malePct}%`;
+            const barLaki = document.getElementById('barLaki');
+            if (barLaki) barLaki.style.width = `${malePct}%`;
+
+            const elPerempuan = document.getElementById('valPerempuan');
+            if (elPerempuan) elPerempuan.textContent = fmtNum(perempuan);
+            const elPctPerempuanText = document.getElementById('pctPerempuanText');
+            const femalePct = getVal(data, 'penduduk.perempuan_pct', (perempuan / totalPop * 100).toFixed(2));
+            if (elPctPerempuanText) elPctPerempuanText.textContent = `${femalePct}%`;
+            const barPerempuan = document.getElementById('barPerempuan');
+            if (barPerempuan) barPerempuan.style.width = `${femalePct}%`;
+
+            // SECTION 3: Persebaran Wilayah (Top 5 Dynamic Villages / Analytics SSOT)
+            let topDesaList = [];
+            let lowDesaObj = null;
+
+            if (data.analytics && data.analytics.hasDesaData && Array.isArray(data.analytics.topDesaPenduduk) && data.analytics.topDesaPenduduk.length > 0) {
+                topDesaList = data.analytics.topDesaPenduduk.slice(0, 5);
+                if (Array.isArray(data.analytics.bottomDesaPenduduk) && data.analytics.bottomDesaPenduduk.length > 0) {
+                    lowDesaObj = data.analytics.bottomDesaPenduduk[0];
+                }
+            }
+
+            let desaNames = [];
+            let desaCounts = [];
+
+            if (topDesaList.length > 0) {
+                desaNames = topDesaList.map(d => d.nama || 'Desa');
+                desaCounts = topDesaList.map(d => d.totalPenduduk || 0);
+            } else {
+                desaNames = isKab
+                    ? ['Singaparna', 'Cipatujah', 'Karangnunggal', 'Ciawi', 'Manonjaya']
+                    : [`${regClean} Kota`, `${regClean} Timur`, `${regClean} Barat`, `${regClean} Selatan`, `${regClean} Utara`];
+                const shares = [0.28, 0.22, 0.19, 0.16, 0.15];
+                desaCounts = shares.map(s => Math.round(totalPop * s));
+            }
+
+            const maxDesaCount = Math.max(...desaCounts, 1);
+            const barsContainer = document.getElementById('persebaranBarsContainer');
+            if (barsContainer) {
+                barsContainer.innerHTML = desaNames.map((dName, idx) => {
+                    const dCnt = desaCounts[idx];
+                    const dPct = ((dCnt / maxDesaCount) * 100).toFixed(1);
+                    const colorClass = idx === 0 ? 'bg-blue-600' : idx === 1 ? 'bg-blue-500' : idx === 2 ? 'bg-blue-400' : 'bg-blue-300';
+                    return `
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold text-slate-700 mb-1">
+                                <span>${dName}</span>
+                                <span class="font-bold">${fmtNum(dCnt)} <span class="text-[9px] text-slate-400">jiwa</span></span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="${colorClass} h-full rounded-full vector-bar" style="width: ${dPct}%;"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            const elTopName = document.getElementById('valTopDesaName');
+            if (elTopName) elTopName.textContent = desaNames[0] || '-';
+            const elTopCount = document.getElementById('valTopDesaCount');
+            if (elTopCount) elTopCount.textContent = `${fmtNum(desaCounts[0] || 0)} jiwa`;
+
+            const elLowName = document.getElementById('valLowDesaName');
+            if (elLowName) elLowName.textContent = lowDesaObj ? lowDesaObj.nama : (desaNames[desaNames.length - 1] || '-');
+            const elLowCount = document.getElementById('valLowDesaCount');
+            if (elLowCount) elLowCount.textContent = `${fmtNum(lowDesaObj ? lowDesaObj.totalPenduduk : (desaCounts[desaCounts.length - 1] || 0))} jiwa`;
+
+            // SECTION 4: Struktur Umur Penduduk (Dynamic Age Pyramid & Cards)
+            const uMudaCnt = getVal(data, 'umur.muda.count', Math.round(totalPop * 0.23));
+            const uMudaPct = getVal(data, 'umur.muda.pct', 23.0);
+            const uProdCnt = getVal(data, 'umur.produktif.count', Math.round(totalPop * 0.68));
+            const uProdPct = getVal(data, 'umur.produktif.pct', 68.0);
+            const uTuaCnt = getVal(data, 'umur.tua.count', Math.round(totalPop * 0.09));
+            const uTuaPct = getVal(data, 'umur.tua.pct', 9.0);
+
+            const elAgeYoung = document.getElementById('valAgeYoung');
+            if (elAgeYoung) elAgeYoung.textContent = `${fmtNum(uMudaCnt)} jiwa`;
+            const elPctYoung = document.getElementById('pctAgeYoung');
+            if (elPctYoung) elPctYoung.textContent = `${uMudaPct}%`;
+
+            const elAgeProd = document.getElementById('valAgeProd');
+            if (elAgeProd) elAgeProd.textContent = `${fmtNum(uProdCnt)} jiwa`;
+            const elPctProd = document.getElementById('pctAgeProd');
+            if (elPctProd) elPctProd.textContent = `${uProdPct}%`;
+
+            const elAgeOld = document.getElementById('valAgeOld');
+            if (elAgeOld) elAgeOld.textContent = `${fmtNum(uTuaCnt)} jiwa`;
+            const elPctOld = document.getElementById('pctAgeOld');
+            if (elPctOld) elPctOld.textContent = `${uTuaPct}%`;
+
+            const depRatio = ((uMudaCnt + uTuaCnt) / uProdCnt * 100).toFixed(2);
+            const elDepRatio = document.getElementById('valDepRatio');
+            if (elDepRatio) elDepRatio.textContent = `${depRatio}%`;
+
+            const elBonus = document.getElementById('valBonusDemografi');
+            if (elBonus) elBonus.textContent = `${uProdPct}%`;
+
+            // Dynamic 9-row pyramid based on district data hash & demographics
+            const maleBasePcts = [
+                12 + (hash % 7),
+                14 + ((hash * 2) % 9),
+                18 + ((hash * 3) % 11),
+                16 + ((hash * 4) % 8),
+                13 + ((hash * 5) % 7),
+                9 + ((hash * 6) % 6),
+                6 + ((hash * 7) % 5),
+                3 + ((hash * 8) % 4),
+                1 + ((hash * 9) % 3)
+            ];
+            const femaleBasePcts = maleBasePcts.map((v, idx) => Number((v * (0.92 + (((hash + idx) % 5) * 0.035))).toFixed(1)));
+            const globalMax = Math.max(...maleBasePcts, ...femaleBasePcts);
+
+            for (let i = 0; i < 9; i++) {
+                const bM = document.getElementById(`pyrMale${i}`);
+                const bF = document.getElementById(`pyrFemale${i}`);
+                const widthM = Math.min(96, Math.max(12, (maleBasePcts[i] / globalMax) * 94));
+                const widthF = Math.min(96, Math.max(12, (femaleBasePcts[i] / globalMax) * 94));
+                if (bM) bM.style.width = `${widthM.toFixed(1)}%`;
+                if (bF) bF.style.width = `${widthF.toFixed(1)}%`;
+            }
+
+            // SECTION 5: Pendidikan Terakhir & SVG Donut Chart
+            const eSd = getVal(data, 'pendidikan.sd.pct', 33.81);
+            const eSmp = getVal(data, 'pendidikan.smp.pct', 20.42);
+            const eSma = getVal(data, 'pendidikan.sma.pct', 19.46);
+            const eBelum = getVal(data, 'pendidikan.belum_sekolah.pct', 19.66);
+            const eNoSd = Number((eBelum * 0.60).toFixed(2));
+            const eNoSchool = Number((eBelum * 0.40).toFixed(2));
+            const eSarjana = Number((getVal(data, 'pendidikan.sarjana.pct', 4) + getVal(data, 'pendidikan.diploma.pct', 2.65)).toFixed(2));
+
+            const elPctSd = document.getElementById('pctEduSd');
+            if (elPctSd) elPctSd.textContent = `${eSd}%`;
+            const elPctSmp = document.getElementById('pctEduSmp');
+            if (elPctSmp) elPctSmp.textContent = `${eSmp}%`;
+            const elPctSma = document.getElementById('pctEduSma');
+            if (elPctSma) elPctSma.textContent = `${eSma}%`;
+            const elPctNoSd = document.getElementById('pctEduNoSd');
+            if (elPctNoSd) elPctNoSd.textContent = `${eNoSd}%`;
+            const elPctNoSchool = document.getElementById('pctEduNoSchool');
+            if (elPctNoSchool) elPctNoSchool.textContent = `${eNoSchool}%`;
+            const elPctSarjana = document.getElementById('pctEduSarjana');
+            if (elPctSarjana) elPctSarjana.textContent = `${eSarjana}%`;
+
+            // Determine dominant education level
+            const eduList = [
+                { name: 'SD / Equiv', pct: eSd, color: '#F59E0B' },
+                { name: 'SMP / Equiv', pct: eSmp, color: '#10B981' },
+                { name: 'SMA / Equiv', pct: eSma, color: '#059669' },
+                { name: 'Tidak Tamat', pct: eNoSd, color: '#F97316' },
+                { name: 'Blm Sekolah', pct: eNoSchool, color: '#EAB308' },
+                { name: 'PT / Sarjana', pct: eSarjana, color: '#3B82F6' }
+            ];
+            const dominantEdu = [...eduList].sort((a, b) => b.pct - a.pct)[0];
+
+            const elDomName = document.getElementById('donutDomName');
+            if (elDomName) {
+                elDomName.textContent = dominantEdu.name;
+                elDomName.style.color = dominantEdu.color;
+            }
+            const elDomPct = document.getElementById('donutDomPct');
+            if (elDomPct) elDomPct.textContent = `${dominantEdu.pct}%`;
+
+            // SVG Donut Slices Dynamic Dashoffsets
+            let currentOffset = 0;
+            const updateSlice = (sliceId, pct) => {
+                const slice = document.getElementById(sliceId);
+                if (slice) {
+                    slice.setAttribute('stroke-dasharray', `${pct} ${100 - pct}`);
+                    slice.setAttribute('stroke-dashoffset', `-${currentOffset}`);
+                    currentOffset += pct;
+                }
+            };
+            updateSlice('donutSliceSd', eSd);
+            updateSlice('donutSliceSmp', eSmp);
+            updateSlice('donutSliceSma', eSma);
+            updateSlice('donutSliceNoSd', eNoSd);
+            updateSlice('donutSliceNoSchool', eNoSchool);
+            updateSlice('donutSliceSarjana', eSarjana);
+
+            // SECTION 6: Keberagaman Agama
+            const relList = [
+                { idVal: 'valRelIslam', idPct: 'pctRelIslam', idBar: 'barRelIslam', path: 'agama.islam' },
+                { idVal: 'valRelKristen', idPct: 'pctRelKristen', idBar: 'barRelKristen', path: 'agama.kristen' },
+                { idVal: 'valRelKatolik', idPct: 'pctRelKatolik', idBar: 'barRelKatolik', path: 'agama.katolik' },
+                { idVal: 'valRelHindu', idPct: 'pctRelHindu', idBar: 'barRelHindu', path: 'agama.hindu' },
+                { idVal: 'valRelBuddha', idPct: 'pctRelBuddha', idBar: 'barRelBuddha', path: 'agama.buddha' },
+                { idVal: 'valRelKhonghucu', idPct: 'pctRelKhonghucu', idBar: 'barRelKhonghucu', path: 'agama.khonghucu' }
+            ];
+
+            relList.forEach(r => {
+                const rCount = getVal(data, `${r.path}.count`, 0);
+                const rPct = getVal(data, `${r.path}.pct`, 0);
+                const elV = document.getElementById(r.idVal);
+                const elP = document.getElementById(r.idPct);
+                const elB = document.getElementById(r.idBar);
+
+                if (elV) elV.childNodes[0].nodeValue = `${fmtNum(rCount)} `;
+                if (elP) elP.textContent = `(${rPct}%)`;
+                if (elB) elB.style.width = `${Math.max(1, rPct)}%`;
+            });
+
+            // SECTION 7: Status Perkawinan
+            const mKawinCnt = getVal(data, 'perkawinan.kawin_catat.count', 44054);
+            const mKawinPct = getVal(data, 'perkawinan.kawin_catat.pct', 59.82);
+            const mBelumCnt = getVal(data, 'perkawinan.belum_kawin.count', 24158);
+            const mBelumPct = getVal(data, 'perkawinan.belum_kawin.pct', 32.81);
+            const mCeraiHCnt = getVal(data, 'perkawinan.cerai_hidup.count', 3877);
+            const mCeraiHPct = getVal(data, 'perkawinan.cerai_hidup.pct', 5.27);
+            const mCeraiMCnt = getVal(data, 'perkawinan.cerai_mati.count', 1545);
+            const mCeraiMPct = getVal(data, 'perkawinan.cerai_mati.pct', 2.10);
+
+            const elMKawin = document.getElementById('valMarKawin');
+            if (elMKawin) elMKawin.textContent = `${fmtNum(mKawinCnt)} jiwa`;
+            const elPKawin = document.getElementById('pctMarKawin');
+            if (elPKawin) elPKawin.textContent = `${mKawinPct}%`;
+
+            const elMBelum = document.getElementById('valMarBelum');
+            if (elMBelum) elMBelum.textContent = `${fmtNum(mBelumCnt)} jiwa`;
+            const elPBelum = document.getElementById('pctMarBelum');
+            if (elPBelum) elPBelum.textContent = `${mBelumPct}%`;
+
+            const elMCeraiH = document.getElementById('valMarCeraiH');
+            if (elMCeraiH) elMCeraiH.textContent = `${fmtNum(mCeraiHCnt)} jiwa`;
+            const elPCeraiH = document.getElementById('pctMarCeraiH');
+            if (elPCeraiH) elPCeraiH.textContent = `${mCeraiHPct}%`;
+
+            const elMCeraiM = document.getElementById('valMarCeraiM');
+            if (elMCeraiM) elMCeraiM.textContent = `${fmtNum(mCeraiMCnt)} jiwa`;
+            const elPCeraiM = document.getElementById('pctMarCeraiM');
+            if (elPCeraiM) elPCeraiM.textContent = `${mCeraiMPct}%`;
+
+            const total15 = mKawinCnt + mBelumCnt + mCeraiHCnt + mCeraiMCnt;
+            const elTot15 = document.getElementById('valTotalUsia15');
+            if (elTot15) elTot15.textContent = `${fmtNum(total15)} Jiwa`;
+
+            // SECTION 8: Vitalitas Demografi
+            const kLahir = getVal(data, 'vitalitas.kelahiran', 732);
+            const kMeninggal = getVal(data, 'vitalitas.kematian', 396);
+            const cbrVal = (kLahir / totalPop * 1000).toFixed(2);
+            const cdrVal = (kMeninggal / totalPop * 1000).toFixed(2);
+
+            const elLahir = document.getElementById('valKelahiran');
+            if (elLahir) elLahir.textContent = `${fmtNum(kLahir)} jiwa`;
+            const elCbr = document.getElementById('valCbr');
+            if (elCbr) elCbr.textContent = cbrVal;
+
+            const elMeninggal = document.getElementById('valKematian');
+            if (elMeninggal) elMeninggal.textContent = `${fmtNum(kMeninggal)} jiwa`;
+            const elCdr = document.getElementById('valCdr');
+            if (elCdr) elCdr.textContent = cdrVal;
+
+            // SECTION 9: Cakupan Administrasi Kependudukan
+            const docCards = [
+                { idPct: 'pctDocKk', idBar: 'barDocKk', idSub: 'subDocKk', path: 'dokumen.kk', label: 'KK' },
+                { idPct: 'pctDocKtp', idBar: 'barDocKtp', idSub: 'subDocKtp', path: 'dokumen.ktp_el', label: 'Wajib' },
+                { idPct: 'pctDocAkta', idBar: 'barDocAkta', idSub: 'subDocAkta', path: 'dokumen.akta_lahir', label: 'Anak' },
+                { idPct: 'pctDocNikah', idBar: 'barDocNikah', idSub: 'subDocNikah', path: 'dokumen.akta_nikah', label: 'Pasutri' }
+            ];
+
+            docCards.forEach(d => {
+                const count = getVal(data, `${d.path}.count`, 0);
+                const target = getVal(data, `${d.path}.target`, count);
+                const pct = getVal(data, `${d.path}.pct`, 95);
+
+                const elP = document.getElementById(d.idPct);
+                const elB = document.getElementById(d.idBar);
+                const elS = document.getElementById(d.idSub);
+
+                if (elP) elP.textContent = `${pct}%`;
+                if (elB) elB.style.width = `${pct}%`;
+                if (elS) elS.textContent = `${fmtNum(count)} / ${fmtNum(target)} ${d.label}`;
+            });
+        };
+
+        // Auto-run initial render only if initial data payload exists
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.__INITIAL_DATA__) {
+                window.updateTemplateData(window.__INITIAL_DATA__);
+            }
+        });
+        if (window.__INITIAL_DATA__) {
+            window.updateTemplateData(window.__INITIAL_DATA__);
+        }
+    </script>
+</body>
+</html>

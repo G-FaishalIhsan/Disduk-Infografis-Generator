@@ -1,0 +1,51 @@
+/* ==========================================================================
+   DISDUKCAPIL INFOGRAFIS V2 — TEMPLATE 2 DESIGN SYSTEM (4:5 CAROUSEL)
+   ========================================================================== */
+:root {
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
+
+  --surface: #ffffff;
+  --surface-elevated: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --primary: #047857;
+}
+
+.dark {
+  --surface: #1e293b;
+  --surface-elevated: #0f172a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.social-canvas {
+  width: 1080px;
+  max-width: 1080px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+  border-radius: 20px;
+}

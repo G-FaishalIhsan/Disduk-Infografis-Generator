@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disdukcapil Infografis V2 - Social Carousel Slide 1</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Design System CSS Tokens -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        #header-bg {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.92), rgba(4, 120, 87, 0.88)), url('../../img/disduk_header.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 flex justify-center items-center p-4">
+
+    <!-- Main Canvas 1080x1350 px (Aspect Ratio 4:5) -->
+    <div class="social-canvas" id="slide1-canvas">
+
+        <!-- 1. HEADER DESIGN -->
+        <header id="header-bg" data-export-slide="cover" data-slide-title="Cover Infografis" class="relative p-5 md:p-6 rounded-2xl overflow-hidden shadow-lg text-white mb-2">
+            <!-- Top Row: Identity -->
+            <div class="flex justify-between items-center gap-4 mb-2.5 relative z-10">
+                <div class="flex items-center gap-3 p-1.5 px-3 rounded-xl backdrop-blur-md border border-white/15 shadow-xl bg-white/5">
+                    <div class="w-9 h-9 flex-shrink-0 flex items-center justify-center p-0.5">
+                        <img src="../../img/logo_disduk.png" alt="Logo Disdukcapil" class="w-full h-full object-contain"/>
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-extrabold tracking-wider leading-tight text-white">DISDUKCAPIL</h2>
+                        <p class="text-[10px] font-bold text-emerald-300 tracking-wider" data-bind="kabupaten">KABUPATEN TASIKMALAYA</p>
+                    </div>
+                </div>
+                <!-- Right Logos -->
+                <div class="flex items-center gap-2.5 bg-white/5 py-1.5 px-3 backdrop-blur-md border border-white/15 shadow-xl rounded-xl">
+                    <div class="flex items-center h-6 flex-shrink-0">
+                        <img src="../../img/logokanan1.png" alt="Logo Disdukcapil" class="h-5 sm:h-6 w-auto object-contain bg-transparent"/>
+                    </div>
+                    <div class="h-4 w-px bg-white/30"></div>
+                    <div class="flex items-center h-6 flex-shrink-0">
+                        <img src="../../img/logokanan2.png" alt="Logo BerAKHLAK" class="h-5 sm:h-6 w-auto object-contain bg-transparent"/>
+                    </div>
+                    <div class="h-4 w-px bg-white/30"></div>
+                    <div class="flex items-center h-6 flex-shrink-0">
+                        <img src="../../img/logokanan3.png" alt="Logo Bangga Melayani Bangsa" class="h-5 sm:h-6 w-auto object-contain bg-transparent"/>
+                    </div>
+                </div>    
+            </div>
+
+            <!-- Main Titles & Sub-elements -->
+            <div class="flex justify-between items-end gap-4 relative z-10 w-full overflow-hidden">
+                <div class="text-left flex-1 min-w-0 pr-2">
+                    <h1 class="text-xs sm:text-sm font-extrabold tracking-tight leading-tight text-slate-100 uppercase">
+                        Profil Kependudukan
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl font-black text-emerald-400 tracking-wide mt-0.5 break-words" id="titleWilayah" data-bind="kecamatan">
+                        KECAMATAN SINGAPARNA
+                    </h2>
+                </div>
+
+                <div class="flex-shrink-0 self-end">
+                    <span class="inline-block text-xs font-extrabold text-white shadow-lg bg-emerald-600/90 tracking-wider backdrop-blur-sm px-4 py-1.5 rounded-xl border border-white/20">
+                        TAHUN <span data-bind="tahun">2025</span>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. HERO CARD TOTAL PENDUDUK -->
+        <section class="stat-card-hero" style="height: 350px; margin-bottom: 8px; padding: 32px 30px 24px 30px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="z-index: 2;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <span class="text-caption" style="color: var(--color-primary-100); font-size: 15px; font-weight: 800; tracking-wide: 0.08em; text-transform: uppercase; display: block; margin-bottom: 4px;">
+                            TOTAL POPULASI PENDUDUK
+                        </span>
+                        <div class="text-display-hero" style="font-size: 86px; line-height: 0.98; font-weight: 900; margin-top: 2px; margin-bottom: 6px;" id="valTotalPenduduk" data-bind="totalPenduduk" data-format="number">
+                            2.026.081
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.18); width: 72px; height: 72px; border-radius: 20px; backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.25); flex-shrink: 0;">
+                        <i class="fa-solid fa-users text-4xl text-white"></i>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; align-items: center;">
+                    <span style="background: rgba(255,255,255,0.15); color: #ffffff; font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); display: inline-flex; align-items: center;">
+                        <i class="fa-solid fa-database text-xs text-emerald-300 mr-2"></i> DKB Sem <span data-bind="semester">2</span> Thn <span data-bind="tahun">2025</span>
+                    </span>
+                    <span style="background: rgba(255,255,255,0.15); color: #fef3c7; font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); display: inline-flex; align-items: center;">
+                        <i class="fa-solid fa-ruler-combined text-xs text-amber-300 mr-2"></i> Luas: 2.708 km²
+                    </span>
+                    <span style="background: rgba(255,255,255,0.15); color: #e0f2fe; font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); display: inline-flex; align-items: center;">
+                        <i class="fa-solid fa-chart-line text-xs text-sky-300 mr-2"></i> Kepadatan: 748 Jiwa/km²
+                    </span>
+                </div>
+            </div>
+
+            <!-- Gender Breakdown -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: rgba(0,0,0,0.25); padding: 14px 20px; border-radius: 18px; z-index: 2; border: 1px solid rgba(255,255,255,0.15);">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 44px; height: 44px; border-radius: 14px; background: #0284c7; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-mars text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-caption" style="color: #cbd5e1; font-size: 12px; font-weight: 700; text-transform: uppercase;">Laki-Laki</span>
+                        <div class="text-heading-2" style="color: #ffffff; font-size: 24px; font-weight: 900; line-height: 1.1;" id="valLaki" data-bind="lakiLaki" data-format="number">1.024.500 Jiwa</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 14px; padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.15);">
+                    <div style="width: 44px; height: 44px; border-radius: 14px; background: #e11d48; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-venus text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-caption" style="color: #cbd5e1; font-size: 12px; font-weight: 700; text-transform: uppercase;">Perempuan</span>
+                        <div class="text-heading-2" style="color: #ffffff; font-size: 24px; font-weight: 900; line-height: 1.1;" id="valPerempuan" data-bind="perempuan" data-format="number">1.001.581 Jiwa</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECONDARY STATISTIC CARDS -->
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px;">
+            <!-- Card 2: KK -->
+            <div class="stat-card-secondary" style="padding: 22px 24px; min-height: 225px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="text-caption" style="color: var(--color-neutral-700); font-size: 16px; font-weight: 800;">Kepala Keluarga (KK)</span>
+                    <div style="background: var(--color-primary-100); width: 48px; height: 48px; border-radius: 14px; color: var(--color-primary-700); display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-house-user text-2xl text-emerald-700"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-display-stat" style="color: var(--color-secondary-900); font-size: 58px; line-height: 1.0; font-weight: 900;" id="valKk" data-bind="kk" data-format="number">
+                        580.120
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding-top: 10px; border-top: 1.5px solid var(--color-neutral-200); font-size: 13px;">
+                        <div style="background: var(--color-neutral-100); padding: 6px 10px; border-radius: 8px; text-align: center;">
+                            <span style="color: var(--color-neutral-600); font-size: 11px; display: block; font-weight: 700;">KK LAKI-LAKI</span>
+                            <span style="color: var(--color-primary-700); font-weight: 900; font-size: 14px;">452.100</span>
+                        </div>
+                        <div style="background: var(--color-neutral-100); padding: 6px 10px; border-radius: 8px; text-align: center;">
+                            <span style="color: var(--color-neutral-600); font-size: 11px; display: block; font-weight: 700;">KK PEREMPUAN</span>
+                            <span style="color: var(--color-accent-amber); font-weight: 900; font-size: 14px;">128.020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Wajib KTP -->
+            <div class="stat-card-secondary" style="padding: 22px 24px; min-height: 225px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="text-caption" style="color: var(--color-neutral-700); font-size: 16px; font-weight: 800;">Wajib KTP-el</span>
+                    <div style="background: var(--color-accent-sky-light); width: 48px; height: 48px; border-radius: 14px; color: var(--color-accent-sky); display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-id-card text-2xl text-sky-600"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-display-stat" style="color: var(--color-secondary-900); font-size: 58px; line-height: 1.0; font-weight: 900;" id="valKtp" data-bind="wajibKtp" data-format="number">
+                        1.320.400
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding-top: 10px; border-top: 1.5px solid var(--color-neutral-200); font-size: 13px;">
+                        <div style="background: var(--color-neutral-100); padding: 6px 10px; border-radius: 8px; text-align: center;">
+                            <span style="color: var(--color-neutral-600); font-size: 11px; display: block; font-weight: 700;">REKAM KTP-EL</span>
+                            <span style="color: var(--color-accent-sky); font-weight: 900; font-size: 14px;" data-bind="rekamKtp" data-format="number">1.315.000</span>
+                        </div>
+                        <div style="background: var(--color-neutral-100); padding: 6px 10px; border-radius: 8px; text-align: center;">
+                            <span style="color: var(--color-neutral-600); font-size: 11px; display: block; font-weight: 700;">AKTIVASI IKD</span>
+                            <span style="color: var(--color-accent-rose); font-weight: 900; font-size: 14px;" data-bind="iakd" data-format="number">85.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. INSIGHT CARD -->
+        <section style="background: var(--color-primary-50); border: 2px solid var(--color-primary-500); border-radius: 20px; padding: 20px 24px; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--color-primary-700); color: white; display: flex; align-items: center; justify-content: center; font-size: 18px;">
+                        <i class="fa-solid fa-lightbulb text-amber-300"></i>
+                    </div>
+                    <h3 class="text-subtitle" style="font-size: 20px; color: var(--color-primary-900); font-weight: 800;">
+                        Highlight Demografi
+                    </h3>
+                </div>
+                <span class="badge-pill badge-emerald" style="font-size: 13px; padding: 4px 12px; font-weight: 800;">
+                    DKB Sem <span data-bind="semester">2</span> <span data-bind="tahun">2025</span>
+                </span>
+            </div>
+
+            <p class="text-body-large" style="color: var(--color-primary-900); font-weight: 700; font-size: 18px; line-height: 1.4;">
+                Mayoritas penduduk berada pada kelompok <span style="color: var(--color-primary-700); font-weight: 900;">usia produktif</span> yang terdaftar aktif dalam DKB Kabupaten Tasikmalaya.
+            </p>
+        </section>
+
+        <!-- 5. FOOTER -->
+        <footer data-export-slide="footer" data-slide-title="Footer Instansi" class="bg-slate-900 text-white rounded-2xl p-4 md:p-5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-emerald-950 opacity-95"></div>
+            
+            <div class="relative z-10 flex flex-row justify-between items-center gap-4">
+                <div>
+                    <span class="text-xs font-black text-emerald-400 tracking-widest uppercase block">DISDUKCAPIL KABUPATEN TASIKMALAYA</span>
+                    <span class="text-[11px] text-slate-300 font-bold uppercase tracking-wider block mt-0.5">IKUTI & HUBUNGI KAMI</span>
+                </div>
+
+                <div class="flex flex-wrap justify-end gap-2 text-xs">
+                    <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 transition text-slate-200 font-semibold text-xs">
+                        <i class="fa-solid fa-globe text-emerald-400"></i>
+                        <span>disduk.id</span>
+                    </a>
+                    <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 transition text-slate-200 font-semibold text-xs">
+                        <i class="fa-brands fa-instagram text-rose-400"></i>
+                        <span>disdukcapil_kabtasik</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

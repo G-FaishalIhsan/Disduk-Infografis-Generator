@@ -1,0 +1,345 @@
+/* ==========================================================================
+   DISDUKCAPIL INFOGRAFIS GENERATOR — DESIGN SYSTEM & UI FOUNDATION V2
+   Phase 3.5 — Non-Breaking UI Foundation Refinement
+   Theme System: Light ☀ | Dark 🌙 | System 💻
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN SYSTEM TOKENS (LIGHT & DARK MODE VARIABLES)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Typography Tokens */
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font Size Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+
+  /* Border Radius Tokens */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Spacing Tokens */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+
+  /* Transition Tokens (200-300ms ease-in-out) */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms ease-in-out;
+  --transition-theme: background-color 250ms ease-in-out, color 250ms ease-in-out, border-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+
+/* LIGHT THEME TOKENS */
+.light, html:not(.dark) {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --surface-elevated: #e2e8f0;
+  
+  --color-bg-workspace: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-elevated: #f1f5f9;
+  --color-bg-sidebar: #ffffff;
+  --color-bg-header: #ffffff;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+  --color-text-inverse: #ffffff;
+
+  --border: #e2e8f0;
+  --color-border-subtle: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  --accent: #059669;
+  --color-primary: #059669;
+  --color-primary-hover: #047857;
+  --color-primary-light: #ecfdf5;
+
+  --color-secondary: #4f46e5;
+  --color-secondary-hover: #4338ca;
+  --color-secondary-light: #e0e7ff;
+
+  --color-danger: #e11d48;
+  --color-danger-hover: #be123c;
+  --color-danger-light: #ffe4e6;
+
+  --color-amber: #d97706;
+  --color-amber-light: #fef3c7;
+
+  --color-slate: #64748b;
+  --color-slate-light: #f1f5f9;
+
+  --color-sky: #0284c7;
+  --color-sky-light: #e0f2fe;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* DARK THEME TOKENS */
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #020617;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --surface-elevated: #334155;
+
+  --color-bg-workspace: #0f172a;
+  --color-bg-surface: #1e293b;
+  --color-bg-surface-elevated: #334155;
+  --color-bg-sidebar: #020617;
+  --color-bg-header: #020617;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+  --color-text-inverse: #0f172a;
+
+  --border: #334155;
+  --color-border-subtle: #334155;
+  --color-border-strong: #475569;
+
+  --accent: #10b981;
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-primary-light: rgba(16, 185, 129, 0.15);
+
+  --color-secondary: #6366f1;
+  --color-secondary-hover: #4f46e5;
+  --color-secondary-light: rgba(99, 102, 241, 0.15);
+
+  --color-danger: #f43f5e;
+  --color-danger-hover: #e11d48;
+  --color-danger-light: rgba(244, 63, 94, 0.15);
+
+  --color-amber: #f59e0b;
+  --color-amber-light: rgba(245, 158, 11, 0.15);
+
+  --color-slate: #94a3b8;
+  --color-slate-light: rgba(148, 163, 184, 0.15);
+
+  --color-sky: #38bdf8;
+  --color-sky-light: rgba(56, 189, 248, 0.15);
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL BASE & SMOOTH TRANSITIONS
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-workspace);
+  color: var(--color-text-main);
+  transition: var(--transition-theme);
+}
+
+/* CRITICAL CONSTRAINT: Preview Canvas Scaler Wrapper MUST STAY WHITE (Figma/Canva behavior) */
+#preview-scaler,
+#preview-scaler iframe {
+  background-color: #ffffff !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #020617;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: var(--radius-pill);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: var(--radius-pill);
+}
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   3. STANDARDIZED BADGES (RULE 5)
+   -------------------------------------------------------------------------- */
+.v2-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+/* ACTIVE (Emerald - Hijau) */
+.v2-badge-active,
+.v2-badge-ready,
+.v2-badge-success {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+/* PROTOTYPE (Indigo/Violet - Ungu) */
+.v2-badge-prototype {
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
+
+/* MAINTENANCE (Amber - Yellow) */
+.v2-badge-maintenance {
+  background-color: var(--color-amber-light);
+  color: var(--color-amber);
+  border: 1px solid var(--color-amber);
+}
+
+/* COMING SOON (Slate - Abu) */
+.v2-badge-coming-soon {
+  background-color: var(--color-slate-light);
+  color: var(--color-slate);
+  border: 1px solid var(--color-border-strong);
+}
+
+/* ERROR / FAILED (Rose - Merah) */
+.v2-badge-error,
+.v2-badge-failed {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+/* LOADING (Sky - Biru) */
+.v2-badge-loading {
+  background-color: var(--color-sky-light);
+  color: var(--color-sky);
+  border: 1px solid var(--color-sky);
+}
+
+/* --------------------------------------------------------------------------
+   4. COMPACT TEMPLATE CARD & UI FOUNDATION (RULE 4 & 10)
+   -------------------------------------------------------------------------- */
+
+/* Section Label Header */
+.sidebar-section-title {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Compact Template Card (Height reduced by ~30%) */
+.tmpl-card-compact {
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  background-color: var(--color-bg-surface);
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.tmpl-card-compact:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-surface-elevated);
+}
+.tmpl-card-compact.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* Standard Buttons */
+.v2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid transparent;
+  user-select: none;
+}
+.v2-btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+.v2-btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+.v2-btn-secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+.v2-btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+}
+.v2-btn-outline {
+  background-color: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text-main);
+}
+.v2-btn-outline:hover {
+  background-color: var(--color-bg-surface-elevated);
+}
+
+/* Standard Input Components */
+.v2-input,
+.v2-select {
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.375rem 0.625rem;
+  font-size: 11px;
+  transition: var(--transition-fast);
+}
+.v2-input:focus,
+.v2-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}

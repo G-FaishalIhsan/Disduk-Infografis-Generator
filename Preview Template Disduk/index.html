@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id" class="dark h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri & Preview Template Disdukcapil Tasikmalaya</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo_disduk.png">
+    <link rel="shortcut icon" type="image/png" href="img/logo_disduk.png">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Design System CSS Tokens -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg-workspace);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-border-strong);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary);
+        }
+
+        .tmpl-card-compact {
+            transition: all 0.2s ease-in-out;
+        }
+        .tmpl-card-compact:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-1px);
+        }
+        .tmpl-card-compact.active {
+            border-color: var(--color-primary);
+            background-color: var(--color-bg-surface-elevated);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+        }
+    </style>
+</head>
+<body class="h-full overflow-hidden antialiased transition-colors duration-250 dark" style="background-color: var(--color-bg-workspace); color: var(--color-text-main);">
+
+    <div class="flex h-full w-full">
+
+        <!-- SIDEBAR CONTAINER (Left Panel 320px) -->
+        <aside id="sidebar-container" class="w-80 flex-shrink-0 h-full z-20 border-r overflow-y-auto custom-scrollbar p-3 space-y-4"
+               style="background-color: var(--color-bg-sidebar); border-color: var(--color-border-subtle);">
+            
+            <!-- HEADER BRAND -->
+            <div class="flex items-center gap-3 pb-3 border-b" style="border-color: var(--color-border-subtle);">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 p-0.5 shadow-md flex items-center justify-center flex-shrink-0">
+                    <img src="img/logo_disduk.png" alt="Logo Disdukcapil" class="w-7 h-7 object-contain" />
+                </div>
+                <div>
+                    <h1 class="text-xs font-black tracking-wider uppercase" style="color: var(--color-text-main);">DISDUKCAPIL TASIKMALAYA</h1>
+                    <p class="text-[10px] font-bold text-emerald-500 tracking-wider">PREVIEW TEMPLATE HUB</p>
+                </div>
+            </div>
+
+            <!-- SECTION 1: WORKSPACE TABS -->
+            <div>
+                <div class="sidebar-section-title text-[10px] font-extrabold uppercase text-slate-400 mb-1.5 flex items-center gap-1">
+                    <i class="fa-solid fa-layer-group text-emerald-500"></i> Ruang Kerja Infografis
+                </div>
+                <div class="grid grid-cols-2 gap-1 p-1 rounded-lg border" style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-subtle);">
+                    <button id="tab-ws-full" onclick="setWorkspace('full')" class="py-1.5 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1.5 transition bg-emerald-600 text-white shadow-sm">
+                        <i class="fa-solid fa-file-invoice"></i> Full Infografis
+                    </button>
+                    <button id="tab-ws-social" onclick="setWorkspace('social')" class="py-1.5 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1.5 transition text-slate-400 hover:text-white">
+                        <i class="fa-solid fa-hashtag text-purple-400"></i> Media Sosial
+                    </button>
+                </div>
+            </div>
+
+            <!-- SECTION 2: MODUS INFOGRAFIS (KABUPATEN vs KECAMATAN) -->
+            <div>
+                <div class="sidebar-section-title text-[10px] font-extrabold uppercase text-slate-400 mb-1.5 flex items-center gap-1">
+                    <i class="fa-solid fa-map-location-dot text-emerald-500"></i> Scope Wilayah Data
+                </div>
+                <div class="grid grid-cols-2 gap-1 p-1 rounded-lg border mb-2" style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-subtle);">
+                    <button id="btn-mode-kab" onclick="setMode('Kabupaten')" class="py-1 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1 transition bg-emerald-600 text-white">
+                        <i class="fa-solid fa-building-columns"></i> Kabupaten
+                    </button>
+                    <button id="btn-mode-kec" onclick="setMode('Kecamatan')" class="py-1 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1 transition text-slate-400 hover:text-white">
+                        <i class="fa-solid fa-map-pin"></i> Kecamatan
+                    </button>
+                </div>
+
+                <!-- Custom Kecamatan Select Dropdown -->
+                <div id="kecamatan-select-box" class="relative hidden">
+                    <div id="kecamatan-select-button" onclick="toggleKecDropdown()" class="w-full py-1.5 px-2.5 rounded-lg border text-[11px] font-bold flex items-center justify-between cursor-pointer"
+                         style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-strong); color: var(--color-text-main);">
+                        <span id="label-selected-kecamatan">320624 — SINGAPARNA</span>
+                        <i id="icon-kec-arrow" class="fa-solid fa-chevron-down text-[9px] text-slate-400"></i>
+                    </div>
+
+                    <div id="dropdown-kecamatan-list" class="hidden absolute left-0 right-0 top-full mt-1 max-h-48 overflow-y-auto border rounded-lg shadow-2xl z-50 p-1 space-y-0.5 custom-scrollbar"
+                         style="background-color: var(--color-bg-surface); border-color: var(--color-border-strong); color: var(--color-text-main);">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: TEMPLATE SELECTOR CARDS -->
+            <div>
+                <div class="sidebar-section-title text-[10px] font-extrabold uppercase text-slate-400 mb-1.5 flex items-center gap-1">
+                    <i class="fa-solid fa-palette text-emerald-500"></i> Pilih Desain Template
+                </div>
+
+                <div id="templates-list-container" class="space-y-2">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- SECTION 4: SLIDE SWITCHER (V2 SOCIAL CAROUSEL ONLY) -->
+            <div id="v2-slide-controls" class="hidden space-y-1.5 pt-2 border-t" style="border-color: var(--color-border-subtle);">
+                <div class="sidebar-section-title text-[10px] font-extrabold uppercase text-amber-400 flex items-center gap-1">
+                    <i class="fa-solid fa-sliders text-xs"></i> Mode Slide Carousel:
+                </div>
+                <div class="grid grid-cols-3 gap-1">
+                    <button id="btn-slide-1" onclick="setSlideMode(1)" class="py-1.5 text-[10px] font-bold rounded border bg-emerald-600 text-white border-emerald-500">Slide 1</button>
+                    <button id="btn-slide-2" onclick="setSlideMode(2)" class="py-1.5 text-[10px] font-bold rounded border bg-slate-800 text-slate-300 border-slate-700">Slide 2</button>
+                    <button id="btn-slide-both" onclick="setSlideMode('both')" class="py-1.5 text-[10px] font-bold rounded border bg-slate-800 text-slate-300 border-slate-700">Beide</button>
+                </div>
+            </div>
+
+            <!-- SECTION 5: GENERATE & INFO CALLOUT -->
+            <div class="space-y-2 pt-2 border-t" style="border-color: var(--color-border-subtle);">
+                <button id="btn-generate" onclick="onGenerateClick()" class="w-full py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-lg font-extrabold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 transition active:scale-95">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Infografis
+                </button>
+                
+                <div class="p-2.5 rounded-lg border text-[10px] space-y-1" style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-subtle);">
+                    <div class="flex items-center gap-1.5 font-bold text-amber-400">
+                        <i class="fa-solid fa-circle-info text-xs"></i>
+                        <span>Petunjuk Pembaharuan Data</span>
+                    </div>
+                    <p class="text-slate-400 leading-snug text-[10px]">
+                        Jika data pada infografis tidak otomatis berubah setelah memilih konfigurasi, silakan klik tombol <strong class="text-emerald-400 font-bold">Generate Infografis</strong> di atas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 6: EKSPOR & UNDUH -->
+            <div>
+                <div class="sidebar-section-title text-[10px] font-extrabold uppercase text-slate-400 mb-1.5 flex items-center gap-1">
+                    <i class="fa-solid fa-download text-emerald-500"></i> Ekspor & Unduh
+                </div>
+                <div id="export-buttons-container">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- SECTION 7: RIWAYAT UNDUHAN (LOG HISTORY) -->
+            <div class="space-y-2 pt-2 border-t" style="border-color: var(--color-border-subtle);">
+                <div class="flex items-center justify-between">
+                    <div class="sidebar-section-title text-[10px] font-extrabold uppercase text-slate-400 flex items-center gap-1">
+                        <i class="fa-solid fa-clock-rotate-left text-amber-400"></i> Riwayat Unduhan
+                    </div>
+                    <button onclick="clearLogs()" class="text-[9px] text-slate-400 hover:text-red-400 font-bold transition flex items-center gap-1">
+                        <i class="fa-solid fa-trash-can text-[9px]"></i> Hapus
+                    </button>
+                </div>
+                
+                <div id="sidebar-log-container" class="space-y-1 max-h-32 overflow-y-auto custom-scrollbar p-2 rounded-lg border text-[10px]" style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-subtle);">
+                    <div class="text-[10px] text-slate-400 italic text-center py-2">Belum ada riwayat unduhan</div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- MAIN WORKSPACE & LIVE PREVIEW AREA (Right Panel) -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+
+            <!-- PREVIEW HEADER TOOLBAR -->
+            <div class="h-12 px-6 border-b flex items-center justify-between flex-shrink-0 z-10 transition-colors duration-250"
+                 style="background-color: var(--color-bg-surface); border-color: var(--color-border-subtle);">
+                
+                <div class="flex items-center gap-3">
+                    <span id="preview-title" class="text-xs font-extrabold tracking-wider uppercase flex items-center gap-2" style="color: var(--color-text-main);">
+                        <i class="fa-solid fa-eye text-emerald-500"></i>
+                        <span id="preview-title-text">Preview • Template 1 (Kabupaten Tasikmalaya)</span>
+                    </span>
+                    <span id="scale-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        100% Scale
+                    </span>
+                </div>
+
+                <!-- Theme Controller Buttons (Light ☀ | Dark 🌙 | System 💻) -->
+                <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1 p-1 rounded-lg border text-xs" style="background-color: var(--color-bg-surface-elevated); border-color: var(--color-border-subtle);">
+                        <button id="btn-theme-light" onclick="setTheme('light')" title="Mode Terang" class="px-2.5 py-1 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-amber-500 text-[11px]">
+                            <i class="fa-solid fa-sun text-amber-500"></i>
+                            <span class="hidden sm:inline">Terang</span>
+                        </button>
+                        <button id="btn-theme-dark" onclick="setTheme('dark')" title="Mode Gelap" class="px-2.5 py-1 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-indigo-400 text-[11px]">
+                            <i class="fa-solid fa-moon text-indigo-400"></i>
+                            <span class="hidden sm:inline">Gelap</span>
+                        </button>
+                        <button id="btn-theme-system" onclick="setTheme('system')" title="Ikuti Sistem" class="px-2.5 py-1 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-emerald-400 text-[11px]">
+                            <i class="fa-solid fa-desktop text-emerald-400"></i>
+                            <span class="hidden sm:inline">Sistem</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WORKSPACE 1: FULL INFOGRAPHICS PREVIEW CONTAINER (V1) -->
+            <div id="preview-wrapper-full" class="flex-1 p-6 overflow-auto flex justify-center items-start relative transition-colors duration-200 custom-scrollbar"
+                 style="background-color: var(--color-bg-workspace);">
+                <div id="preview-scaler" class="origin-top transition-transform duration-150 shadow-2xl rounded-xl overflow-hidden border"
+                     style="width: 1200px; background-color: #ffffff; border-color: var(--color-border-strong);">
+                    <iframe id="preview-iframe" style="width: 1200px; border: 0; min-height: 1697px; background-color: #ffffff;" title="Infographic Live Preview"></iframe>
+                </div>
+            </div>
+
+            <!-- WORKSPACE 2: MEDIA SOSIAL CAROUSEL PREVIEW CONTAINER (V2 - 2 SLIDES IN 1 PAGE VIEW) -->
+            <div id="preview-wrapper-social" class="hidden flex-1 p-6 overflow-auto flex flex-col items-center gap-4 relative transition-colors duration-200 custom-scrollbar"
+                 style="background-color: var(--color-bg-workspace);">
+                
+                <!-- Information Metadata Panel V2 -->
+                <div id="preview-v2-info-panel" class="w-full max-w-[2240px] p-3 rounded-xl border shadow-sm transition-colors duration-200 text-xs flex items-center justify-between"
+                     style="background-color: var(--color-bg-surface); border-color: var(--color-border-subtle); color: var(--color-text-main);">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[10px]">CAROUSEL 4:5</span>
+                        <span class="font-bold text-slate-300">Format Instagram & Facebook Feed (1080×1350 px)</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-emerald-400 font-bold">2 Slide Preview Mode</span>
+                </div>
+
+                <!-- Dual Carousel Live Canvas View (Slide 1 & Slide 2 Side-by-Side) -->
+                <div id="social-slides-scaler" class="origin-top transition-transform duration-150 flex flex-wrap lg:flex-nowrap justify-center gap-6 w-full max-w-[2240px]">
+                    <!-- Slide 1 Canvas Frame -->
+                    <div id="frame-slide-1" class="flex flex-col items-center">
+                        <div class="text-xs font-extrabold text-emerald-400 mb-2 uppercase tracking-wider flex items-center gap-1.5 bg-emerald-500/10 px-3 py-1 rounded-lg border border-emerald-500/20">
+                            <i class="fa-solid fa-images"></i> Slide 1 — Cover Profil
+                        </div>
+                        <div class="shadow-2xl rounded-2xl overflow-hidden border bg-slate-900" style="width: 1080px; height: 1350px; border-color: var(--color-border-strong);">
+                            <iframe id="preview-social-slide1" style="width: 1080px; height: 1350px; border: 0;" title="Social Slide 1"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 Canvas Frame -->
+                    <div id="frame-slide-2" class="flex flex-col items-center">
+                        <div class="text-xs font-extrabold text-indigo-400 mb-2 uppercase tracking-wider flex items-center gap-1.5 bg-indigo-500/10 px-3 py-1 rounded-lg border border-indigo-500/20">
+                            <i class="fa-solid fa-chart-pie"></i> Slide 2 — Visualisasi Demografi
+                        </div>
+                        <div class="shadow-2xl rounded-2xl overflow-hidden border bg-slate-900" style="width: 1080px; height: 1350px; border-color: var(--color-border-strong);">
+                            <iframe id="preview-social-slide2" style="width: 1080px; height: 1350px; border: 0;" title="Social Slide 2"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- MAIN APP & AUTOFITTER JAVASCRIPT -->
+    <script>
+        // KECAMATAN CODE MAP (39 OFFICIAL DISTRICTS)
+        const KECAMATAN_CODE_MAP = {
+            'CIPATUJAH': '320601', 'KARANGNUNGGAL': '320602', 'CIKALONG': '320603', 'PANCATENGAH': '320604',
+            'CIKATOMAS': '320605', 'CIBALONG': '320606', 'PARUNGPONTENG': '320607', 'BANTARKALONG': '320608',
+            'BOJONGASIH': '320609', 'CULAMEGA': '320610', 'BOJONGGAMBIR': '320611', 'SODONGHILIR': '320612',
+            'TARAJU': '320613', 'SALAWU': '320614', 'PUSPAHIANG': '320615', 'TANJUNGJAYA': '320616',
+            'SUKARAJA': '320617', 'SALOPA': '320618', 'JATIWARAS': '320619', 'CINEAM': '320620',
+            'KARANGJAYA': '320621', 'MANONJAYA': '320622', 'GUNUNGTANJUNG': '320623', 'SINGAPARNA': '320624',
+            'MANGUNREJA': '320625', 'SUKARAME': '320626', 'CIGALONTANG': '320627', 'LEUWISARI': '320628',
+            'PADAKEMBANG': '320629', 'SARIWANGI': '320630', 'SUKARATU': '320631', 'CISAYONG': '320632',
+            'SUKAHENING': '320633', 'RAJAPOLAH': '320634', 'JAMANIS': '320635', 'CIAWI': '320636',
+            'KADIPATEN': '320637', 'PAGERAGEUNG': '320638', 'PAGEURAGEUNG': '320638', 'SUKARESIK': '320639'
+        };
+
+        function formatKecamatanLabel(dName) {
+            if (!dName) return '';
+            const cleanName = String(dName).toUpperCase().replace(/^KECAMATAN\s+/i, '').trim();
+            const code = KECAMATAN_CODE_MAP[cleanName] || '320600';
+            return `${code} — ${cleanName}`;
+        }
+
+        // DATASETS & TEMPLATES DATA
+        const TEMPLATES_V1 = [
+            { id: 'template-1', name: 'Template 1', desc: 'Single Page Standard', path: './v1/template-1/index.html', badge: 'Standard A4', icon: 'fa-file-invoice' },
+            { id: 'template-2', name: 'Template 2', desc: 'Kabupaten & 39 Kec', path: './v1/template-2/index.html', badge: 'Makro Page', icon: 'fa-table-list' },
+            { id: 'template-3', name: 'Template 3', desc: 'Compact Summary', path: './v1/template-3/index.html', badge: 'Compact', icon: 'fa-box-archive' }
+        ];
+
+        const TEMPLATES_V2 = [
+            { id: 'template-1-v2', name: 'Template 1 V2', desc: 'Emerald Carousel 4:5', slide1: './v2/template-1/slide1.html', slide2: './v2/template-1/slide2.html', badge: 'Emerald Carousel', icon: 'fa-images' },
+            { id: 'template-2-v2', name: 'Template 2 V2', desc: 'Classic Teal Carousel', slide1: './v2/template-2/slide1.html', slide2: './v2/template-2/slide2.html', badge: 'Teal Carousel', icon: 'fa-layer-group' },
+            { id: 'template-3-v2', name: 'Template 3 V2', desc: 'Purple Slate Carousel', slide1: './v2/template-3/slide1.html', slide2: './v2/template-3/slide2.html', badge: 'Purple Carousel', icon: 'fa-sliders' }
+        ];
+
+        const DISTRICTS = Object.keys(KECAMATAN_CODE_MAP).filter(k => k !== 'PAGEURAGEUNG');
+
+        // APPLICATION STATE
+        let currentWorkspace = 'full'; // 'full' | 'social'
+        let currentMode = 'Kabupaten'; // 'Kabupaten' | 'Kecamatan'
+        let selectedDistrict = 'SINGAPARNA';
+        let selectedTemplateId = 'template-1';
+        let v2SlideMode = 'both'; // 1 | 2 | 'both'
+        let logs = [];
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            initKecamatanDropdown();
+            renderTemplatesList();
+            renderExportButtons();
+            loadPreview();
+            autoFit();
+
+            window.addEventListener('resize', autoFit);
+        });
+
+        // THEME CONTROLLER SYSTEM
+        function initTheme() {
+            const savedTheme = localStorage.getItem('disduk_theme') || 'dark';
+            setTheme(savedTheme);
+        }
+
+        function setTheme(mode) {
+            const body = document.body;
+            const btnLight = document.getElementById('btn-theme-light');
+            const btnDark = document.getElementById('btn-theme-dark');
+            const btnSys = document.getElementById('btn-theme-system');
+
+            const activeBtn = "px-2.5 py-1 rounded font-bold transition flex items-center gap-1 bg-emerald-600 text-white shadow-sm";
+            const inactiveBtn = "px-2.5 py-1 rounded font-bold transition flex items-center gap-1 text-slate-400 hover:text-emerald-400";
+
+            btnLight.className = mode === 'light' ? activeBtn : inactiveBtn;
+            btnDark.className = mode === 'dark' ? activeBtn : inactiveBtn;
+            btnSys.className = mode === 'system' ? activeBtn : inactiveBtn;
+
+            if (mode === 'system') {
+                const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (sysDark) body.classList.add('dark'); else body.classList.remove('dark');
+            } else if (mode === 'light') {
+                body.classList.remove('dark');
+            } else {
+                body.classList.add('dark');
+            }
+
+            localStorage.setItem('disduk_theme', mode);
+        }
+
+        // WORKSPACE SWITCHER
+        function setWorkspace(ws) {
+            currentWorkspace = ws;
+            const tabFull = document.getElementById('tab-ws-full');
+            const tabSocial = document.getElementById('tab-ws-social');
+
+            const wrapperFull = document.getElementById('preview-wrapper-full');
+            const wrapperSocial = document.getElementById('preview-wrapper-social');
+            const v2Controls = document.getElementById('v2-slide-controls');
+
+            if (ws === 'full') {
+                tabFull.className = "py-1.5 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1.5 transition bg-emerald-600 text-white shadow-sm";
+                tabSocial.className = "py-1.5 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1.5 transition text-slate-400 hover:text-white";
+
+                wrapperFull.classList.remove('hidden');
+                wrapperSocial.classList.add('hidden');
+                v2Controls.classList.add('hidden');
+                selectedTemplateId = 'template-1';
+            } else {
+                tabSocial.className = "py-1.5 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1.5 transition bg-purple-600 text-white shadow-sm";
+                tabFull.className = "py-1.5 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1.5 transition text-slate-400 hover:text-white";
+
+                wrapperSocial.classList.remove('hidden');
+                wrapperFull.classList.add('hidden');
+                v2Controls.classList.remove('hidden');
+                selectedTemplateId = 'template-1-v2';
+            }
+
+            renderTemplatesList();
+            renderExportButtons();
+            loadPreview();
+        }
+
+        // MODE SWITCHER (KABUPATEN vs KECAMATAN)
+        function setMode(mode) {
+            currentMode = mode;
+            const btnKab = document.getElementById('btn-mode-kab');
+            const btnKec = document.getElementById('btn-mode-kec');
+            const kecBox = document.getElementById('kecamatan-select-box');
+
+            if (mode === 'Kabupaten') {
+                btnKab.className = "py-1 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1 transition bg-emerald-600 text-white";
+                btnKec.className = "py-1 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1 transition text-slate-400 hover:text-white";
+                kecBox.classList.add('hidden');
+            } else {
+                btnKec.className = "py-1 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1 transition bg-emerald-600 text-white";
+                btnKab.className = "py-1 px-2 text-[10px] font-bold rounded flex items-center justify-center gap-1 transition text-slate-400 hover:text-white";
+                kecBox.classList.remove('hidden');
+            }
+
+            updatePreviewTitle();
+        }
+
+        // KECAMATAN DROPDOWN INIT & SEARCH
+        function initKecamatanDropdown() {
+            const dropdown = document.getElementById('dropdown-kecamatan-list');
+            const sorted = [...DISTRICTS].sort((a, b) => {
+                const codeA = KECAMATAN_CODE_MAP[a] || '999999';
+                const codeB = KECAMATAN_CODE_MAP[b] || '999999';
+                return codeA.localeCompare(codeB);
+            });
+
+            dropdown.innerHTML = sorted.map(d => `
+                <div onclick="selectDistrict('${d}')" class="px-2.5 py-1.5 text-[11px] font-semibold rounded cursor-pointer transition flex items-center justify-between hover:bg-emerald-600 hover:text-white">
+                    <span>${formatKecamatanLabel(d)}</span>
+                </div>
+            `).join('');
+        }
+
+        function toggleKecDropdown() {
+            const dropdown = document.getElementById('dropdown-kecamatan-list');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function selectDistrict(dName) {
+            selectedDistrict = dName;
+            document.getElementById('label-selected-kecamatan').innerText = formatKecamatanLabel(dName);
+            document.getElementById('dropdown-kecamatan-list').classList.add('hidden');
+            updatePreviewTitle();
+        }
+
+        // RENDER TEMPLATES LIST
+        function renderTemplatesList() {
+            const list = currentWorkspace === 'full' ? TEMPLATES_V1 : TEMPLATES_V2;
+            const container = document.getElementById('templates-list-container');
+
+            container.innerHTML = list.map(t => {
+                const isActive = t.id === selectedTemplateId;
+                return `
+                    <div onclick="selectTemplate('${t.id}')" class="tmpl-card-compact p-2.5 rounded-xl border cursor-pointer ${isActive ? 'active' : ''}"
+                         style="background-color: var(--color-bg-surface); border-color: ${isActive ? 'var(--color-primary)' : 'var(--color-border-subtle)'};">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="text-xs font-bold flex items-center gap-1.5" style="color: var(--color-text-main);">
+                                <i class="fa-solid ${t.icon} text-emerald-500"></i> ${t.name}
+                            </h3>
+                            <span class="px-1.5 py-0.5 text-[9px] font-extrabold rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                ${t.badge}
+                            </span>
+                        </div>
+                        <p class="text-[10px] text-slate-400 line-clamp-1">${t.desc}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function selectTemplate(id) {
+            selectedTemplateId = id;
+            renderTemplatesList();
+            loadPreview();
+        }
+
+        // V2 SLIDE MODE SWITCHER
+        function setSlideMode(mode) {
+            v2SlideMode = mode;
+            const btn1 = document.getElementById('btn-slide-1');
+            const btn2 = document.getElementById('btn-slide-2');
+            const btnBoth = document.getElementById('btn-slide-both');
+
+            const actClass = "py-1.5 text-[10px] font-bold rounded border bg-emerald-600 text-white border-emerald-500";
+            const inactClass = "py-1.5 text-[10px] font-bold rounded border bg-slate-800 text-slate-300 border-slate-700";
+
+            btn1.className = mode === 1 ? actClass : inactClass;
+            btn2.className = mode === 2 ? actClass : inactClass;
+            btnBoth.className = mode === 'both' ? actClass : inactClass;
+
+            const f1 = document.getElementById('frame-slide-1');
+            const f2 = document.getElementById('frame-slide-2');
+
+            if (mode === 1) {
+                f1.classList.remove('hidden');
+                f2.classList.add('hidden');
+            } else if (mode === 2) {
+                f2.classList.remove('hidden');
+                f1.classList.add('hidden');
+            } else {
+                f1.classList.remove('hidden');
+                f2.classList.remove('hidden');
+            }
+
+            autoFit();
+        }
+
+        // LOAD PREVIEW IFRAMES
+        function loadPreview() {
+            if (currentWorkspace === 'full') {
+                const tmpl = TEMPLATES_V1.find(t => t.id === selectedTemplateId) || TEMPLATES_V1[0];
+                document.getElementById('preview-iframe').src = tmpl.path;
+            } else {
+                const tmpl = TEMPLATES_V2.find(t => t.id === selectedTemplateId) || TEMPLATES_V2[0];
+                document.getElementById('preview-social-slide1').src = tmpl.slide1;
+                document.getElementById('preview-social-slide2').src = tmpl.slide2;
+            }
+
+            updatePreviewTitle();
+            autoFit();
+        }
+
+        function updatePreviewTitle() {
+            const scopeStr = currentMode === 'Kecamatan' ? formatKecamatanLabel(selectedDistrict) : 'Kabupaten Tasikmalaya';
+            const tmpl = (currentWorkspace === 'full' ? TEMPLATES_V1 : TEMPLATES_V2).find(t => t.id === selectedTemplateId);
+            const tmplName = tmpl ? tmpl.name : selectedTemplateId;
+            document.getElementById('preview-title-text').innerText = `Preview • ${tmplName} (${scopeStr})`;
+        }
+
+        // EXPORT BUTTONS & LOGGING
+        function renderExportButtons() {
+            const container = document.getElementById('export-buttons-container');
+            if (currentWorkspace === 'full') {
+                container.innerHTML = `
+                    <div class="grid grid-cols-3 gap-1">
+                        <button onclick="triggerExport('PNG')" class="py-1.5 px-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded text-[10px] font-bold flex items-center justify-center gap-1 shadow-sm transition">
+                            <i class="fa-solid fa-file-image"></i> PNG
+                        </button>
+                        <button onclick="triggerExport('JPG')" class="py-1.5 px-2 bg-teal-700 hover:bg-teal-600 text-white rounded text-[10px] font-bold flex items-center justify-center gap-1 shadow-sm transition">
+                            <i class="fa-solid fa-image"></i> JPG
+                        </button>
+                        <button onclick="triggerExport('PDF')" class="py-1.5 px-2 bg-indigo-700 hover:bg-indigo-600 text-white rounded text-[10px] font-bold flex items-center justify-center gap-1 shadow-sm transition">
+                            <i class="fa-solid fa-file-pdf"></i> PDF
+                        </button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button onclick="triggerExport('ZIP')" class="w-full py-2.5 px-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-lg text-xs font-extrabold flex items-center justify-center gap-2 transition shadow-md active:scale-95">
+                        <i class="fa-solid fa-file-zipper text-amber-300"></i> Unduh Paket ZIP Carousel
+                    </button>
+                `;
+            }
+        }
+
+        function triggerExport(format) {
+            const scope = currentMode === 'Kecamatan' ? formatKecamatanLabel(selectedDistrict) : 'Kabupaten Tasikmalaya';
+            const tmpl = (currentWorkspace === 'full' ? TEMPLATES_V1 : TEMPLATES_V2).find(t => t.id === selectedTemplateId)?.name || selectedTemplateId;
+            const logMsg = format === 'ZIP' ? `Mengunduh Paket ZIP Carousel — ${tmpl} (${scope})` : `Mengunduh ${format} — ${scope}`;
+            addLog(logMsg);
+            alert(`[SIMULASI EKSPOR]: ${logMsg}`);
+        }
+
+        function onGenerateClick() {
+            loadPreview();
+            alert('Preview infografis berhasil diperbaharui!');
+        }
+
+        // LOG HISTORY SYSTEM
+        function addLog(msg) {
+            const time = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            logs.unshift({ time, msg });
+            if (logs.length > 20) logs.pop();
+            renderLogs();
+        }
+
+        function renderLogs() {
+            const container = document.getElementById('sidebar-log-container');
+            if (logs.length === 0) {
+                container.innerHTML = `<div class="text-[10px] text-slate-400 italic text-center py-2">Belum ada riwayat unduhan</div>`;
+                return;
+            }
+            container.innerHTML = logs.map(l => `
+                <div class="flex items-start gap-1.5 py-1 border-b last:border-0 border-slate-700/30">
+                    <span class="font-mono text-[9px] text-emerald-400 font-bold flex-shrink-0 mt-0.5">${l.time}</span>
+                    <span class="text-slate-300 flex-1 leading-tight text-[10px]">${l.msg}</span>
+                </div>
+            `).join('');
+        }
+
+        function clearLogs() {
+            logs = [];
+            renderLogs();
+        }
+
+        // AUTOFITTER ENGINE (MATCHES DISDUKCAPIL AUTOFITTER 100%)
+        function autoFit() {
+            const scaleBadge = document.getElementById('scale-badge');
+
+            if (currentWorkspace === 'full') {
+                const wrapper = document.getElementById('preview-wrapper-full');
+                const scaler = document.getElementById('preview-scaler');
+                if (!wrapper || !scaler) return;
+
+                const availWidth = wrapper.clientWidth - 48;
+                const availHeight = wrapper.clientHeight - 48;
+
+                const scaleX = availWidth / 1200;
+                const scaleY = availHeight / 1697;
+
+                let fitScale = Math.min(scaleX, scaleY);
+                if (fitScale > 1.2) fitScale = 1.2;
+                if (fitScale < 0.25) fitScale = 0.25;
+
+                scaler.style.transform = `scale(${fitScale})`;
+                if (scaleBadge) scaleBadge.innerText = `${Math.round(fitScale * 100)}% Scale`;
+            } else {
+                const wrapper = document.getElementById('preview-wrapper-social');
+                const scaler = document.getElementById('social-slides-scaler');
+                if (!wrapper || !scaler) return;
+
+                const availWidth = wrapper.clientWidth - 48;
+                const availHeight = wrapper.clientHeight - 100;
+
+                const isDual = v2SlideMode === 'both';
+                const targetNativeW = isDual ? 2192 : 1080;
+
+                const scaleX = availWidth / targetNativeW;
+                const scaleY = availHeight / 1350;
+
+                let fitScale = Math.min(scaleX, scaleY);
+                if (fitScale > 1.0) fitScale = 1.0;
+                if (fitScale < 0.2) fitScale = 0.2;
+
+                scaler.style.transform = `scale(${fitScale})`;
+                if (scaleBadge) scaleBadge.innerText = `${Math.round(fitScale * 100)}% Scale`;
+            }
+        }
+    </script>
+</body>
+</html>

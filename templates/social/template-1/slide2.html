@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disdukcapil Infografis V2 - Social Carousel Slide 2</title>
+
+    <!-- Font Preconnect for fast icon rendering -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Design System CSS Tokens -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        #header-bg {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.92), rgba(4, 120, 87, 0.88)), url('/img/disduk_header.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        circle {
+            fill: none !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 flex justify-center items-center p-4">
+
+    <!-- Main Canvas 1080x1350 px (Aspect Ratio 4:5) -->
+    <div class="social-canvas" id="slide2-canvas">
+
+        <!-- 1. HEADER DESIGN -->
+        <header id="header-bg" data-export-slide="cover" data-slide-title="Cover Infografis" class="relative p-5 md:p-6 rounded-2xl overflow-hidden shadow-lg text-white mb-2">
+            <div class="flex justify-between items-center gap-4 mb-2.5 relative z-10">
+                <div class="flex items-center gap-3 p-1.5 px-3 rounded-xl backdrop-blur-md border border-white/15 shadow-xl bg-white/5">
+                    <div class="w-9 h-9 flex-shrink-0 flex items-center justify-center p-0.5">
+                        <img src="/img/logo_disduk.png" alt="Logo Disdukcapil" class="w-full h-full object-contain"/>
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-extrabold tracking-wider leading-tight text-white">DISDUKCAPIL</h2>
+                        <p class="text-[10px] font-bold text-emerald-300 tracking-wider" data-bind="valKabupaten">KABUPATEN TASIKMALAYA</p>
+                    </div>
+                </div>
+                <!-- Right Logos -->
+                <div class="flex items-center gap-2.5 bg-white/5 py-1.5 px-3 backdrop-blur-md border border-white/15 shadow-xl rounded-xl">
+                    <div class="flex items-center h-6 flex-shrink-0">
+                        <img src="/img/logokanan1.png" alt="Logo Disdukcapil" class="h-5 sm:h-6 w-auto object-contain bg-transparent"/>
+                    </div>
+                    <div class="h-4 w-px bg-white/30"></div>
+                    <div class="flex items-center h-6 flex-shrink-0">
+                        <img src="/img/logokanan2.png" alt="Logo BerAKHLAK" class="h-5 sm:h-6 w-auto object-contain bg-transparent"/>
+                    </div>
+                    <div class="h-4 w-px bg-white/30"></div>
+                    <div class="flex items-center h-6 flex-shrink-0">
+                        <img src="/img/logokanan3.png" alt="Logo Bangga Melayani Bangsa" class="h-5 sm:h-6 w-auto object-contain bg-transparent"/>
+                    </div>
+                </div>    
+            </div>
+
+            <!-- Main Titles & Sub-elements -->
+            <div class="flex justify-between items-end gap-4 relative z-10 w-full overflow-hidden">
+                <div class="text-left flex-1 min-w-0 pr-2">
+                    <h1 class="text-xs sm:text-sm font-extrabold tracking-tight leading-tight text-slate-100 uppercase">
+                        Visualisasi Demografi & Sebaran Wilayah
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl font-black text-emerald-400 tracking-wide mt-0.5 break-words" id="titleWilayah" data-bind="valKecamatan">
+                        KECAMATAN SINGAPARNA
+                    </h2>
+                </div>
+
+                <div class="flex-shrink-0 self-end">
+                    <span class="inline-block text-xs font-extrabold text-white shadow-lg bg-emerald-600/90 tracking-wider backdrop-blur-sm px-4 py-1.5 rounded-xl border border-white/20">TAHUN <span data-bind="valTahun">2025</span></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. ROW 1: GENDER DISTRIBUTION & AGE CATEGORY -->
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px;">
+            
+            <!-- Widget 1: Gender Distribution -->
+            <div class="stat-card-secondary" style="padding: 24px 26px; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-mars-and-venus text-emerald-700 text-xl"></i>
+                        <h3 class="text-heading-2" style="font-size: 20px; color: var(--color-secondary-900); font-weight: 800;">
+                            Gender Distribution
+                        </h3>
+                    </div>
+                    <span style="font-size: 13px; font-weight: 800; color: var(--color-primary-700); background: var(--color-primary-50); padding: 4px 10px; border-radius: 8px; border: 1.5px solid var(--color-primary-500);">
+                        Ratio <span data-bind="valSexRatio">102,3</span>
+                    </span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="position: relative; width: 130px; height: 130px; flex-shrink: 0;">
+                        <canvas id="genderChartCanvas" width="130" height="130"></canvas>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; pointer-events: none;">
+                            <span style="font-size: 11px; font-weight: 800; color: var(--color-neutral-600);">DKB</span>
+                            <span style="font-size: 18px; font-weight: 900; color: var(--color-secondary-900);">Sem <span data-bind="valSemester">2</span></span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-mars text-emerald-700 text-sm"></i>
+                                <span class="text-body-regular" style="font-size: 15px; font-weight: 700;">Laki-Laki</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="font-size: 17px; font-weight: 900; color: var(--color-primary-700);" id="valLaki" data-bind="valLaki">1.024.500</span>
+                                <span style="font-size: 12px; font-weight: 700; color: var(--color-neutral-500); block" data-bind="valLakiPct">(50,5%)</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <i class="fa-solid fa-venus text-rose-500 text-sm"></i>
+                                <span class="text-body-regular" style="font-size: 15px; font-weight: 700;">Perempuan</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="font-size: 17px; font-weight: 900; color: var(--color-accent-rose);" id="valPerempuan" data-bind="valPerempuan">1.001.581</span>
+                                <span style="font-size: 12px; font-weight: 700; color: var(--color-neutral-500); block" data-bind="valPerempuanPct">(49,5%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widget 2: Kategori Usia KTP -->
+            <div class="stat-card-secondary" style="padding: 24px 26px; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-users-between-lines text-sky-600 text-xl"></i>
+                        <h3 class="text-heading-2" style="font-size: 20px; color: var(--color-secondary-900); font-weight: 800;">
+                            Kategori Usia KTP
+                        </h3>
+                    </div>
+                    <span style="font-size: 13px; font-weight: 800; color: var(--color-accent-sky); background: var(--color-accent-sky-light); padding: 4px 10px; border-radius: 8px; border: 1.5px solid var(--color-accent-sky);">
+                        Data Excel
+                    </span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <div style="position: relative; width: 130px; height: 130px; flex-shrink: 0;">
+                        <canvas id="ageChartCanvas" width="130" height="130"></canvas>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; pointer-events: none;">
+                            <span style="font-size: 10px; font-weight: 800; color: var(--color-primary-700);">WAJIB KTP</span>
+                            <span style="font-size: 18px; font-weight: 900; color: var(--color-primary-900);" data-bind="valKtpPct">75,9%</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #047857;"></span>
+                                <span style="font-size: 14px; font-weight: 700;">Wajib KTP (≥17th)</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="font-size: 15px; font-weight: 900; color: var(--color-primary-700);" data-bind="valKTP">1.320.400</span>
+                                <span style="font-size: 12px; font-weight: 700; color: var(--color-neutral-500); block" data-bind="valKtpPct">(75,9%)</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #0284c7;"></span>
+                                <span style="font-size: 14px; font-weight: 700;">Anak (<17th)</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="font-size: 15px; font-weight: 900; color: var(--color-accent-sky);" data-bind="valUsiaMuda">350.000</span>
+                                <span style="font-size: 12px; font-weight: 700; color: var(--color-neutral-500); block" data-bind="valAnakPct">(24,1%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 3. ROW 2: DOCUMENT OWNERSHIP (RADIAL PROGRESS) -->
+        <section class="stat-card-secondary" style="padding: 24px 26px; min-height: 205px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-file-contract text-amber-600 text-xl"></i>
+                    <h3 class="text-heading-2" style="font-size: 20px; color: var(--color-secondary-900); font-weight: 800;">
+                        Document Ownership (Capaian Adminduk)
+                    </h3>
+                </div>
+                <span style="font-size: 13px; font-weight: 800; color: var(--color-accent-amber); background: var(--color-accent-amber-light); padding: 4px 10px; border-radius: 8px; border: 1.5px solid var(--color-accent-amber);">
+                    Target & Realisasi <span data-bind="valTahun">2025</span>
+                </span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+                
+                <!-- Radial 1: KTP-el (99.4%) -->
+                <div style="display: flex; align-items: center; gap: 14px; background: var(--color-neutral-100); padding: 16px 20px; border-radius: 18px;">
+                    <div style="position: relative; width: 68px; height: 68px; flex-shrink: 0;">
+                        <svg width="68" height="68" viewBox="0 0 80 80" style="background: transparent;">
+                            <circle cx="40" cy="40" r="32" fill="none" stroke="#cbd5e1" stroke-width="10"/>
+                            <circle id="svg-ring-ktp" cx="40" cy="40" r="32" fill="none" stroke="#047857" stroke-width="10" stroke-dasharray="198.8 201.06" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+                        </svg>
+                        <div id="svg-text-ktp" data-bind="valKtpPctRound" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #047857;">
+                            99%
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-id-card text-emerald-700 text-xs"></i>
+                            <span class="text-caption" style="color: var(--color-neutral-700); font-size: 13px; font-weight: 800;">Wajib KTP</span>
+                        </div>
+                        <div style="font-size: 20px; font-weight: 900; color: var(--color-secondary-900); margin-top: 2px;" data-bind="valKtpPct">99,4%</div>
+                        <span style="font-size: 12px; color: var(--color-neutral-600); font-weight: 700;" data-bind="valKTP">1.320.400</span>
+                    </div>
+                </div>
+
+                <!-- Radial 2: Akta Kelahiran (96.5%) -->
+                <div style="display: flex; align-items: center; gap: 14px; background: var(--color-neutral-100); padding: 16px 20px; border-radius: 18px;">
+                    <div style="position: relative; width: 68px; height: 68px; flex-shrink: 0;">
+                        <svg width="68" height="68" viewBox="0 0 80 80" style="background: transparent;">
+                            <circle cx="40" cy="40" r="32" fill="none" stroke="#cbd5e1" stroke-width="10"/>
+                            <circle id="svg-ring-lahir" cx="40" cy="40" r="32" fill="none" stroke="#0284c7" stroke-width="10" stroke-dasharray="194 201.06" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+                        </svg>
+                        <div id="svg-text-lahir" data-bind="valAktaLahirPctRound" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #0284c7;">
+                            96%
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-baby text-sky-600 text-xs"></i>
+                            <span class="text-caption" style="color: var(--color-neutral-700); font-size: 13px; font-weight: 800;">Akta Lahir</span>
+                        </div>
+                        <div style="font-size: 20px; font-weight: 900; color: var(--color-secondary-900); margin-top: 2px;" data-bind="valAktaLahirPct">96,5%</div>
+                        <span style="font-size: 12px; color: var(--color-neutral-600); font-weight: 700;" data-bind="valAktaLahir">445.000</span>
+                    </div>
+                </div>
+
+                <!-- Radial 3: Akta Nikah (63.5%) -->
+                <div style="display: flex; align-items: center; gap: 14px; background: var(--color-neutral-100); padding: 16px 20px; border-radius: 18px;">
+                    <div style="position: relative; width: 68px; height: 68px; flex-shrink: 0;">
+                        <svg width="68" height="68" viewBox="0 0 80 80" style="background: transparent;">
+                            <circle cx="40" cy="40" r="32" fill="none" stroke="#cbd5e1" stroke-width="10"/>
+                            <circle id="svg-ring-nikah" cx="40" cy="40" r="32" fill="none" stroke="#d97706" stroke-width="10" stroke-dasharray="127.6 201.06" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+                        </svg>
+                        <div id="svg-text-nikah" data-bind="valAktaNikahPctRound" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #d97706;">
+                            63%
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-ring text-amber-600 text-xs"></i>
+                            <span class="text-caption" style="color: var(--color-neutral-700); font-size: 13px; font-weight: 800;">Akta Nikah</span>
+                        </div>
+                        <div style="font-size: 20px; font-weight: 900; color: var(--color-secondary-900); margin-top: 2px;" data-bind="valAktaNikahPct">63,5%</div>
+                        <span style="font-size: 12px; color: var(--color-neutral-600); font-weight: 700;" data-bind="valAktaNikah">368.000</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. ROW 3: TOP 3 DESA (CARD RANKING) -->
+        <section class="stat-card-secondary" style="padding: 24px 26px; min-height: 225px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-ranking-star text-emerald-700 text-xl"></i>
+                    <h3 class="text-heading-2" style="font-size: 20px; color: var(--color-secondary-900); font-weight: 800;">
+                        Top 3 Desa (Penduduk Terbanyak)
+                    </h3>
+                </div>
+                <span style="font-size: 13px; font-weight: 800; color: var(--color-primary-700); background: var(--color-primary-50); padding: 4px 10px; border-radius: 8px; border: 1.5px solid var(--color-primary-500);">
+                    Sebaran Desa <span data-bind="valTahun">2025</span>
+                </span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+                
+                <!-- Rank 1 Card -->
+                <div style="background: var(--color-primary-50); border: 2px solid var(--color-primary-500); padding: 20px; border-radius: 18px; position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary-700); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900;">
+                            <i class="fa-solid fa-trophy text-amber-300 text-xs"></i>
+                        </span>
+                        <span style="font-size: 11px; font-weight: 900; color: var(--color-primary-800); background: rgba(255,255,255,0.9); padding: 3px 10px; border-radius: 6px;">JUARA 1</span>
+                    </div>
+                    <div style="font-size: 20px; font-weight: 900; color: var(--color-primary-900);" id="valRank1Name">
+                        Desa Singaparna
+                    </div>
+                    <div style="font-size: 28px; font-weight: 900; color: var(--color-primary-700); margin-top: 2px;" id="valRank1Count">
+                        14.850
+                    </div>
+                    <div style="font-size: 13px; color: var(--color-primary-900); font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1.5px dashed var(--color-primary-500);" id="valRank1Details">
+                        L: 7.510 • P: 7.340 • KK: 5.120
+                    </div>
+                </div>
+
+                <!-- Rank 2 Card -->
+                <div style="background: #f8fafc; border: 2px solid var(--color-neutral-300); padding: 20px; border-radius: 18px; position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-sky); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900;">2</span>
+                        <span style="font-size: 11px; font-weight: 900; color: var(--color-accent-sky); background: var(--color-accent-sky-light); padding: 3px 10px; border-radius: 6px;">RANK 2</span>
+                    </div>
+                    <div style="font-size: 20px; font-weight: 900; color: var(--color-secondary-900);" id="valRank2Name">
+                        Desa Cipakat
+                    </div>
+                    <div style="font-size: 28px; font-weight: 900; color: var(--color-accent-sky); margin-top: 2px;" id="valRank2Count">
+                        12.340
+                    </div>
+                    <div style="font-size: 13px; color: var(--color-neutral-700); font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1.5px dashed var(--color-neutral-300);" id="valRank2Details">
+                        L: 6.240 • P: 6.100 • KK: 4.310
+                    </div>
+                </div>
+
+                <!-- Rank 3 Card -->
+                <div style="background: #f8fafc; border: 2px solid var(--color-neutral-300); padding: 20px; border-radius: 18px; position: relative;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-amber); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900;">3</span>
+                        <span style="font-size: 11px; font-weight: 900; color: var(--color-accent-amber); background: var(--color-accent-amber-light); padding: 3px 10px; border-radius: 6px;">RANK 3</span>
+                    </div>
+                    <div style="font-size: 20px; font-weight: 900; color: var(--color-secondary-900);" id="valRank3Name">
+                        Desa Cintaraja
+                    </div>
+                    <div style="font-size: 28px; font-weight: 900; color: var(--color-accent-amber); margin-top: 2px;" id="valRank3Count">
+                        9.780
+                    </div>
+                    <div style="font-size: 13px; color: var(--color-neutral-700); font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1.5px dashed var(--color-neutral-300);" id="valRank3Details">
+                        L: 4.950 • P: 4.830 • KK: 4.830
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. FOOTER -->
+        <footer data-export-slide="footer" data-slide-title="Footer Instansi" class="bg-slate-900 text-white rounded-2xl p-4 md:p-5 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-emerald-950 opacity-95"></div>
+            
+            <div class="relative z-10 flex flex-row justify-between items-center gap-4">
+                <div>
+                    <span class="text-xs font-black text-emerald-400 tracking-widest uppercase block">DISDUKCAPIL KABUPATEN TASIKMALAYA</span>
+                    <span class="text-[11px] text-slate-300 font-bold uppercase tracking-wider block mt-0.5">IKUTI & HUBUNGI KAMI</span>
+                </div>
+
+                <div class="flex flex-wrap justify-end gap-2 text-xs">
+                    <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 transition text-slate-200 font-semibold text-xs">
+                        <i class="fa-solid fa-globe text-emerald-400"></i>
+                        <span>disduk.id</span>
+                    </a>
+                    <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 transition text-slate-200 font-semibold text-xs">
+                        <i class="fa-brands fa-instagram text-rose-400"></i>
+                        <span>disdukcapil_kabtasik</span>
+                    </a>
+                    <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 transition text-slate-200 font-semibold text-xs">
+                        <i class="fa-brands fa-facebook-f text-blue-400"></i>
+                        <span>disdukcapilkabtasik</span>
+                    </a>
+                    <a href="#" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-xl border border-slate-700 transition text-slate-200 font-semibold text-xs">
+                        <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                        <span>+62 811-2111-1324</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Chart.js Initialization Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctxGender = document.getElementById('genderChartCanvas').getContext('2d');
+            new Chart(ctxGender, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Laki-Laki', 'Perempuan'],
+                    datasets: [{
+                        data: [1024500, 1001581],
+                        backgroundColor: ['#047857', '#e11d48'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    cutout: '72%',
+                    animation: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            const ctxAge = document.getElementById('ageChartCanvas').getContext('2d');
+            new Chart(ctxAge, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Wajib KTP (≥17th)', 'Anak (<17th)'],
+                    datasets: [{
+                        data: [1320400, 705681],
+                        backgroundColor: ['#047857', '#0284c7'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    cutout: '72%',
+                    animation: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Logs & Temporary Media Storage
+*.log
+.tempmediaStorage/
+.system_generated/
+scratch/*.png
+scratch/*.pdf
+
+# Database
+database/app_database.sqlite*
+storage/backups/*
+
+# Environment Variables
+.env
+.env.local
+
+# OS Metadata
+Thumbs.db
+.DS_Store

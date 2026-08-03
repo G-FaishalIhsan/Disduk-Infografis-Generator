@@ -1,0 +1,16 @@
+{
+  "id": "template-3-v2",
+  "name": "Template 3 V2",
+  "version": "2.0.0",
+  "status": "active",
+  "category": "social",
+  "ratio": "1080x1350",
+  "slides": 2,
+  "createdAt": "2026-07-28",
+  "updatedAt": "2026-07-28",
+  "author": "Disdukcapil Dev Team",
+  "compatibleDatasetVersion": "1.0",
+  "engine": "TemplateEngineV2",
+  "description": "Interactive Charts & Tables",
+  "icon": "fa-chart-pie"
+}

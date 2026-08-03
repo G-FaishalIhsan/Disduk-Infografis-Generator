@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disdukcapil Infografis V2 - Social Carousel Slide 1 (Template 3)</title>
+
+    <!-- Font Preconnect for fast icon rendering -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#035485',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        /* Fixed 1080x1350 Instagram Feed Canvas - Light Mode Gradient */
+        .ig-canvas {
+            width: 1080px;
+            height: 1350px;
+            min-width: 1080px;
+            min-height: 1350px;
+            max-width: 1080px;
+            max-height: 1350px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(2, 132, 199, 0.15);
+            box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 flex items-center justify-center min-h-screen">
+
+    <!-- SLIDE 1: COVER & MAIN HIGHLIGHTS -->
+    <div id="slide-1" class="ig-canvas p-10 flex flex-col justify-between text-slate-800 shadow-2xl rounded-2xl relative">
+        <!-- Background Decorative Elements -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-200/50 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-200/50 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Slide Header Banner -->
+        <div class="relative z-10 header-banner-bg bg-cover bg-center text-white rounded-3xl p-6 shadow-xl my-1 overflow-hidden border border-slate-800"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url('/img/disduk_header.png');">
+
+            <!-- Background Light Glow Effect -->
+            <div class="absolute -top-12 -right-12 w-64 h-64 bg-indigo-600/20 rounded-full blur-2xl pointer-events-none z-0"></div>
+
+            <div class="relative z-10 flex items-center justify-between gap-4">
+                <!-- Left Group: Logo Disdukcapil + Titles -->
+                <div class="flex items-center gap-5">
+                    <div class="w-20 h-20 bg-white rounded-2xl p-2 shadow-lg flex items-center justify-center shrink-0 border border-slate-200">
+                        <img src="/img/logo_disduk.png" alt="Logo Disdukcapil" class="h-16 w-16 object-contain" onerror="this.src='/img/logokiri.png'">
+                    </div>
+
+                    <div>
+                        <span data-bind="valKabupaten" class="inline-block bg-indigo-900/80 text-indigo-200 text-[11px] font-extrabold px-3 py-1 rounded-full border border-indigo-700/60 uppercase tracking-widest mb-1.5 shadow-sm">
+                            KABUPATEN TASIKMALAYA
+                        </span>
+                        <h2 class="text-2xl font-black tracking-tight text-white uppercase leading-snug">
+                            INFOGRAFIS<br>
+                            KEPENDUDUKAN &amp;<br>
+                            PENCATATAN SIPIL
+                        </h2>
+                        <p class="text-[11px] text-slate-200 font-medium flex items-center gap-1.5 mt-2">
+                            <i class="fa-solid fa-building-columns text-sky-400"></i>
+                            <span>Dinas Kependudukan dan Pencatatan Sipil Kabupaten Tasikmalaya</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Group: Top Logos Container & Slide Tag -->
+                <div class="flex flex-col items-end gap-3">
+                    <div class="bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-3">
+                        <img src="/img/logokanan1.png" class="h-8 object-contain" alt="DISDUK">
+                        <div class="h-6 w-[1px] bg-slate-300"></div>
+                        <img src="/img/logokanan2.png" alt="Logo BerAKHLAK" class="h-8 object-contain">
+                        <div class="h-6 w-[1px] bg-slate-300"></div>
+                        <img src="/img/logokanan3.png" alt="Logo Bangga Melayani Bangsa" class="h-8 object-contain">
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <span class="bg-sky-400/20 text-blue-300 text-xs font-extrabold px-3 py-1 rounded-xl border border-amber-400/30">
+                            SLIDE 01 / 02
+                        </span>
+                        <span class="text-[11px] text-slate-200 font-semibold" data-bind="valSemesterTahun">DKB Sem 2 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlight Big Card -->
+        <div class="relative z-10 rounded-3xl p-7 shadow-2xl my-2 overflow-hidden border border-sky-400/40 text-white bg-cover bg-center"
+            style="background-image: linear-gradient(135deg, rgba(3, 105, 161, 0.94) 0%, rgba(2, 132, 199, 0.90) 50%, rgba(30, 58, 138, 0.96) 100%), url('/img/population.jpg');">
+            <!-- Watermark Icon Decor -->
+            <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black pointer-events-none select-none">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <!-- Glow Effect -->
+            <div class="absolute -top-16 -right-16 w-56 h-56 bg-sky-300/20 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="relative z-10 flex items-center justify-between mb-3">
+                <span class="text-xs font-black uppercase tracking-widest text-sky-200 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-line text-amber-300"></i> TOTAL POPULASI KABUPATEN
+                </span>
+                <span class="px-3.5 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-extrabold rounded-full border border-white/30 shadow-sm">
+                    39 Kecamatan
+                </span>
+            </div>
+            <div class="relative z-10 text-6xl font-black text-white tracking-tight mb-2 drop-shadow-md">
+                <span id="valTotalPenduduk" data-bind="valTotalPenduduk">1.973.411</span> <span class="text-2xl text-amber-300 font-extrabold">JIWA</span>
+            </div>
+            <div class="relative z-10 flex items-center justify-between border-t border-white/20 pt-4 mt-3 text-xs font-bold">
+                <span class="flex items-center gap-2 text-sky-100">
+                    <span class="w-7 h-7 rounded-lg bg-sky-400/30 flex items-center justify-center text-sky-200 border border-sky-300/30">
+                        <i class="fa-solid fa-mars"></i>
+                    </span>
+                    Laki-Laki: <span id="valLaki" data-bind="valLaki" class="text-white font-extrabold">1.004.884</span> <span id="valLakiPct" data-bind="valLakiPct" class="text-[10px] text-sky-200 font-normal">(50,92%)</span>
+                </span>
+                <span class="text-white/40">•</span>
+                <span class="flex items-center gap-2 text-rose-100">
+                    <span class="w-7 h-7 rounded-lg bg-rose-400/30 flex items-center justify-center text-rose-200 border border-rose-300/30">
+                        <i class="fa-solid fa-venus"></i>
+                    </span>
+                    Perempuan: <span id="valPerempuan" data-bind="valPerempuan" class="text-white font-extrabold">968.527</span> <span id="valPerempuanPct" data-bind="valPerempuanPct" class="text-[10px] text-rose-200 font-normal">(49,08%)</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- 3 Key Metric Cards -->
+        <div class="relative z-10 grid grid-cols-3 gap-4">
+            <div class="glass-card rounded-2xl p-5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-2">
+                    <i class="fa-solid fa-address-card"></i>
+                </div>
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Wajib KTP (≥17 th)</span>
+                <div id="valKTP" data-bind="valKTP" class="text-2xl font-black text-slate-900 my-1">1.473.941</div>
+                <span data-bind="valKtpPct" class="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md inline-block border border-emerald-200">74,69% Populasi</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5">
+                <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-2">
+                    <i class="fa-solid fa-house-user"></i>
+                </div>
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Total Kepala Keluarga</span>
+                <div id="valKK" data-bind="valKK" class="text-2xl font-black text-slate-900 my-1">725.793</div>
+                <span class="text-[10px] text-purple-700 font-bold bg-purple-50 px-2 py-0.5 rounded-md inline-block border border-purple-200"><span data-bind="valAvgKk">2,72</span> Jiwa / KK</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5">
+                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-2">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Rasio Gender</span>
+                <div id="valSexRatio" data-bind="valSexRatio" class="text-2xl font-black text-slate-900 my-1">103,75</div>
+                <span class="text-[10px] text-amber-800 font-bold bg-amber-50 px-2 py-0.5 rounded-md inline-block border border-amber-200">Laki / 100 Wanita</span>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="relative z-10 grid grid-cols-2 gap-5 my-1">
+            <div class="glass-card rounded-2xl p-5 flex items-center gap-4">
+                <div class="w-28 h-28 relative shrink-0">
+                    <canvas id="s1GenderChart"></canvas>
+                </div>
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase text-slate-800 tracking-wider mb-1">Proporsi Gender</h4>
+                    <p class="text-xs text-sky-700 font-bold">Laki-Laki: <span data-bind="valLaki">1.004.884</span> (<span data-bind="valLakiPct">50.9%</span>)</p>
+                    <p class="text-xs text-rose-600 font-bold mt-0.5">Perempuan: <span data-bind="valPerempuan">968.527</span> (<span data-bind="valPerempuanPct">49.1%</span>)</p>
+                    <p class="text-[10px] text-slate-500 mt-2 font-medium">Selisih: Laki-Laki &amp; Perempuan</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 flex items-center gap-4">
+                <div class="w-28 h-28 relative shrink-0">
+                    <canvas id="s1KkChart"></canvas>
+                </div>
+                <div>
+                    <h4 class="text-xs font-extrabold uppercase text-slate-800 tracking-wider mb-1">Kepala Keluarga</h4>
+                    <p class="text-xs text-purple-700 font-bold">KK Laki: <span data-bind="valKkPria">562.116</span> (<span data-bind="valKkLakiPct">77,4%</span>)</p>
+                    <p class="text-xs text-amber-700 font-bold mt-0.5">KK Wanita: <span data-bind="valPekka">163.677</span> (<span data-bind="valPekkaPct">22,6%</span>)</p>
+                    <p class="text-[10px] text-slate-500 mt-2 font-medium"><span data-bind="valPekkaPct">22,6%</span> KK Wanita Mandiri</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top 5 Kecamatan / Desa Visual With Numbers Label -->
+        <div class="relative z-10 glass-card rounded-2xl p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-extrabold uppercase tracking-wide text-sky-800 flex items-center gap-2">
+                    <i class="fa-solid fa-ranking-star text-amber-500"></i> <span id="valTop5Title">TOP 5 KECAMATAN POPULASI TERBANYAK</span>
+                </span>
+                <div class="flex items-center gap-4 text-[10px] font-bold">
+                    <span class="flex items-center gap-1.5 text-sky-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sky-600 inline-block"></span> Laki-Laki
+                    </span>
+                    <span class="flex items-center gap-1.5 text-rose-600">
+                        <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> Perempuan
+                    </span>
+                </div>
+            </div>
+            <div class="h-36 relative pt-2">
+                <canvas id="s1TopKecChart" style="width: 100% !important; height: 100% !important; min-height: 140px !important; display: block !important;"></canvas>
+            </div>
+        </div>
+
+        <!-- Slide 1 Footer Card -->
+        <div class="relative z-10 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-3.5 text-center shadow-md flex flex-col items-center gap-2.5">
+            <div class="flex items-center justify-center gap-2.5">
+                <img src="/img/logo_disduk.png" alt="Logo Disdukcapil" class="img-disdukcapil-logo h-7 w-7 object-contain" onerror="this.src='/img/logokiri.png'">
+                <div class="text-left">
+                    <h5 class="text-xs font-bold text-slate-800 leading-tight">Dinas Kependudukan dan Pencatatan Sipil Kabupaten Tasikmalaya</h5>
+                    <p class="text-[10px] text-slate-500 font-medium">Hak Cipta © 2026 Pemerintah Daerah Kabupaten Tasikmalaya.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-1.5 w-full">
+                <div class="flex flex-wrap items-center justify-center gap-2 text-white text-[11px] font-bold">
+                    <a href="https://disduk.tasikmalayakab.go.id" target="_blank" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                        <i class="fa-solid fa-globe text-xs"></i> <span>disduk.tasikmalayakab.go.id</span>
+                    </a>
+                    <a href="https://instagram.com/disdukcapil_kabtasik" target="_blank" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-90 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                        <i class="fa-brands fa-instagram text-xs"></i> <span>disdukcapil_kabtasik</span>
+                    </a>
+                    <a href="#" class="px-3.5 py-1.5 bg-[#1877f2] hover:bg-blue-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                        <i class="fa-brands fa-facebook-f text-xs"></i> <span>disdukcapilkabtasik</span>
+                    </a>
+                    <a href="#" class="px-3.5 py-1.5 bg-[#ff0000] hover:bg-red-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                        <i class="fa-brands fa-youtube text-xs"></i> <span>disdukcapil_kabtasik</span>
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-2 text-white text-[11px] font-bold">
+                    <a href="#" class="px-3.5 py-1.5 bg-black hover:bg-slate-900 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                        <i class="fa-brands fa-tiktok text-xs"></i> <span>disdukcapil_kabtasik</span>
+                    </a>
+                    <a href="https://wa.me/6281121111324" target="_blank" class="px-3.5 py-1.5 bg-[#25d366] hover:bg-emerald-600 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                        <i class="fa-brands fa-whatsapp text-xs"></i> <span>0811-2111-1324</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Custom Plugin to Render Value Labels directly above each Bar
+        const barValueLabelsPlugin = {
+            id: 'barValueLabels',
+            afterDatasetsDraw(chart) {
+                const { ctx } = chart;
+                chart.data.datasets.forEach((dataset, datasetIndex) => {
+                    const meta = chart.getDatasetMeta(datasetIndex);
+                    if (meta.hidden) return;
+
+                    meta.data.forEach((bar, index) => {
+                        const val = dataset.data[index];
+                        if (val !== null && val !== undefined) {
+                            const formattedVal = val.toLocaleString('id-ID');
+                            ctx.save();
+                            ctx.font = 'bold 9px "Plus Jakarta Sans", sans-serif';
+                            ctx.fillStyle = dataset.borderColor || (datasetIndex === 0 ? '#0369a1' : '#be123c');
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            ctx.fillText(formattedVal, bar.x, bar.y - 3);
+                            ctx.restore();
+                        }
+                    });
+                });
+            }
+        };
+
+        window.genderChartInstance = null;
+        window.kkChartInstance = null;
+        window.topKecChartInstance = null;
+
+        function initCharts() {
+            if (window.genderChartInstance) window.genderChartInstance.destroy();
+            if (window.kkChartInstance) window.kkChartInstance.destroy();
+            if (window.topKecChartInstance) window.topKecChartInstance.destroy();
+
+            // Gender Donut Chart
+            window.genderChartInstance = new Chart(document.getElementById('s1GenderChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Laki-Laki', 'Perempuan'],
+                    datasets: [{
+                        data: [1004884, 968527],
+                        backgroundColor: ['#0284c7', '#f43f5e'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    animation: false,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    cutout: '72%'
+                }
+            });
+
+            // KK Donut Chart
+            window.kkChartInstance = new Chart(document.getElementById('s1KkChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['KK Laki-Laki', 'KK Perempuan'],
+                    datasets: [{
+                        data: [562116, 163677],
+                        backgroundColor: ['#9333ea', '#d97706'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    animation: false,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    cutout: '72%'
+                }
+            });
+
+            // Top 5 Bar Chart
+            window.topKecChartInstance = new Chart(document.getElementById('s1TopKecChart').getContext('2d'), {
+                type: 'bar',
+                plugins: [barValueLabelsPlugin],
+                data: {
+                    labels: ['KARANGNUNGGAL', 'SINGAPARNA', 'CIPATUJAH', 'CIGALONTANG', 'CIKALONG'],
+                    datasets: [
+                        { label: 'Laki-Laki', data: [46849, 38450, 37735, 37410, 36571], backgroundColor: '#0284c7', borderRadius: 4 },
+                        { label: 'Perempuan', data: [45605, 37820, 36287, 35820, 35506], backgroundColor: '#f43f5e', borderRadius: 4 }
+                    ]
+                },
+                options: {
+                    animation: false,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: { top: 18 } },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#334155', font: { size: 10, weight: 'bold' }, maxRotation: 0, minRotation: 0 }
+                        },
+                        y: {
+                            grid: { color: 'rgba(0,0,0,0.06)' },
+                            ticks: { color: '#64748b', font: { size: 9 }, callback: function(value) { return value.toLocaleString('id-ID'); } },
+                            grace: '15%'
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initCharts);
+        initCharts();
+    </script>
+</body>
+</html>

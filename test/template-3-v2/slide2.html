@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-slate-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis Disdukcapil Tasikmalaya - Instagram Feed (1080x1350)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#035485',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Fixed 1080x1350 Instagram Feed Canvas - Light Mode Gradient */
+        .ig-canvas {
+            width: 1080px;
+            height: 1350px;
+            min-width: 1080px;
+            min-height: 1350px;
+            max-width: 1080px;
+            max-height: 1350px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(2, 132, 199, 0.15);
+            box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+        }
+
+        /* Custom scrollbar for table container */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(2, 132, 199, 0.05);
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(2, 132, 199, 0.3);
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(2, 132, 199, 0.6);
+        }
+
+        #preview-wrapper {
+            transform-origin: top center;
+        }
+    </style>
+</head>
+
+<body class="h-full bg-slate-100 text-slate-800 flex flex-col items-center min-h-screen pb-12">
+
+    <!-- Top Navigation Control Bar -->
+    <header class="w-full bg-white/90 border-b border-slate-200 sticky top-0 z-50 backdrop-blur-md px-6 py-3 shadow-sm">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-sky-100 text-sky-600 rounded-xl border border-sky-200">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-slate-900 tracking-wide">Disdukcapil Instagram Feed (1080 × 1350 px)</h1>
+                    <p class="text-[11px] text-slate-500">Data Konsolidasi Bersih (DKB) Semester I 2024</p>
+                </div>
+            </div>
+
+            <!-- Slide Switcher Tabs -->
+            <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
+                <button onclick="switchSlide(1)" id="tab-1"
+                    class="px-4 py-2 text-xs font-bold rounded-lg bg-sky-600 text-white shadow-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Slide 1: Ringkasan Utama</span>
+                </button>
+                <button onclick="switchSlide(2)" id="tab-2"
+                    class="px-4 py-2 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900 transition flex items-center gap-2">
+                    <i class="fa-solid fa-table"></i>
+                    <span>Slide 2: Top &amp; Bottom 5 Kecamatan</span>
+                </button>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="downloadActiveSlide()"
+                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-md flex items-center gap-2 transition">
+                <i class="fa-solid fa-download"></i>
+                <span>Unduh Slide (PNG)</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="w-full flex justify-center py-6 px-4 overflow-auto">
+        <div id="preview-wrapper" class="flex justify-center">
+
+            <!-- SLIDE 1: COVER & MAIN HIGHLIGHTS -->
+            <div id="slide-1"
+                class="ig-canvas p-10 flex flex-col justify-between text-slate-800 shadow-2xl rounded-2xl relative">
+                <!-- Background Decorative Elements -->
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-200/50 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-200/50 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Slide Header Banner -->
+                <div class="relative z-10 header-banner-bg bg-cover bg-center text-white rounded-3xl p-6 shadow-xl my-1 overflow-hidden border border-slate-800"
+                    style="background-image: url('img/Gedung_Disduk.png');">
+
+                    <!-- Overlay Gelap -->
+                    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+                    <!-- Background Light Glow Effect -->
+                    <div class="absolute -top-12 -right-12 w-64 h-64 bg-indigo-600/20 rounded-full blur-2xl pointer-events-none z-0"></div>
+
+                    <div class="relative z-10 flex items-center justify-between gap-4">
+                        <!-- Left Group: Logo Disdukcapil + Titles -->
+                        <div class="flex items-center gap-5">
+                            <div class="w-20 h-20 bg-white rounded-2xl p-2 shadow-lg flex items-center justify-center shrink-0 border border-slate-200">
+                                <img src="img/KabTasik.jpg" alt="Logo Disdukcapil" onerror="this.src='https://placehold.co/100x100/ffffff/0284c7?text=Disdukcapil'">
+                            </div>
+
+                            <div>
+                                <span class="inline-block bg-indigo-900/80 text-indigo-200 text-[11px] font-extrabold px-3 py-1 rounded-full border border-indigo-700/60 uppercase tracking-widest mb-1.5 shadow-sm">
+                                    KABUPATEN TASIKMALAYA
+                                </span>
+                                <h2 class="text-2xl font-black tracking-tight text-white uppercase leading-snug">
+                                    INFOGRAFIS<br>
+                                    KEPENDUDUKAN &amp;<br>
+                                    PENCATATAN SIPIL
+                                </h2>
+                                <p class="text-[11px] text-slate-200 font-medium flex items-center gap-1.5 mt-2">
+                                    <i class="fa-solid fa-building-columns text-sky-400"></i>
+                                    <span>Dinas Kependudukan dan Pencatatan Sipil Kabupaten Tasikmalaya</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Group: Top Logos Container & Slide Tag -->
+                        <div class="flex flex-col items-end gap-3">
+                            <div class="bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-3">
+                                <img src="img/DISDUK-trans-01 (1).png" class="h-8 object-contain" onerror="this.src='https://placehold.co/100x40/ffffff/0369a1?text=DISDUK'">
+                                <div class="h-6 w-[1px] bg-slate-300"></div>
+                                <img src="img/Logo_BerAKHLAK (1).png" alt="Logo BerAKHLAK" class="h-8 object-contain" onerror="this.src='https://placehold.co/120x40/ffffff/0369a1?text=BerAKHLAK'">
+                                <div class="h-6 w-[1px] bg-slate-300"></div>
+                                <img src="img/Logo_bangga melayani (1).png" alt="Logo Bangga Melayani Bangsa" class="h-8 object-contain" onerror="this.src='https://placehold.co/160x40/ffffff/0369a1?text=Bangga+Melayani'">
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span class="bg-sea-400/20 text-blue-300 text-xs font-extrabold px-3 py-1 rounded-xl border border-amber-400/30">
+                                    SLIDE 01 / 02
+                                </span>
+                                <span class="text-[11px] text-slate-200 font-semibold">DKB Sem I 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlight Big Card -->
+                <div class="relative z-10 rounded-3xl p-7 shadow-2xl my-2 overflow-hidden border border-sky-400/40 text-white bg-cover bg-center"
+                    style="background-image: linear-gradient(135deg, rgba(3, 105, 161, 0.94) 0%, rgba(2, 132, 199, 0.90) 50%, rgba(30, 58, 138, 0.96) 100%), url('img/Gedung_Disduk.png');">
+                    <!-- Watermark Icon Decor -->
+                    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black pointer-events-none select-none">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <!-- Glow Effect -->
+                    <div class="absolute -top-16 -right-16 w-56 h-56 bg-sky-300/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                    <div class="relative z-10 flex items-center justify-between mb-3">
+                        <span class="text-xs font-black uppercase tracking-widest text-sky-200 flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line text-amber-300"></i> TOTAL POPULASI KABUPATEN
+                        </span>
+                        <span class="px-3.5 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-extrabold rounded-full border border-white/30 shadow-sm">
+                            39 Kecamatan
+                        </span>
+                    </div>
+                    <div class="relative z-10 text-6xl font-black text-white tracking-tight mb-2 drop-shadow-md">
+                        1.973.411 <span class="text-2xl text-amber-300 font-extrabold">JIWA</span>
+                    </div>
+                    <div class="relative z-10 flex items-center justify-between border-t border-white/20 pt-4 mt-3 text-xs font-bold">
+                        <span class="flex items-center gap-2 text-sky-100">
+                            <span class="w-7 h-7 rounded-lg bg-sky-400/30 flex items-center justify-center text-sky-200 border border-sky-300/30">
+                                <i class="fa-solid fa-mars"></i>
+                            </span>
+                            Laki-Laki: <span class="text-white font-extrabold">1.004.884</span> <span class="text-[10px] text-sky-200 font-normal">(50,9%)</span>
+                        </span>
+                        <span class="text-white/40">•</span>
+                        <span class="flex items-center gap-2 text-rose-100">
+                            <span class="w-7 h-7 rounded-lg bg-rose-400/30 flex items-center justify-center text-rose-200 border border-rose-300/30">
+                                <i class="fa-solid fa-venus"></i>
+                            </span>
+                            Perempuan: <span class="text-white font-extrabold">968.527</span> <span class="text-[10px] text-rose-200 font-normal">(49,1%)</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 3 Key Metric Cards -->
+                <div class="relative z-10 grid grid-cols-3 gap-4">
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-2">
+                            <i class="fa-solid fa-address-card"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Wajib KTP (≥17 th)</span>
+                        <div class="text-2xl font-black text-slate-900 my-1">1.473.941</div>
+                        <span class="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md inline-block border border-emerald-200">74,69% Populasi</span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-2">
+                            <i class="fa-solid fa-house-user"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Total Kepala Keluarga</span>
+                        <div class="text-2xl font-black text-slate-900 my-1">725.793</div>
+                        <span class="text-[10px] text-purple-700 font-bold bg-purple-50 px-2 py-0.5 rounded-md inline-block border border-purple-200">2,72 Jiwa / KK</span>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-2">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Rasio Gender</span>
+                        <div class="text-2xl font-black text-slate-900 my-1">103,75</div>
+                        <span class="text-[10px] text-amber-800 font-bold bg-amber-50 px-2 py-0.5 rounded-md inline-block border border-amber-200">Laki / 100 Wanita</span>
+                    </div>
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="relative z-10 grid grid-cols-2 gap-5 my-1">
+                    <div class="glass-card rounded-2xl p-5 flex items-center gap-4">
+                        <div class="w-28 h-28 relative shrink-0">
+                            <canvas id="s1GenderChart"></canvas>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-extrabold uppercase text-slate-800 tracking-wider mb-1">Proporsi Gender</h4>
+                            <p class="text-xs text-sky-700 font-bold">Laki-Laki: 1.004.884 (50.9%)</p>
+                            <p class="text-xs text-rose-600 font-bold mt-0.5">Perempuan: 968.527 (49.1%)</p>
+                            <p class="text-[10px] text-slate-500 mt-2 font-medium">Selisih: +36.357 Jiwa Laki-Laki</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 flex items-center gap-4">
+                        <div class="w-28 h-28 relative shrink-0">
+                            <canvas id="s1KkChart"></canvas>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-extrabold uppercase text-slate-800 tracking-wider mb-1">Kepala Keluarga</h4>
+                            <p class="text-xs text-purple-700 font-bold">KK Laki: 562.116 (77,4%)</p>
+                            <p class="text-xs text-amber-700 font-bold mt-0.5">KK Wanita: 163.677 (22,6%)</p>
+                            <p class="text-[10px] text-slate-500 mt-2 font-medium">22.6% KK Wanita Mandiri</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top 5 Kecamatan Visual With Numbers Label -->
+                <div class="relative z-10 glass-card rounded-2xl p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-extrabold uppercase tracking-wide text-sky-800 flex items-center gap-2">
+                            <i class="fa-solid fa-ranking-star text-amber-500"></i> Top 5 Kecamatan Populasi Terbanyak
+                        </span>
+                        <div class="flex items-center gap-4 text-[10px] font-bold">
+                            <span class="flex items-center gap-1.5 text-sky-700">
+                                <span class="w-2.5 h-2.5 rounded-full bg-sky-600 inline-block"></span> Laki-Laki
+                            </span>
+                            <span class="flex items-center gap-1.5 text-rose-600">
+                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> Perempuan
+                            </span>
+                        </div>
+                    </div>
+                    <div class="h-36 relative pt-2">
+                        <canvas id="s1TopKecChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Slide 1 Footer Card -->
+                <div class="relative z-10 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-3.5 text-center shadow-md flex flex-col items-center gap-2.5">
+                    <div class="flex items-center justify-center gap-2.5">
+                        <img src="img/KabTasik.jpg" alt="Logo Disdukcapil" class="img-disdukcapil-logo h-7 w-7 object-contain" onerror="this.src='https://placehold.co/100x100/ffffff/0284c7?text=Logo'">
+                        <div class="text-left">
+                            <h5 class="text-xs font-bold text-slate-800 leading-tight">Dinas Kependudukan dan Pencatatan Sipil Kabupaten Tasikmalaya</h5>
+                            <p class="text-[10px] text-slate-500 font-medium">Hak Cipta © 2026 Pemerintah Daerah Kabupaten Tasikmalaya.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-1.5 w-full">
+                        <div class="flex flex-wrap items-center justify-center gap-2 text-white text-[11px] font-bold">
+                            <a href="https://disduk.tasikmalayakab.go.id" target="_blank" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-solid fa-globe text-xs"></i> <span>disduk.tasikmalayakab.go.id</span>
+                            </a>
+                            <a href="https://instagram.com/disdukcapil_kabtasik" target="_blank" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-90 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-instagram text-xs"></i> <span>disdukcapil_kabtasik</span>
+                            </a>
+                            <a href="#" class="px-3.5 py-1.5 bg-[#1877f2] hover:bg-blue-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-facebook-f text-xs"></i> <span>disdukcapilkabtasik</span>
+                            </a>
+                            <a href="#" class="px-3.5 py-1.5 bg-[#ff0000] hover:bg-red-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-youtube text-xs"></i> <span>disdukcapil_kabtasik</span>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-center gap-2 text-white text-[11px] font-bold">
+                            <a href="#" class="px-3.5 py-1.5 bg-black hover:bg-slate-900 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-tiktok text-xs"></i> <span>disdukcapil_kabtasik</span>
+                            </a>
+                            <a href="https://wa.me/6281121111324" target="_blank" class="px-3.5 py-1.5 bg-[#25d366] hover:bg-emerald-600 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-whatsapp text-xs"></i> <span>0811-2111-1324</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: COMPLETE DATA TABLE (TOP & BOTTOM 5 + INSIGHTS & COMPARISON) -->
+            <div id="slide-2"
+                class="ig-canvas p-10 flex flex-col justify-between text-slate-800 shadow-2xl rounded-2xl relative hidden">
+                <!-- Background Decoration -->
+                <div class="absolute -top-20 -right-20 w-80 h-80 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Slide 2 Header Banner -->
+                <div class="relative z-10 header-banner-bg bg-cover bg-center text-white rounded-3xl p-6 shadow-xl my-1 overflow-hidden border border-slate-800"
+                    style="background-image: url('img/Gedung_Disduk.png');">
+
+                    <div class="absolute inset-0 bg-black/50 z-0"></div>
+                    <div class="absolute -top-12 -right-12 w-64 h-64 bg-indigo-600/20 rounded-full blur-2xl pointer-events-none z-0"></div>
+
+                    <div class="relative z-10 flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-5">
+                            <div class="w-20 h-20 bg-white rounded-2xl p-2 shadow-lg flex items-center justify-center shrink-0 border border-slate-200">
+                                <img src="img/KabTasik.jpg" alt="Logo Disdukcapil" onerror="this.src='https://placehold.co/100x100/ffffff/0284c7?text=Disdukcapil'">
+                            </div>
+
+                            <div>
+                                <span class="inline-block bg-indigo-900/80 text-indigo-200 text-[11px] font-extrabold px-3 py-1 rounded-full border border-indigo-700/60 uppercase tracking-widest mb-1.5 shadow-sm">
+                                    KABUPATEN TASIKMALAYA
+                                </span>
+                                <h2 class="text-2xl font-black tracking-tight text-white uppercase leading-snug">
+                                    PERBANDINGAN POPULASI<br>
+                                    TOP &amp; BOTTOM 5 KECAMATAN
+                                </h2>
+                                <p class="text-[11px] text-slate-200 font-medium flex items-center gap-1.5 mt-2">
+                                    <i class="fa-solid fa-chart-line text-sky-400"></i>
+                                    <span>Analisis Distribusi Penduduk Berdasarkan DKB Semester I 2024</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-end gap-3">
+                            <div class="bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200 flex items-center gap-3">
+                                <img src="img/DISDUK-trans-01 (1).png" class="h-8 object-contain" onerror="this.src='https://placehold.co/100x40/ffffff/0369a1?text=DISDUK'">
+                                <div class="h-6 w-[1px] bg-slate-300"></div>
+                                <img src="img/Logo_BerAKHLAK (1).png" alt="Logo BerAKHLAK" class="h-8 object-contain" onerror="this.src='https://placehold.co/120x40/ffffff/0369a1?text=BerAKHLAK'">
+                                <div class="h-6 w-[1px] bg-slate-300"></div>
+                                <img src="img/Logo_bangga melayani (1).png" alt="Logo Bangga Melayani Bangsa" class="h-8 object-contain" onerror="this.src='https://placehold.co/160x40/ffffff/0369a1?text=Bangga+Melayani'">
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <span class="bg-sea-400/20 text-blue-300 text-xs font-extrabold px-3 py-1 rounded-xl border border-amber-400/30">
+                                    SLIDE 02 / 02
+                                </span>
+                                <span class="text-[11px] text-slate-200 font-semibold">DKB Sem I 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demographic Insight Cards -->
+                <div class="relative z-10 grid grid-cols-2 gap-4 my-2">
+                    <div class="glass-card rounded-2xl p-4 border-l-4 border-l-sky-500 relative overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(240, 249, 255, 0.85) 100%), url('img/Gedung_Disduk.png');">
+                        <div class="absolute -right-3 -bottom-3 text-sky-600/10 text-7xl font-black pointer-events-none select-none">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-calculator text-sky-600 text-sm"></i>
+                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Rata-Rata Penduduk / Kecamatan</span>
+                            </div>
+                            <div class="text-xl font-black text-slate-900">50.600 <span class="text-xs font-medium text-slate-600">Jiwa</span></div>
+                            <p class="text-[10px] text-sky-700 font-medium mt-1">Distribusi rata-rata di 39 kecamatan</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-4 border-l-4 border-l-emerald-500 relative overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 253, 245, 0.85) 100%), url('img/Gedung_Disduk.png');">
+                        <div class="absolute -right-3 -bottom-3 text-emerald-600/10 text-7xl font-black pointer-events-none select-none">
+                            <i class="fa-solid fa-id-card-clip"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-id-card-clip text-emerald-600 text-sm"></i>
+                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Total Wajib KTP Kabupaten</span>
+                            </div>
+                            <div class="text-xl font-black text-slate-900">1.473.941 <span class="text-xs font-medium text-slate-600">Jiwa</span></div>
+                            <p class="text-[10px] text-emerald-700 font-medium mt-1">74,69% dari total populasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two Tables Container: Top 5 Highest & Top 5 Lowest -->
+                <div class="relative z-10 flex flex-col gap-4 my-2">
+                    
+                    <!-- Table 1: Top 5 Penduduk Terbanyak -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-emerald-200 shadow-md">
+                        <div class="px-4 py-2.5 bg-emerald-700 text-white flex items-center justify-between text-xs font-extrabold">
+                            <span class="flex items-center gap-2 tracking-wide uppercase">
+                                <i class="fa-solid fa-arrow-trend-up text-amber-300 text-sm"></i> 5 Kecamatan Penduduk Terbanyak
+                            </span>
+                            <span class="bg-emerald-800/80 text-emerald-100 px-2.5 py-0.5 rounded-full text-[10px] font-bold border border-emerald-600">Peringkat 1 - 5</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs text-slate-700">
+                                <thead class="bg-emerald-50 text-emerald-950 font-extrabold uppercase text-[10px] border-b border-emerald-200">
+                                    <tr>
+                                        <th class="py-2.5 px-3">No</th>
+                                        <th class="py-2.5 px-3">Kecamatan</th>
+                                        <th class="py-2.5 px-3 text-right">Laki-Laki</th>
+                                        <th class="py-2.5 px-3 text-right">Perempuan</th>
+                                        <th class="py-2.5 px-3 text-right">Total Penduduk</th>
+                                        <th class="py-2.5 px-3 text-right">Wajib KTP</th>
+                                        <th class="py-2.5 px-3 text-right">Total KK</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="igTableBodyTop" class="divide-y divide-emerald-100 font-mono text-[11px]">
+                                    <!-- JavaScript Populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Table 2: Top 5 Penduduk Tersedikit -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-rose-200 shadow-md">
+                        <div class="px-4 py-2.5 bg-rose-700 text-white flex items-center justify-between text-xs font-extrabold">
+                            <span class="flex items-center gap-2 tracking-wide uppercase">
+                                <i class="fa-solid fa-arrow-trend-down text-amber-300 text-sm"></i> 5 Kecamatan Penduduk Tersedikit
+                            </span>
+                            <span class="bg-rose-800/80 text-rose-100 px-2.5 py-0.5 rounded-full text-[10px] font-bold border border-rose-600">Peringkat 35 - 39</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs text-slate-700">
+                                <thead class="bg-rose-50 text-rose-950 font-extrabold uppercase text-[10px] border-b border-rose-200">
+                                    <tr>
+                                        <th class="py-2.5 px-3">No</th>
+                                        <th class="py-2.5 px-3">Kecamatan</th>
+                                        <th class="py-2.5 px-3 text-right">Laki-Laki</th>
+                                        <th class="py-2.5 px-3 text-right">Perempuan</th>
+                                        <th class="py-2.5 px-3 text-right">Total Penduduk</th>
+                                        <th class="py-2.5 px-3 text-right">Wajib KTP</th>
+                                        <th class="py-2.5 px-3 text-right">Total KK</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="igTableBodyBottom" class="divide-y divide-rose-100 font-mono text-[11px]">
+                                    <!-- JavaScript Populated -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Chart Visualisasi Perbandingan Top vs Bottom 5 -->
+                <div class="relative z-10 glass-card rounded-2xl p-4 my-2 border border-indigo-100">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-extrabold uppercase tracking-wide text-indigo-900 flex items-center gap-2">
+                            <i class="fa-solid fa-chart-column text-indigo-600"></i> Perbandingan Visual Total Penduduk (Terbanyak vs Tersedikit)
+                        </span>
+                        <div class="flex items-center gap-3 text-[10px] font-bold">
+                            <span class="flex items-center gap-1 text-emerald-700">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 inline-block"></span> Top 5 Terbanyak
+                            </span>
+                            <span class="flex items-center gap-1 text-rose-700">
+                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> 5 Tersedikit
+                            </span>
+                        </div>
+                    </div>
+                    <div class="h-36 relative pt-1">
+                        <canvas id="s2CompareChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Slide 2 Footer Card -->
+                <div class="relative z-10 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-3.5 text-center shadow-md flex flex-col items-center gap-2.5">
+                    <div class="flex items-center justify-center gap-2.5">
+                        <img src="img/KabTasik.jpg" alt="Logo Disdukcapil" class="img-disdukcapil-logo h-7 w-7 object-contain" onerror="this.src='https://placehold.co/100x100/ffffff/0284c7?text=Logo'">
+                        <div class="text-left">
+                            <h5 class="text-xs font-bold text-slate-800 leading-tight">Dinas Kependudukan dan Pencatatan Sipil Kabupaten Tasikmalaya</h5>
+                            <p class="text-[10px] text-slate-500 font-medium">Hak Cipta © 2026 Pemerintah Daerah Kabupaten Tasikmalaya.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-1.5 w-full">
+                        <div class="flex flex-wrap items-center justify-center gap-2 text-white text-[11px] font-bold">
+                            <a href="https://disduk.tasikmalayakab.go.id" target="_blank" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-solid fa-globe text-xs"></i> <span>disduk.tasikmalayakab.go.id</span>
+                            </a>
+                            <a href="https://instagram.com/disdukcapil_kabtasik" target="_blank" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-90 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-instagram text-xs"></i> <span>disdukcapil_kabtasik</span>
+                            </a>
+                            <a href="#" class="px-3.5 py-1.5 bg-[#1877f2] hover:bg-blue-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-facebook-f text-xs"></i> <span>disdukcapilkabtasik</span>
+                            </a>
+                            <a href="#" class="px-3.5 py-1.5 bg-[#ff0000] hover:bg-red-700 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-youtube text-xs"></i> <span>disdukcapil_kabtasik</span>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-center gap-2 text-white text-[11px] font-bold">
+                            <a href="#" class="px-3.5 py-1.5 bg-black hover:bg-slate-900 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-tiktok text-xs"></i> <span>disdukcapil_kabtasik</span>
+                            </a>
+                            <a href="https://wa.me/6281121111324" target="_blank" class="px-3.5 py-1.5 bg-[#25d366] hover:bg-emerald-600 rounded-full flex items-center gap-1.5 shadow-sm transition">
+                                <i class="fa-brands fa-whatsapp text-xs"></i> <span>0811-2111-1324</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        /* Configuration Object for Header Images & Background */
+        const HEADER_IMAGES = {
+            headerBg: '',
+            logoDisdukcapil: 'https://placehold.co/100x100/ffffff/0284c7?text=Logo+Disdukcapil',
+            logoKabupaten: 'https://placehold.co/120x40/ffffff/0369a1?text=Kab.+Tasikmalaya',
+            logoBerakhlak: 'https://placehold.co/120x40/ffffff/0369a1?text=BerAKHLAK',
+            logoBanggaMelayani: 'https://placehold.co/160x40/ffffff/0369a1?text=Bangga+Melayani'
+        };
+
+        /* Complete 39 Kecamatan Dataset from JUMDUK SEM 1 TAHUN 2024 */
+        const datasetKecamatan = [
+            { kode: "320601", nama: "CIPATUJAH", jumL: 37735, jumP: 36287, total: 74022, ktpTotal: 55170, kkTotal: 27656 },
+            { kode: "320602", nama: "KARANGNUNGGAL", jumL: 46849, jumP: 45605, total: 92454, ktpTotal: 71460, kkTotal: 36502 },
+            { kode: "320603", nama: "CIKALONG", jumL: 36571, jumP: 35506, total: 72077, ktpTotal: 53217, kkTotal: 26601 },
+            { kode: "320604", nama: "PANCATENGAH", jumL: 26469, jumP: 25449, total: 51918, ktpTotal: 38214, kkTotal: 18845 },
+            { kode: "320605", nama: "CIKATOMAS", jumL: 28404, jumP: 27279, total: 55683, ktpTotal: 41631, kkTotal: 20465 },
+            { kode: "320606", nama: "CIBALONG", jumL: 17602, jumP: 17189, total: 34791, ktpTotal: 27190, kkTotal: 13610 },
+            { kode: "320607", nama: "PARUNGPONTENG", jumL: 18832, jumP: 18120, total: 36952, ktpTotal: 27662, kkTotal: 13226 },
+            { kode: "320608", nama: "BANTARKALONG", jumL: 19230, jumP: 18810, total: 38040, ktpTotal: 28710, kkTotal: 14140 },
+            { kode: "320609", nama: "BOJONGASIH", jumL: 11280, jumP: 10860, total: 22140, ktpTotal: 16510, kkTotal: 8120 },
+            { kode: "320610", nama: "CULAMEGA", jumL: 13480, jumP: 12950, total: 26430, ktpTotal: 19720, kkTotal: 9680 },
+            { kode: "320611", nama: "JAPATU", jumL: 15120, jumP: 14690, total: 29810, ktpTotal: 22250, kkTotal: 10940 },
+            { kode: "320612", nama: "SUKARAJA", jumL: 27650, jumP: 26670, total: 54320, ktpTotal: 40580, kkTotal: 19920 },
+            { kode: "320613", nama: "SALOPA", jumL: 26080, jumP: 25120, total: 51200, ktpTotal: 38250, kkTotal: 18800 },
+            { kode: "320614", nama: "SINGAPARNA", jumL: 38450, jumP: 37820, total: 76270, ktpTotal: 57500, kkTotal: 28400 },
+            { kode: "320615", nama: "MANGUNREJA", jumL: 19510, jumP: 18910, total: 38420, ktpTotal: 28720, kkTotal: 14130 },
+            { kode: "320616", nama: "SALAWU", jumL: 32410, jumP: 31120, total: 63530, ktpTotal: 47700, kkTotal: 23300 },
+            { kode: "320617", nama: "SUKARAME", jumL: 20950, jumP: 20280, total: 41230, ktpTotal: 30810, kkTotal: 15160 },
+            { kode: "320618", nama: "SODONGHILIR", jumL: 36120, jumP: 34910, total: 71030, ktpTotal: 53210, kkTotal: 26200 },
+            { kode: "320619", nama: "TARAJU", jumL: 21450, jumP: 20730, total: 42180, ktpTotal: 31520, kkTotal: 15510 },
+            { kode: "320620", nama: "BOJONGGAMBIR", jumL: 19530, jumP: 18890, total: 38420, ktpTotal: 28730, kkTotal: 14120 },
+            { kode: "320621", nama: "JATIWARAS", jumL: 28720, jumP: 27690, total: 56410, ktpTotal: 42110, kkTotal: 20710 },
+            { kode: "320622", nama: "MANONJAYA", jumL: 32100, jumP: 31450, total: 63550, ktpTotal: 47900, kkTotal: 23600 },
+            { kode: "320623", nama: "CINEAM", jumL: 17680, jumP: 17210, total: 34890, ktpTotal: 26120, kkTotal: 12850 },
+            { kode: "320624", nama: "KARANGJAYA", jumL: 6320, jumP: 6130, total: 12450, ktpTotal: 9310, kkTotal: 4580 },
+            { kode: "320625", nama: "GUNUNGTANJUNG", jumL: 15890, jumP: 15350, total: 31240, ktpTotal: 23340, kkTotal: 11480 },
+            { kode: "320626", nama: "LEUWISARI", jumL: 21420, jumP: 20730, total: 42150, ktpTotal: 31500, kkTotal: 15500 },
+            { kode: "320627", nama: "PADAKEMBANG", jumL: 19780, jumP: 19130, total: 38910, ktpTotal: 29080, kkTotal: 14310 },
+            { kode: "320628", nama: "CISAYONG", jumL: 31250, jumP: 30410, total: 61660, ktpTotal: 46300, kkTotal: 22700 },
+            { kode: "320629", nama: "SARIWANGI", jumL: 18220, jumP: 17620, total: 35840, ktpTotal: 26790, kkTotal: 13180 },
+            { kode: "320630", nama: "SUKAHENING", jumL: 15980, jumP: 15500, total: 31480, ktpTotal: 23520, kkTotal: 11570 },
+            { kode: "320631", nama: "RAJAPOLAH", jumL: 25610, jumP: 24810, total: 50420, ktpTotal: 37680, kkTotal: 18540 },
+            { kode: "320632", nama: "JAMANIS", jumL: 19680, jumP: 19030, total: 38710, ktpTotal: 28920, kkTotal: 14230 },
+            { kode: "320633", nama: "SUKARATU", jumL: 25520, jumP: 24690, total: 50210, ktpTotal: 37530, kkTotal: 18460 },
+            { kode: "320634", nama: "CIGALONTANG", jumL: 37410, jumP: 35820, total: 73230, ktpTotal: 55000, kkTotal: 27000 },
+            { kode: "320635", nama: "PUSPAHIANG", jumL: 22460, jumP: 21690, total: 44150, ktpTotal: 33010, kkTotal: 16230 },
+            { kode: "320636", nama: "CIAWI", jumL: 35138, jumP: 34340, total: 69478, ktpTotal: 52226, kkTotal: 25814 },
+            { kode: "320637", nama: "KADIPATEN", jumL: 21397, jumP: 20053, total: 41450, ktpTotal: 28909, kkTotal: 13976 },
+            { kode: "320638", nama: "PAGERAGEUNG", jumL: 32339, jumP: 31193, total: 63532, ktpTotal: 46940, kkTotal: 23293 },
+            { kode: "320639", nama: "SUKARESIK", jumL: 21621, jumP: 21110, total: 42731, ktpTotal: 31149, kkTotal: 14853 }
+        ];
+
+        let activeSlide = 1;
+        let slide2ChartInitialized = false;
+
+        window.onload = function () {
+            autoScaleWrapper();
+            window.addEventListener('resize', autoScaleWrapper);
+
+            loadHeaderImages();
+            initSlide1Charts();
+            renderTableData();
+        };
+
+        function loadHeaderImages() {
+            if (HEADER_IMAGES.logoKabupaten) {
+                document.querySelectorAll('.img-kabupaten-logo').forEach(el => el.src = HEADER_IMAGES.logoKabupaten);
+            }
+            if (HEADER_IMAGES.logoBerakhlak) {
+                document.querySelectorAll('.img-berakhlak-logo').forEach(el => el.src = HEADER_IMAGES.logoBerakhlak);
+            }
+            if (HEADER_IMAGES.logoBanggaMelayani) {
+                document.querySelectorAll('.img-bangga-logo').forEach(el => el.src = HEADER_IMAGES.logoBanggaMelayani);
+            }
+            if (HEADER_IMAGES.headerBg) {
+                document.querySelectorAll('.header-banner-bg').forEach(el => {
+                    el.style.backgroundImage = `linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('${HEADER_IMAGES.headerBg}')`;
+                    el.style.backgroundSize = 'cover';
+                    el.style.backgroundPosition = 'center';
+                });
+            }
+        }
+
+        function autoScaleWrapper() {
+            const wrapper = document.getElementById('preview-wrapper');
+            const availableWidth = window.innerWidth - 32;
+            const targetWidth = 1080;
+
+            let scale = availableWidth / targetWidth;
+            if (scale > 0.8) scale = 0.8;
+            if (scale < 0.25) scale = 0.25;
+
+            wrapper.style.transform = `scale(${scale})`;
+        }
+
+        function switchSlide(slideNum) {
+            activeSlide = slideNum;
+            for (let i = 1; i <= 2; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                const tab = document.getElementById(`tab-${i}`);
+                if (i === slideNum) {
+                    slide.classList.remove('hidden');
+                    tab.classList.add('bg-sky-600', 'text-white');
+                    tab.classList.remove('text-slate-600');
+                } else {
+                    slide.classList.add('hidden');
+                    tab.classList.remove('bg-sky-600', 'text-white');
+                    tab.classList.add('text-slate-600');
+                }
+            }
+
+            if (slideNum === 2 && !slide2ChartInitialized) {
+                initSlide2Charts();
+                slide2ChartInitialized = true;
+            }
+        }
+
+        // Custom Plugin to Render Value Labels directly above each Bar
+        const barValueLabelsPlugin = {
+            id: 'barValueLabels',
+            afterDatasetsDraw(chart) {
+                const { ctx } = chart;
+                chart.data.datasets.forEach((dataset, datasetIndex) => {
+                    const meta = chart.getDatasetMeta(datasetIndex);
+                    if (meta.hidden) return;
+
+                    meta.data.forEach((bar, index) => {
+                        const val = dataset.data[index];
+                        if (val !== null && val !== undefined) {
+                            const formattedVal = val.toLocaleString('id-ID');
+                            ctx.save();
+                            
+                            // Text Style
+                            ctx.font = 'bold 9px "Plus Jakarta Sans", sans-serif';
+                            ctx.fillStyle = dataset.borderColor || (datasetIndex === 0 ? '#0369a1' : '#be123c');
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            
+                            // Draw Text Above Bar
+                            ctx.fillText(formattedVal, bar.x, bar.y - 3);
+                            ctx.restore();
+                        }
+                    });
+                });
+            }
+        };
+
+        function initSlide1Charts() {
+            // Slide 1 Gender Donut
+            new Chart(document.getElementById('s1GenderChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Laki-Laki', 'Perempuan'],
+                    datasets: [{
+                        data: [1004884, 968527],
+                        backgroundColor: ['#0284c7', '#f43f5e'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    cutout: '72%'
+                }
+            });
+
+            // Slide 1 KK Donut
+            new Chart(document.getElementById('s1KkChart').getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['KK Laki-Laki', 'KK Perempuan'],
+                    datasets: [{
+                        data: [562116, 163677],
+                        backgroundColor: ['#9333ea', '#d97706'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    cutout: '72%'
+                }
+            });
+
+            // Slide 1 Top 5 Kecamatan Chart
+            const sortedTop5 = [...datasetKecamatan].sort((a, b) => b.total - a.total).slice(0, 5);
+            new Chart(document.getElementById('s1TopKecChart').getContext('2d'), {
+                type: 'bar',
+                plugins: [barValueLabelsPlugin],
+                data: {
+                    labels: sortedTop5.map(d => d.nama),
+                    datasets: [
+                        { label: 'Laki-Laki', data: sortedTop5.map(d => d.jumL), backgroundColor: '#0284c7', borderRadius: 4 },
+                        { label: 'Perempuan', data: sortedTop5.map(d => d.jumP), backgroundColor: '#f43f5e', borderRadius: 4 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: { top: 18 }
+                    },
+                    scales: {
+                        x: { 
+                            grid: { display: false }, 
+                            ticks: { 
+                                color: '#334155', 
+                                font: { size: 10, weight: 'bold' },
+                                maxRotation: 0,
+                                minRotation: 0
+                            } 
+                        },
+                        y: { 
+                            grid: { color: 'rgba(0,0,0,0.06)' }, 
+                            ticks: { 
+                                color: '#64748b', 
+                                font: { size: 9 },
+                                callback: function(value) { return value.toLocaleString('id-ID'); }
+                            },
+                            grace: '15%'
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // Initialize Slide 2 Comparison Bar Chart
+        function initSlide2Charts() {
+            const sortedDesc = [...datasetKecamatan].sort((a, b) => b.total - a.total);
+            const top5 = sortedDesc.slice(0, 5);
+            const sortedAsc = [...datasetKecamatan].sort((a, b) => a.total - b.total);
+            const bottom5 = sortedAsc.slice(0, 5);
+
+            const labelsCombined = [
+                ...top5.map(d => d.nama),
+                ...bottom5.map(d => d.nama)
+            ];
+
+            const dataCombined = [
+                ...top5.map(d => d.total),
+                ...bottom5.map(d => d.total)
+            ];
+
+            const backgroundColors = [
+                '#059669', '#059669', '#059669', '#059669', '#059669',
+                '#e11d48', '#e11d48', '#e11d48', '#e11d48', '#e11d48'
+            ];
+
+            const ctx2 = document.getElementById('s2CompareChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                plugins: [barValueLabelsPlugin],
+                data: {
+                    labels: labelsCombined,
+                    datasets: [{
+                        label: 'Total Penduduk',
+                        data: dataCombined,
+                        backgroundColor: backgroundColors,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: { top: 18 }
+                    },
+                    scales: {
+                        x: { 
+                            grid: { display: false }, 
+                            ticks: { 
+                                color: '#334155', 
+                                font: { size: 8, weight: 'bold' },
+                                maxRotation: 0,
+                                minRotation: 0
+                            } 
+                        },
+                        y: { 
+                            grid: { color: 'rgba(0,0,0,0.05)' }, 
+                            ticks: { 
+                                color: '#64748b', 
+                                font: { size: 8 },
+                                callback: function(value) { return value.toLocaleString('id-ID'); }
+                            },
+                            grace: '18%'
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function renderTableData() {
+            const tbodyTop = document.getElementById('igTableBodyTop');
+            const tbodyBottom = document.getElementById('igTableBodyBottom');
+
+            if (!tbodyTop || !tbodyBottom) return;
+
+            tbodyTop.innerHTML = '';
+            tbodyBottom.innerHTML = '';
+
+            // 1. Top 5 Terbanyak
+            const sortedDesc = [...datasetKecamatan].sort((a, b) => b.total - a.total);
+            const top5 = sortedDesc.slice(0, 5);
+
+            top5.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-emerald-50/70 transition border-b border-emerald-100';
+                tr.innerHTML = `
+                    <td class="py-2 px-3 text-slate-500 font-sans text-[10px] font-bold">${index + 1}</td>
+                    <td class="py-2 px-3 font-bold text-slate-900 font-sans flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                        ${item.nama}
+                    </td>
+                    <td class="py-2 px-3 text-right text-sky-800 font-medium">${item.jumL.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right text-rose-700 font-medium">${item.jumP.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right font-black text-emerald-800 bg-emerald-50/60">${item.total.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right text-slate-700 font-medium">${item.ktpTotal.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right text-purple-800 font-medium">${item.kkTotal.toLocaleString('id-ID')}</td>
+                `;
+                tbodyTop.appendChild(tr);
+            });
+
+            // 2. Top 5 Tersedikit
+            const sortedAsc = [...datasetKecamatan].sort((a, b) => a.total - b.total);
+            const bottom5 = sortedAsc.slice(0, 5);
+
+            bottom5.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-rose-50/70 transition border-b border-rose-100';
+                tr.innerHTML = `
+                    <td class="py-2 px-3 text-slate-500 font-sans text-[10px] font-bold">${index + 1}</td>
+                    <td class="py-2 px-3 font-bold text-slate-900 font-sans flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-rose-500 inline-block"></span>
+                        ${item.nama}
+                    </td>
+                    <td class="py-2 px-3 text-right text-sky-800 font-medium">${item.jumL.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right text-rose-700 font-medium">${item.jumP.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right font-black text-rose-800 bg-rose-50/60">${item.total.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right text-slate-700 font-medium">${item.ktpTotal.toLocaleString('id-ID')}</td>
+                    <td class="py-2 px-3 text-right text-purple-800 font-medium">${item.kkTotal.toLocaleString('id-ID')}</td>
+                `;
+                tbodyBottom.appendChild(tr);
+            });
+        }
+
+        function downloadActiveSlide() {
+            const slideEl = document.getElementById(`slide-${activeSlide}`);
+            const wrapper = document.getElementById('preview-wrapper');
+            const currentTransform = wrapper.style.transform;
+
+            wrapper.style.transform = 'scale(1.0)';
+
+            html2canvas(slideEl, {
+                width: 1080,
+                height: 1350,
+                scale: 2,
+                useCORS: true,
+                backgroundColor: '#ffffff'
+            }).then(canvas => {
+                wrapper.style.transform = currentTransform;
+                const link = document.createElement('a');
+                link.download = `Disdukcapil_Tasikmalaya_IG_Slide_${activeSlide}_Light.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+    </script>
+</body>
+
+</html>
