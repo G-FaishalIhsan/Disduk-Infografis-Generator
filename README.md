@@ -16,10 +16,10 @@
   <p align="center">
     <a href="#-fitur-utama">Fitur Utama</a> •
     <a href="#-ruang-kerja-workspace">Ruang Kerja</a> •
-    <a href="#-arsitektur-sistem">Arsitektur</a> •
+    <a href="#-arsitektur--pipeline-sistem">Arsitektur</a> •
     <a href="#-teknologi-yang-digunakan">Teknologi</a> •
     <a href="#-cara-instalasi--memulai">Instalasi</a> •
-    <a href="#-struktur-folder">Struktur Project</a>
+    <a href="#-saran-pengembangan--roadmap-enterprise">Saran Pengembangan</a>
   </p>
 
 </div>
@@ -173,6 +173,46 @@ Disduk-Infografis-Generator/
 │   └── social/                  # Template V2 Carousel Media Sosial (Template 1, 2, 3)
 └── data/                        # Dataset JSON Kependudukan Terstruktur
 ```
+
+---
+
+## 💡 Saran Pengembangan & Roadmap Enterprise
+
+Berikut adalah saran pengembangan dan peta jalan (*roadmap*) tingkat lanjut untuk meningkatkan kualitas dan performa aplikasi ke standar *Enterprise*:
+
+### ⚡ 1. Optimasi Performa Jaringan & Beban Aset (Full Offline Ready)
+- **Self-Host & Bundling Aset Lokal (Vite / ESBuild)**: Mengompilasi seluruh stylesheet Tailwind CSS, ikon FontAwesome (`.woff2`), dan font Inter secara lokal di server untuk memotong ukuran transfer jaringan dari **>5 MB menjadi <300 KB**, halaman *load* instan (<1 detik), dan **100% Full Offline Ready**.
+- **Web Worker untuk Heavy Parsing**: Memindahkan pemrosesan ekstraksi file Excel besar dan kalkulasi `AnalyticsEngine` ke Web Worker (*background thread*) agar UI utama tidak pernah terasa *freeze/lag*.
+- **Lazy Loading Iframe Preview**: Render iframe template secara *on-demand* untuk menghemat penggunaan RAM browser.
+
+### 🗄️ 2. Arsitektur Database & Deployment
+Dua opsi pilihan database yang dapat disesuaikan dengan skala infrastruktur dinas:
+- **Opsi A: SQLite *(Paling Praktis)***: Database *serverless* 1 file lokal, 0 instalasi (sangat praktis untuk PC operasional staf).
+- **Opsi B: MySQL / MariaDB *(Standar Enterprise)***: Database RDBMS *client-server* standar industri instansi untuk server pusat.
+- **Deployment Kontainerisasi (Docker & Docker-Compose)**: Pengemasan aplikasi Node.js, Puppeteer Engine, dan Database ke dalam kontainer Docker terisolasi (`docker-compose up -d`).
+- **Object Storage (S3 / MinIO)**: Penyimpanan berkas ekspor hasil render (PNG, PDF, ZIP) secara terpusat.
+
+### 🔒 3. Keamanan & Hak Akses (RBAC)
+- **Autentikasi & RBAC (Role-Based Access Control)**: Membedakan peran Admin, Staf Pengolah Data, dan Operator Medsos.
+- **Backend Rate Limiting**: Proteksi endpoint ekspor Puppeteer dari serangan *request overload rendering*.
+
+### 🖨️ 4. Skalabilitas Engine Render Puppeteer
+- **Puppeteer Cluster Worker Pool**: Antrean pemrosesan paralel agar ekspor simultan oleh banyak pengguna berjalan stabil tanpa *timeout*.
+
+### 🎨 5. Fitur Interaktif & Pengalaman Pengguna (UI/UX)
+- **Inline WYSIWYG Text Editor**: Kustomisasi teks/catatan highlight secara langsung di atas canvas preview.
+- **Custom Color Palette Switcher**: Pilihan skema warna instansi (*Emerald Green, Royal Indigo, Classic Teal, Executive Gold*).
+- **Mode Cetak Hemat Tinta (Print-Friendly Ink Saver)**: Mengubah background berwarna/gelap menjadi putih bersih untuk hemat tinta printer kantor.
+
+### 🚀 6. Fitur Inovatif Tingkat Lanjut
+- 🗺️ **Peta Tematik Interaktif (GIS / Choropleth Map)**: Visualisasi sebaran demografi 39 kecamatan berbasis GeoJSON + Leaflet.js.
+- 🤖 **Narasi Teks Otomatis Berbasis AI**: Generasi otomatis 1-2 paragraf ringkasan cerita analisis kependudukan untuk rilis pers Humas / pidato pimpinan.
+- 📢 **Auto-Publish ke Instagram / Facebook (Meta Graph API)**: Posting otomatis paket Carousel dari web ke akun resmi Disdukcapil.
+- 📱 **QR Code Verifikasi Keabsahan Dokumen Resmi**: QR Code unik di setiap ekspor infografis A4 yang dapat di-scan dari HP warga/pejabat untuk memverifikasi keaslian dokumen.
+- 📊 **Modul Analisis Komparasi Antar-Kecamatan & Periode**: Perbandingan 2 kecamatan (*Singaparna vs Cipatujah*) atau 2 periode data secara berdampingan.
+
+### 🧪 7. Otomatisasi CI/CD & Testing Pipeline
+- **GitHub Actions Workflow**: Otomatisasi pengujian regresi visual (*Visual Regression Testing*) dan *auto-deployment* ke server pementasan (*Staging Server*) setiap kali ada pembaruan kode pada branch `main`.
 
 ---
 
